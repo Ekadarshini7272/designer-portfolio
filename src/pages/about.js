@@ -1,12 +1,12 @@
 import { Container } from 'react-bootstrap';
 import MainLayout from '../layout/MainLayout';
-import HomeContainer from '../components/container/HomeContainer';
+import About from '../components/container/about';
 
 export default function Home() {
   return (
     <MainLayout>
       <Container>
-       <HomeContainer />
+       <About />
       </Container>
     </MainLayout>
   );

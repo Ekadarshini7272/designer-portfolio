@@ -1,12 +1,12 @@
 import { Container } from 'react-bootstrap';
 import MainLayout from '../layout/MainLayout';
-import HomeContainer from '../components/container/HomeContainer';
 
-export default function Home() {
+export default function Contact() {
   return (
     <MainLayout>
       <Container>
-       <HomeContainer />
+        <h2>Contact</h2>
+        <p>Email: designer@email.com</p>
       </Container>
     </MainLayout>
   );
