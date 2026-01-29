@@ -95,57 +95,44 @@ const HomeContainer = () => {
       prev === sliderData.length - 1 ? 0 : prev + 1
     );
   };
+  //Functionality for auto-scrolling for global brand logos
   useEffect(() => {
     const container = brandListRef.current;
     if (!container) return;
-    const scrollAmount = 180;
-    const delay = 2000;
-    const startAutoScroll = () => {
-      autoScrollRef.current = setInterval(() => {
+    let speed = 0.7;
+    let isHovered = false;
+    const autoScroll = () => {
+      if (!isHovered) {
+        container.scrollLeft += speed;
+        // reset when reaching end
         if (
           container.scrollLeft + container.clientWidth >=
           container.scrollWidth
         ) {
-          container.scrollTo({
-            left: 0,
-            behavior: "smooth",
-          });
-        } else {
-          container.scrollBy({
-            left: scrollAmount,
-            behavior: "smooth",
-          });
+          container.scrollLeft = 0;
         }
-      }, delay);
-    };
-
-    const stopAutoScroll = () => {
-      if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
-        autoScrollRef.current = null;
       }
+      autoScrollRef.current = requestAnimationFrame(autoScroll);
     };
-    // Start initially
-    startAutoScroll();
-    // Pause on hover
-    container.addEventListener("mouseenter", stopAutoScroll);
-    container.addEventListener("mouseleave", startAutoScroll);
+    autoScrollRef.current = requestAnimationFrame(autoScroll);
+    const handleMouseEnter = () => (isHovered = true);
+    const handleMouseLeave = () => (isHovered = false);
+    container.addEventListener("mouseenter", handleMouseEnter);
+    container.addEventListener("mouseleave", handleMouseLeave);
     return () => {
-      stopAutoScroll();
-      container.removeEventListener("mouseenter", stopAutoScroll);
-      container.removeEventListener("mouseleave", startAutoScroll);
+      cancelAnimationFrame(autoScrollRef.current);
+      container.removeEventListener("mouseenter", handleMouseEnter);
+      container.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
   const cards = [
     user1, user2, user3, user4, user5, user6,
     user7, user8, user9, user10, user11, user12,
   ];
-  const totalPages = 2; // 12 cards → 6 per page
-
+  const totalPages = 2;
   const handlePrev = () => {
     if (page > 0) setPage(page - 1);
   };
-
   const handleNext = () => {
     if (page < totalPages - 1) setPage(page + 1);
   };
@@ -225,10 +212,10 @@ const HomeContainer = () => {
             </Row>
           </Col>
         </Row>
+        {/* GLOBAL BRAND SECTION */}
         <Row className="mt-5">
           <Col>
             <div className={styles.globalBrandSection}>
-              {/* Title pill */}
               <div className={styles.question}>
                 🌐 See My Collaborators (Global Brand)
               </div>
@@ -369,7 +356,7 @@ const HomeContainer = () => {
                         .map((img, i) => (
                           <Col lg={4} md={6} key={i}>
                             <div className={styles.cardWrapper}>
-                              <Image src={img} alt="user" />
+                              <Image src={img} alt="user" width={355} height={364} />
                             </div>
                           </Col>
                         ))}
@@ -383,7 +370,7 @@ const HomeContainer = () => {
               <button className={`${styles.navBtn} ${page === 0 ? styles.disabled : styles.active}`} onClick={handlePrev} disabled={page === 0}>
                 <FiArrowLeft />
               </button>
-              <button className={`${styles.navBtn} ${page === totalPages - 1 ? styles.disabled : styles.active }`} onClick={handleNext} disabled={page === totalPages - 1}>
+              <button className={`${styles.navBtn} ${page === totalPages - 1 ? styles.disabled : styles.active}`} onClick={handleNext} disabled={page === totalPages - 1}>
                 <FiArrowRight />
               </button>
             </div>

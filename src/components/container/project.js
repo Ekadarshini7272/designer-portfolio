@@ -61,27 +61,13 @@ const Project = () => {
           {projectData.map((item) => (
             <Col key={item.id} md={6}>
               <div className={styles.projectCard}>
-                
-                {/* Arrow */}
                 <span className={styles.arrowIcon}>
                   <FiArrowUpRight />
                 </span>
-
-                {/* Tag */}
                 <p className={styles.tag}>{item.tag}</p>
-
-                {/* Image */}
                 <div className={styles.imageWrapper}>
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                  
-                    className={styles.image}
-                    width={536} height={334}
-                  />
+                  <Image src={item.image} alt={item.title} className={styles.image} width={536} height={334}/>
                 </div>
-
-                {/* Content */}
                 <h4 className={styles.title}>{item.title}</h4>
                 <p className={styles.author}>{item.author}</p>
               </div>
