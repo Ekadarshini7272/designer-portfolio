@@ -41,7 +41,15 @@ color: #959595;
 /* Location */
 .location {
   position: relative;
-  cursor: pointer;
+    color: #333;
+    background-color: #ecece8;
+    border-radius: 3em;
+    align-items: center;
+    gap: 6px;
+    padding: 1em;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
 }
 .locationImages {
   position: absolute;
