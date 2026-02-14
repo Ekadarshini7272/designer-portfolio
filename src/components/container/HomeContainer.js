@@ -33,25 +33,11 @@ import gbrand22 from '../../../public/images/gbrand22.png';
 import gbrand23 from '../../../public/images/gbrand23.png';
 import gbrand24 from '../../../public/images/gbrand24.png';
 import professional1 from '../../../public/images/professionalimg.png';
-import user1 from '../../../public/images/user1.png';
-import user2 from '../../../public/images/user2.png';
-import user3 from '../../../public/images/user3.png';
-import user4 from '../../../public/images/user4.png';
-import user5 from '../../../public/images/user5.png';
-import user6 from '../../../public/images/user6.png';
-import user7 from '../../../public/images/user7.png';
-import user8 from '../../../public/images/user8.png';
-import user9 from '../../../public/images/user9.png';
-import user10 from '../../../public/images/user10.png';
-import user11 from '../../../public/images/user11.png';
-import user12 from '../../../public/images/user12.png';
-import kindimg1 from '../../../public/images/kindimg1.png';
-import kindimg2 from '../../../public/images/kindimg2.png';
+import Testimonial from '../container/testimonial';
 const HomeContainer = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const brandListRef = useRef(null);
   const autoScrollRef = useRef(null);
-  const [page, setPage] = useState(0);
   // slider JSON content
   const sliderData = [
     {
@@ -125,17 +111,17 @@ const HomeContainer = () => {
       container.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
-  const cards = [
-    user1, user2, user3, user4, user5, user6,
-    user7, user8, user9, user10, user11, user12,
-  ];
-  const totalPages = 2;
-  const handlePrev = () => {
-    if (page > 0) setPage(page - 1);
-  };
-  const handleNext = () => {
-    if (page < totalPages - 1) setPage(page + 1);
-  };
+  // const cards = [
+  //   user1, user2, user3, user4, user5, user6,
+  //   user7, user8, user9, user10, user11, user12,
+  // ];
+  // const totalPages = 2;
+  // const handlePrev = () => {
+  //   if (page > 0) setPage(page - 1);
+  // };
+  // const handleNext = () => {
+  //   if (page < totalPages - 1) setPage(page + 1);
+  // };
   return (
     <section className={styles.homeSection}>
       <Container>
@@ -194,7 +180,7 @@ const HomeContainer = () => {
             </div>
             <Row className="g-4 mt-1">
               <Col md={6}>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+                <a href="https://www.linkedin.com/in/19design97/" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
                   <div className={styles.smallCard}>
                     <span className={styles.arrow}><FiArrowUpRight /></span>
                     <Image src={linkedinimg} alt="LinkedIn" width={80} height={80} />
@@ -202,7 +188,7 @@ const HomeContainer = () => {
                 </a>
               </Col>
               <Col md={6}>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+                <a href="https://drive.google.com/file/d/1iIKZjKxWkVUjfbABwKkcLb5uQu3my3xg/view?usp=sharing" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
                   <div className={styles.smallCard}>
                     <span className={styles.arrow}><FiArrowUpRight /></span>
                     <Image src={resumeimg} alt="Resume" width={150} height={200} />
@@ -337,45 +323,7 @@ const HomeContainer = () => {
             </Row>
           </Col>
         </Row>
-        <section className={styles.kindWordsSection}>
-          <Container>
-            {/* HEADER */}
-            <div className={styles.kindHeader}>
-              <Image src={kindimg1} alt="icon" width={173} height={140} />
-              <h2>Kind Words From <br />Collaborators</h2>
-              <Image src={kindimg2} alt="icon" width={173} height={140} />
-            </div>
-            {/* SLIDER */}
-            <div className={styles.sliderWrapper}>
-              <div className={styles.sliderTrack} style={{ transform: `translateX(-${page * 100}%)` }}>
-                {[0, 1].map((slideIndex) => (
-                  <div className={styles.slide} key={slideIndex}>
-                    <Row className="g-4">
-                      {cards
-                        .slice(slideIndex * 6, slideIndex * 6 + 6)
-                        .map((img, i) => (
-                          <Col lg={4} md={6} key={i}>
-                            <div className={styles.cardWrapper}>
-                              <Image src={img} alt="user" width={355} height={364} />
-                            </div>
-                          </Col>
-                        ))}
-                    </Row>
-                  </div>
-                ))}
-              </div>
-            </div>
-            {/* NAVIGATION */}
-            <div className={styles.sliderNav}>
-              <button className={`${styles.navBtn} ${page === 0 ? styles.disabled : styles.active}`} onClick={handlePrev} disabled={page === 0}>
-                <FiArrowLeft />
-              </button>
-              <button className={`${styles.navBtn} ${page === totalPages - 1 ? styles.disabled : styles.active}`} onClick={handleNext} disabled={page === totalPages - 1}>
-                <FiArrowRight />
-              </button>
-            </div>
-          </Container>
-        </section>
+        <Testimonial/>
       </Container>
     </section>
   );
