@@ -23,49 +23,42 @@ const data = [
     name: "Gourav Das",
     role: "Co-Founder & CPTO at ApnaKlub",
     img: testimonial12,
-    layout: "bottom"
   },
   {
     text: `Prabhu is an exceptionally talented designer with a deep understanding of Figma. His ability to create intuitive, visually appealing designs and collaborate seamlessly with teams is outstanding. I highly recommend Prabhu for any project requiring creative and user-focused design expertise.`,
     name: "Chetan Pawar",
     role: "Senior SDE at ApnaKlub",
     img: testimonial11,
-    layout: "top"
   },
   {
     text: `Prabhu has an exceptional eye for design and consistently produces creative and visually stunning work. He is artistically accurate with any design he put out yet has the humility to accept feedback & transform his work into a collective vision for the team. His workmanship with design tools is great and comes handy when you want to churn out stuff faster!`,
     name: "Ritika Gupta",
     role: "Product @ BCG",
     img: testimonial10,
-    layout: "bottom"
   },
   {
     text: `Prabhu played a key role at O4S in launching our web and mobile app SaaS. He excels at turning complex ideas into intuitive, user-friendly designs. His creativity, attention to detail, and UX expertise greatly impacted our product's success. Passionate about design and delivering quality solutions, Prabhu is a valuable asset to any team.`,
     name: "Mayank Mrinal",
     role: "Product Manager – O4S",
     img: testimonial9,
-    layout: "top"
   },
   {
     text: `Prabhu worked as a Product designer with O4S. He is a super dependable guy a with a keen eye for aesthetics. He did a great job here. He also assisted the marketing team, churning out some wonderful designs. He is definitely an asset to any team he works for. I'd recommend him any day!`,
     name: "Advait Parnaik",
     role: "CRO @ O4S",
-    img: testimonial5,
-    layout: "bottom"
+    img: testimonial4,
   },
   {
     text: `I worked with Prabhu for 3 years as a product designer and witnessed his ability to create user-focused, beautiful interfaces. He's a true team player, delivering projects ahead of schedule with exceptional attention to detail and high-quality designs. I highly recommend Prabhu, confident he will excel and make a positive impact in any product designer role.`,
     name: "Fluck Alwa",
     role: "Senior Product Designer at SmartQ",
     img: testimonial5,
-    layout: "top"
   },
   {
     text: `Prabhu worked as a Product designer with O4S. He is a super dependable guy a with a keen eye for aesthetics. He did a great job here. He also assisted the marketing team, churning out some wonderful designs. He is definitely an asset to any team he works for. I'd recommend him any day!`,
     name: "Advait Parnaik",
     role: "CRO @ O4S",
-    img: testimonial7,
-    layout: "bottom"
+    img: testimonial6,
   },
   {
     text: `Prabhu is a fantastic colleague and a great designer. His knowledge, skills, and humility have been his stand out traits. 
@@ -75,38 +68,32 @@ He is someone who is always available, hard working, and will teach you somethin
     name: "Arnav Parimoo",
     role: "Associate Product Manager @ 3SC",
     img: testimonial7,
-    layout: "top"
   },
   {
     text: `I highly recommend Prabhu for any UI/UX design role. Over three years at O4S, he excelled in designing visually stunning, functional, and user-friendly mobile apps for iOS and Android, significantly enhancing user experiences. A collaborative team player, he consistently offered valuable feedback to improve outcomes. Prabhu will undoubtedly make impactful contributions to any organization.`,
     name: "Pulkit Mehdiratta",
     role: "Product Manager at O4S",
     img: testimonial2,
-    layout: "bottom"
   },
   {
     text: `Prabhu was an integral part of the design team at O4S Company. He consistently delivered high-quality work and was always willing to go above and beyond to ensure that our projects were completed on time and to the highest standard. He has a great eye for detail and is an excellent communicator. He is also a great team player and always willing to lend a hand when needed. I would highly recommend Prabhu for any UI/UX role.`,
     name: "Mudit Kumar Jain",
     role: "Executive – Project Management",
     img: testimonial1,
-    layout: "top"
   },
   {
     text: `Prabhu is a talented designer with exceptional UI/UX skills, handling wireframes and multiple applications independently. He stays updated with the latest design trends, delivering outstanding results. His attention to detail, creativity, positive attitude, and problem-solving mindset make him a valuable asset. Prabhu is a reliable team player any organization would be lucky to have.`,
     name: "Subhra Jyoti Baroi",
     role: "Frontend Enthusiast – Hiver",
     img: testimonial8,
-    layout: "bottom"
   },
   {
     text: `Prabhu is an exceptional Product Designer with impressive attention to detail in UX prototypes, enhancing timelines significantly. A supportive team player, he's quick to assist and responsive to queries. His work on key features has impacted thousands of users, showcasing his tangible value. Highly recommend Prabhu for product design roles—he's an asset to any team!`,
     name: "Sparsh Verma",
     role: "Program Manager @ApnaKlub",
     img: testimonial3,
-    layout: "top"
   }
 ];
-
 const Testimonial = () => {
   const [index, setIndex] = useState(0);
   const itemsPerSlide = 6;
@@ -137,34 +124,18 @@ const Testimonial = () => {
                 slideIndex * itemsPerSlide,
                 slideIndex * itemsPerSlide + itemsPerSlide
               );
-
               return (
                 <div className={styles.slide} key={slideIndex}>
                   {slice.map((item, i) => (
                     <div className={styles.card} key={i}>
-
-                      {item.layout === "top" && (
-                        <div className={styles.profile}>
-                          <Image src={item.img} alt="" width={60} height={60} />
-                          <div>
-                            <h4>{item.name}</h4>
-                            <p>{item.role}</p>
-                          </div>
+                      <div className={styles.profile}>
+                        <Image src={item.img} alt="" width={60} height={60} />
+                        <div>
+                          <h4>{item.name}</h4>
+                          <p>{item.role}</p>
                         </div>
-                      )}
-
-                      <p className={styles.text}>{item.text}</p>
-
-                      {item.layout === "bottom" && (
-                        <div className={styles.profile}>
-                          <Image src={item.img} alt="" width={60} height={60} />
-                          <div>
-                            <h4>{item.name}</h4>
-                            <p>{item.role}</p>
-                          </div>
-                        </div>
-                      )}
-
+                      </div>
+                      <div className={styles.text}>{item.text}</div>
                     </div>
                   ))}
                 </div>
@@ -172,26 +143,14 @@ const Testimonial = () => {
             })}
           </div>
         </div>
-
-<div className={styles.controls}>
-  <button
-    onClick={prev}
-    className={index === 0 ? styles.disabled : styles.active}
-  >
-    <FiArrowLeft />
-  </button>
-
-  <button
-    onClick={next}
-    className={index === totalSlides - 1 ? styles.disabled : styles.active}
-  >
-    <FiArrowRight />
-  </button>
-</div>
-
+           <div className={styles.controls}>
+        <div className={styles.buttons}>
+          <button onClick={prev}><FiArrowLeft/></button>
+          <button onClick={next}><FiArrowRight/></button>
+        </div>
+        </div>
       </Container>
     </section>
   );
 };
-
 export default Testimonial;

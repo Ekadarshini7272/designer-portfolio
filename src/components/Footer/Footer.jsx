@@ -26,7 +26,7 @@ const Footer = () => {
             <div className={styles.linkGroup}>
               <Link href="https://www.linkedin.com/in/19design97/" target="_blank">LinkedIn <FiArrowUpRight /></Link>
               <Link href="https://medium.com/@19design97" target="_blank">Medium <FiArrowUpRight /></Link>
-              <Link href="https://dribbble.com/19design97" target="_blank">dribble <FiArrowUpRight /></Link>
+              <Link href="https://dribbble.com/19design97" target="_blank">Dribble <FiArrowUpRight /></Link>
               <Link href="https://www.behance.net/19design97" target="_blank">Behance <FiArrowUpRight /></Link>
               <Link href="https://www.instagram.com/19design97/" target="_blank">Instagram <FiArrowUpRight /></Link>
               <Link href="https://www.youtube.com/@PPPDesigner" target="_blank">Youtube <FiArrowUpRight /></Link>

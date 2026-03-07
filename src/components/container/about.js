@@ -1,30 +1,28 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
 import Image from "next/image";
-import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
+import { FiArrowUpRight} from 'react-icons/fi';
 import Batchdigit1 from "../../../public/images/batchdigit1.png";
 import Batchdigit2 from "../../../public/images/batchdigit2.png";
 import Batchdigit3 from "../../../public/images/batchdigit3.png";
 import Batchdigit4 from "../../../public/images/batchdigit4.png";
-import profileimg from '../../../public/images/profileimg.png';
-import gridframeimg from '../../../public/images/gridframeimg.png';
-import resumeimg from '../../../public/images/resumeimg.png';
-import twitterimg from '../../../public/images/twitterimg.png';
-import behanceimg from '../../../public/images/behanceimg.png';
-import dribbleimg from '../../../public/images/dribbleimg.png';
-import mediumimg from '../../../public/images/mediumimg.png';
-import instaimg from '../../../public/images/instaimg.png';
-import linkedinimg from '../../../public/images/linkedinimg.png';
-import youtubeimg from '../../../public/images/youtubeimg.png';
-import tool1 from '../../../public/images/tool1.png';
-import tool2 from '../../../public/images/tool2.png';
-import tool3 from '../../../public/images/tool3.png';
-import tool4 from '../../../public/images/tool4.png';
-import tool5 from '../../../public/images/tool5.png';
-import tool6 from '../../../public/images/tool6.png';
-import tool7 from '../../../public/images/tool7.png';
-import tool8 from '../../../public/images/tool8.png';
-import tool9 from '../../../public/images/tool9.png';
+import resumeimg from '../../../public/images/socialicon/resumeiconimg.png';
+import twitterimg from '../../../public/images/socialicon/twittericonimg.png';
+import behanceimg from '../../../public/images/socialicon/behanceiconimg.png';
+import dribbleimg from '../../../public/images/socialicon/dribleiconimg.png';
+import mediumimg from '../../../public/images/socialicon/mediumiconimg.png';
+import instaimg from '../../../public/images/socialicon/instaiconimg.png';
+import linkedinimg from '../../../public/images/socialicon/lniconimg.png';
+import youtubeimg from '../../../public/images/socialicon/youtubeiconimg.png';
+import tool1 from '../../../public/images/softtools/softTool1.png';
+import tool2 from '../../../public/images/softtools/softTool2.png';
+import tool3 from '../../../public/images/softtools/softTool3.png';
+import tool4 from '../../../public/images/softtools/softTool4.png';
+import tool5 from '../../../public/images/softtools/softTool5.png';
+import tool6 from '../../../public/images/softtools/softTool6.png';
+import tool7 from '../../../public/images/softtools/softTool7.png';
+import tool8 from '../../../public/images/softtools/softTool8.png';
+import tool9 from '../../../public/images/softtools/softTool9.png';
 import frame1 from '../../../public/images/frame1.png';
 import frame2 from '../../../public/images/frame2.png';
 import frame3 from '../../../public/images/frame3.png';
@@ -44,96 +42,62 @@ import smilechild from '../../../public/images/smilechild.png';
 import styles from './about.module.scss';
 
 const About = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const brandListRef = useRef(null);
-  const autoScrollRef = useRef(null);
-  const sliderData = [
-    {
-      label: "For Anyone",
-      text:
-        "Hello there, I’m a designer who cares about making beautiful things that help people.",
-    },
-    {
-      label: "Recruiter",
-      text:
-        "I’m a product designer with 5+ years of experience across brand and product, at companies large and small. I’m actively looking for a new role.",
-    },
-    {
-      label: "Product Design",
-      text:
-        "As a systems thinker, I prioritize quality in every detail. I’m here to collaborate and learn from you. Together, we’ll create something we can be proud of.",
-    },
-    {
-      label: "Product Manager",
-      text:
-        "I bring end-to-end product acumen, from vision and strategy to discovery and delivery. I’ll partner closely with you to generate the highest impact possible.",
-    },
-    {
-      label: "Engineers",
-      text:
-        "I’m highly technical and while I’m not an engineer, I know my way around code and can speak fluently with you.",
-    },
-    {
-      label: "Design Director",
-      text:
-        "I take pride in my craft and love mentoring earlier career designers. I develop cross-functional partnerships and thrive in complex, ambiguous environments.",
-    },
-  ];
-  const prevSlide = () => {
-    setActiveIndex((prev) =>
-      prev === 0 ? sliderData.length - 1 : prev - 1
-    );
-  };
-  const nextSlide = () => {
-    setActiveIndex((prev) =>
-      prev === sliderData.length - 1 ? 0 : prev + 1
-    );
-  };
-  useEffect(() => {
-    const container = brandListRef.current;
-    if (!container) return;
-    const scrollAmount = 180;
-    const delay = 2000;
-    const startAutoScroll = () => {
-      autoScrollRef.current = setInterval(() => {
-        if (
-          container.scrollLeft + container.clientWidth >=
-          container.scrollWidth
-        ) {
-          container.scrollTo({
-            left: 0,
-            behavior: "smooth",
-          });
-        } else {
-          container.scrollBy({
-            left: scrollAmount,
-            behavior: "smooth",
-          });
-        }
-      }, delay);
-    };
+  // const brandListRef = useRef(null);
+  // const autoScrollRef = useRef(null);
+  // useEffect(() => {
+  //   const container = brandListRef.current;
+  //   if (!container) return;
+  //   const scrollAmount = 180;
+  //   const delay = 2000;
+  //   const startAutoScroll = () => {
+  //     autoScrollRef.current = setInterval(() => {
+  //       if (
+  //         container.scrollLeft + container.clientWidth >=
+  //         container.scrollWidth
+  //       ) {
+  //         container.scrollTo({
+  //           left: 0,
+  //           behavior: "smooth",
+  //         });
+  //       } else {
+  //         container.scrollBy({
+  //           left: scrollAmount,
+  //           behavior: "smooth",
+  //         });
+  //       }
+  //     }, delay);
+  //   };
 
-    const stopAutoScroll = () => {
-      if (autoScrollRef.current) {
-        clearInterval(autoScrollRef.current);
-        autoScrollRef.current = null;
-      }
-    };
-    // Start initially
-    startAutoScroll();
-    // Pause on hover
-    container.addEventListener("mouseenter", stopAutoScroll);
-    container.addEventListener("mouseleave", startAutoScroll);
-    return () => {
-      stopAutoScroll();
-      container.removeEventListener("mouseenter", stopAutoScroll);
-      container.removeEventListener("mouseleave", startAutoScroll);
-    };
-  }, []);
+  //   const stopAutoScroll = () => {
+  //     if (autoScrollRef.current) {
+  //       clearInterval(autoScrollRef.current);
+  //       autoScrollRef.current = null;
+  //     }
+  //   };
+  //   // Start initially
+  //   startAutoScroll();
+  //   // Pause on hover
+  //   container.addEventListener("mouseenter", stopAutoScroll);
+  //   container.addEventListener("mouseleave", startAutoScroll);
+  //   return () => {
+  //     stopAutoScroll();
+  //     container.removeEventListener("mouseenter", stopAutoScroll);
+  //     container.removeEventListener("mouseleave", startAutoScroll);
+  //   };
+  // }, []);
+  const tools = [tool1, tool2, tool3, tool4, tool5, tool6, tool7, tool8, tool9];
   return (
     <section className={styles.homeSection}>
       <Container>
-        <h1 className={styles.typohead}>I'm a Odia <span className={styles.typobold}>Sr. Designer,</span> Learner, and <br />Traveler, living in <span className={styles.typobold}>Odisha, India.</span></h1>
+        <section className={styles.heroSection}>
+          <div className={styles.heroContent}>
+            <div className={styles.typohead}>I'm a Odia </div>
+            <div className={styles.typohead}><span className={styles.typobold}>Sr. Designer,</span> Learner,</div>
+            <div className={styles.typohead}>and Traveler, living in</div>
+            <div className={styles.typobold}>Odisha, India.</div>
+          </div>
+        </section>
+        {/* <h1 className={styles.typohead}>I'm a Odia <span className={styles.typobold}>Sr. Designer,</span> Learner, and <br />Traveler, living in <span className={styles.typobold}>Odisha, India.</span></h1> */}
         <Row className={styles.badgeRow}>
           <Col md={3} sm={6} xs={6}>
             <div className={styles.badgeCard}>
@@ -160,141 +124,13 @@ const About = () => {
             </div>
           </Col>
         </Row>
-        <Row className={styles.aboutGrid}>
-          {/* LEFT SIDE */}
-          <Col lg={6}>
-            {/* SLIDER */}
-            <div className={styles.sliderCard}>
-              <div className={styles.question}>
-                👀 What is my significance to you?
-              </div>
-              <div className={styles.contentBox}>
-                <span className={styles.label}>
-                  {sliderData[activeIndex].label}
-                </span>
-                <p>{sliderData[activeIndex].text}</p>
-              </div>
-
-              <div className={styles.controls}>
-                <div className={styles.gridImgWrap}>
-                  <Image src={gridframeimg} alt="grid" />
-                </div>
-                <div className={styles.buttons}>
-                  <button
-                    onClick={prevSlide}
-                    className={activeIndex === sliderData.length - 1 ? styles.activeBtn : ""}
-                  >
-                    <FiArrowLeft />
-                  </button>
-                  <button
-                    onClick={nextSlide}
-                    className={activeIndex !== sliderData.length - 1 ? styles.activeBtn : ""}
-                  >
-                    <FiArrowRight />
-                  </button>
-                </div>
-                <div className={styles.gridImgWrap}>
-                  <Image src={gridframeimg} alt="grid" />
-                </div>
-              </div>
-            </div>
-            <Row className="g-4 mt-1">
-              <Col md={6}>
-                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
-                  <div className={styles.smallCard}>
-                    <span className={styles.arrow}><FiArrowUpRight /></span>
-                    <Image src={linkedinimg} alt="LinkedIn" width={80} height={80} />
-                  </div>
-                </a>
-              </Col>
-              <Col md={6}>
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
-                  <div className={styles.smallCard}>
-                    <span className={styles.arrow}><FiArrowUpRight /></span>
-                    <Image src={resumeimg} alt="Resume" width={218} height={300} />
-                  </div>
-                </a>
-              </Col>
-            </Row>
-          </Col>
-          <Col lg={6}>
-            <div className={styles.profileCard}>
-              <Image
-                src={profileimg}
-                alt="profile"
-                className={styles.profileImg}
-                width={269}
-                height={699}
-              />
-            </div>
-          </Col>
-        </Row>
-        <Row className="g-4 mt-1">
-          <Col lg={3}>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
-              <div className={styles.smallCard}>
-                <span className={styles.arrow}><FiArrowUpRight /></span>
-                <Image src={behanceimg} alt="Resume" />
-              </div>
-            </a>
-          </Col>
-          <Col lg={3}>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
-              <div className={styles.smallCard}>
-                <span className={styles.arrow}><FiArrowUpRight /></span>
-                <Image src={dribbleimg} alt="Resume" />
-              </div>
-            </a>
-          </Col>
-          <Col lg={3}>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
-              <div className={styles.smallCard}>
-                <span className={styles.arrow}><FiArrowUpRight /></span>
-                <Image src={mediumimg} alt="Resume" />
-              </div>
-            </a>
-          </Col>
-          <Col lg={3}>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
-              <div className={styles.smallCard}>
-                <span className={styles.arrow}><FiArrowUpRight /></span>
-                <Image src={instaimg} alt="Resume" />
-              </div>
-            </a>
-          </Col>
-        </Row>
-        <Row className="g-4 mt-1">
-          <Col lg={3}>
-          </Col>
-          <Col lg={3}>
-          </Col>
-          <Col lg={3}>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
-              <div className={styles.smallCard}>
-                <span className={styles.arrow}><FiArrowUpRight /></span>
-                <Image src={twitterimg} alt="Resume" />
-              </div>
-            </a>
-          </Col>
-          <Col lg={3}>
-            <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
-              <div className={styles.smallCard}>
-                <span className={styles.arrow}><FiArrowUpRight /></span>
-                <Image src={youtubeimg} alt="Resume" />
-              </div>
-            </a>
-          </Col>
-        </Row>
         {/* Experience section */}
         <Row className="mt-5">
           <Col>
             <div className={styles.experienceCard}>
-
-              {/* Header pill */}
               <div className={styles.expHeader}>
                 <span>🧳 Recent Experience</span>
               </div>
-              {/* Item 1 */}
               <div className={styles.expItem}>
                 <div>
                   <h4>Senior Designer</h4>
@@ -303,7 +139,6 @@ const About = () => {
                 <span className={styles.expDate}>Current</span>
               </div>
               <div className={styles.divider} />
-              {/* Item 2 */}
               <div className={styles.expItem}>
                 <div>
                   <h4>Product Designer</h4>
@@ -312,7 +147,6 @@ const About = () => {
                 <span className={styles.expDate}>July 2023 - Feb 2025</span>
               </div>
               <div className={styles.divider} />
-              {/* Item 3 */}
               <div className={styles.expItem}>
                 <div>
                   <h4>Product Designer</h4>
@@ -320,24 +154,90 @@ const About = () => {
                 </div>
                 <span className={styles.expDate}>May 2020 - April 2023</span>
               </div>
-              {/* Footer CTA */}
               <div className={styles.expFooter}>
-                <button>
+                <Button className={styles.footerCta} href="https://www.linkedin.com/in/19design97/" target="_blank" rel="noopener noreferrer">
                   See Full Experience <span>↗</span>
-                </button>
+                </Button>
               </div>
             </div>
           </Col>
         </Row>
+        {/* Social Card CTA section */}
+        <Row className="mt-4 g-4">
+          <Col md={3}>
+            <a href="https://drive.google.com/file/d/1iIKZjKxWkVUjfbABwKkcLb5uQu3my3xg/view?usp=sharing" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+              <div className={styles.smallCard}>
+                <span className={styles.arrow}><FiArrowUpRight /></span>
+                <Image src={resumeimg} alt="LinkedIn" width={150} height={200} />
+              </div>
+            </a>
+          </Col>
+          <Col md={3}>
+            <a href="https://www.linkedin.com/in/19design97/" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+              <div className={styles.smallCard}>
+                <span className={styles.arrow}><FiArrowUpRight /></span>
+                <Image src={linkedinimg} alt="LinkedIn" width={80} height={80} />
+              </div>
+            </a>
+          </Col>
+          <Col md={3}>
+            <a href="https://www.behance.net/19design97" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+              <div className={styles.smallCard}>
+                <span className={styles.arrow}><FiArrowUpRight /></span>
+                <Image src={behanceimg} alt="LinkedIn" width={80} height={80} />
+              </div>
+            </a>
+          </Col>
+          <Col md={3}>
+            <a href="https://www.youtube.com/@PPPDesigner" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+              <div className={styles.smallCard}>
+                <span className={styles.arrow}><FiArrowUpRight /></span>
+                <Image src={youtubeimg} alt="LinkedIn" width={80} height={80} />
+              </div>
+            </a>
+          </Col>
+        </Row>
+        <Row className="mt-2 g-4">
+          <Col md={3}>
+            <a href="https://medium.com/@19design97" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+              <div className={styles.smallCard}>
+                <span className={styles.arrow}><FiArrowUpRight /></span>
+                <Image src={mediumimg} alt="LinkedIn" width={80} height={80} />
+              </div>
+            </a>
+          </Col>
+          <Col md={3}>
+            <a href="https://dribbble.com/19design97" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+              <div className={styles.smallCard}>
+                <span className={styles.arrow}><FiArrowUpRight /></span>
+                <Image src={dribbleimg} alt="LinkedIn" width={80} height={80} />
+              </div>
+            </a>
+          </Col>
+          <Col md={3}>
+            <a href="https://twitter.com/19design97" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+              <div className={styles.smallCard}>
+                <span className={styles.arrow}><FiArrowUpRight /></span>
+                <Image src={twitterimg} alt="LinkedIn" width={80} height={80} />
+              </div>
+            </a>
+          </Col>
+          <Col md={3}>
+            <a href="https://www.instagram.com/19design97/" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
+              <div className={styles.smallCard}>
+                <span className={styles.arrow}><FiArrowUpRight /></span>
+                <Image src={instaimg} alt="LinkedIn" width={80} height={80} />
+              </div>
+            </a>
+          </Col>
+        </Row>
         {/* Tools Section */}
-        <Row className="mt-5">
+        {/* <Row className="mt-5">
           <Col>
             <div className={styles.globalBrandSection}>
-              {/* Title pill */}
               <div className={styles.question}>
                 ⚙️ The Magical Tools
               </div>
-              {/* Brand logos */}
               <div className={styles.brandList} ref={brandListRef}>
                 <div className={styles.brandItem}>
                   <Image src={tool1} alt="Brand 1" />
@@ -369,13 +269,46 @@ const About = () => {
               </div>
             </div>
           </Col>
+        </Row> */}
+        <Row className="mt-5">
+          <Col>
+            <div className={styles.globalBrandSection}>
+
+              {/* Title */}
+              <div className={styles.brandTitle}>
+                ⚙️ The Magical Tools
+              </div>
+
+              {/* Scrolling Container */}
+              <div className={styles.brandSlider}>
+
+                <div className={styles.brandTrack}>
+
+                  {/* First set */}
+                  {tools.map((tool, index) => (
+                    <div className={styles.brandItem} key={index}>
+                      <Image src={tool} alt="tool" height={99} width={99}/>
+                    </div>
+                  ))}
+
+                  {/* Duplicate set for seamless scroll */}
+                  {tools.map((tool, index) => (
+                    <div className={styles.brandItem} key={`dup-${index}`}>
+                      <Image src={tool} alt="tool" height={99} width={99}/>
+                    </div>
+                  ))}
+
+                </div>
+
+              </div>
+
+            </div>
+          </Col>
         </Row>
-        {/* Own Image section */}
+        {/* Own Image grid section */}
         <section className={styles.cameraSection}>
           <div className={styles.cameraCard}>
-            <p className={styles.question}>
-              📸 Check out what my camera captures when I’m off duty!
-            </p>
+            <p className={styles.question}>📸 Check out what my camera captures when I'm off duty!</p>
             {/* TOP GRID */}
             <div className={styles.topGrid}>
               {/* Left 4 images */}
@@ -397,18 +330,16 @@ const About = () => {
               <div className={styles.imgWrap}><Image src={frame8} alt="" /></div>
             </div>
             <div className={styles.expFooter}>
-              <button>
+              <Button className={styles.footerCta}>
                 See Full Experience <span>↗</span>
-              </button>
+              </Button>
             </div>
           </div>
         </section>
-
+        {/* Photography image grid section */}
         <section className={styles.cameraSection}>
           <div className={styles.cameraCard}>
-            <p className={styles.question}>
-              📸 Check out what my camera captures when I’m off duty!
-            </p>
+            <p className={styles.question}>📸 Check out what my camera sees!</p>
             <div className={styles.cameraGrid}>
               <div className={`${styles.card} ${styles.eye}`}>
                 <Image src={eye} alt="Eye" fill />
@@ -443,9 +374,9 @@ const About = () => {
               </div>
             </div>
             <div className={styles.expFooter}>
-              <button>
+              <Button className={styles.footerCta}>
                 See Full Experience <span>↗</span>
-              </button>
+              </Button>
             </div>
           </div>
         </section>

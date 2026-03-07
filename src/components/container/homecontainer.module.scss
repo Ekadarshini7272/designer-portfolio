@@ -69,6 +69,39 @@
   }
 }
 /* Arrow buttons */
+// .buttons {
+//   display: flex;
+//   gap: 14px;
+//   button {
+//     width: 44px;
+//     height: 44px;
+//     border-radius: 50%;
+//     border: none;
+//     background: #ffffff;
+//     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     cursor: pointer;
+//     transition: all 0.25s ease;
+//     svg {
+//       font-size: 18px;
+//       color: #aaa;
+//       transition: color 0.25s ease;
+//     }
+//     // &:hover svg {
+//     //   color: #f6550A;
+//     // }
+//   }
+//   /* 🔥 ACTIVE SLIDER BUTTON (INITIAL + STATE BASED) */
+//   button.activeBtn {
+//     background: #ffffff;
+//     box-shadow: 0 10px 26px rgba(246, 85, 10, 0.35);
+//     svg {
+//       color: #f6550A; /* EXACT FIGMA COLOR */
+//     }
+//   }
+// }
 .buttons {
   display: flex;
   gap: 14px;
@@ -89,16 +122,11 @@
       color: #aaa;
       transition: color 0.25s ease;
     }
-    // &:hover svg {
-    //   color: #f6550A;
-    // }
-  }
-  /* 🔥 ACTIVE SLIDER BUTTON (INITIAL + STATE BASED) */
-  button.activeBtn {
-    background: #ffffff;
-    box-shadow: 0 10px 26px rgba(246, 85, 10, 0.35);
-    svg {
-      color: #f6550A; /* EXACT FIGMA COLOR */
+    &:hover {
+      box-shadow: 0 10px 26px rgba(246, 85, 10, 0.35);
+      svg {
+        color: #f6550A;
+      }
     }
   }
 }
@@ -136,6 +164,7 @@
 }
 .profileImg {
   object-fit: cover;
+  // box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 /* Bottom cards */
 .cardLink {
@@ -223,7 +252,7 @@
 .brandList {
   display: flex;
   align-items: center;
-  gap: 24px;
+  gap: 60px;
   overflow-x: auto;
   padding-bottom: 10px;
   /* hide scrollbar */
@@ -239,7 +268,7 @@
   height: 99px;
   background: #ffffff;
   border-radius: 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+  // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -253,9 +282,9 @@
   }
   &:hover {
     transform: translateY(-6px);
-    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
+    // box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
     img {
-      filter: grayscale(0%);
+      filter: grayscale(100%);
       opacity: 1;
     }
   }
@@ -345,15 +374,14 @@
 /* ---------- TITLE ---------- */
 .workTitle {
 font-weight: 500;
-font-style: Medium;
-font-size: 26px;
+font-size: 18px;
 line-height: 100%;
 letter-spacing: 5%;
 }
 /* ---------- BOTTOM META ---------- */
 .workMeta {
-  position: absolute;
-  right: 18px;
+  // position: absolute;
+  // right: 18px;
   font-size: 12px;
   color: #888;
 }

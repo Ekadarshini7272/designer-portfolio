@@ -19,41 +19,32 @@
     text-align: center;
   }
 }
-/* SLIDER */
-
 .sliderWrapper {
   overflow: hidden;
 }
-
 .slider {
   display: flex;
   transition: transform 0.6s ease;
   gap: 28px;
 }
-
 .slide {
   min-width: 85%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 22px;
 }
-
-/* CARD */
-
 .card {
   background: #fff;
   padding: 20px;
   border-radius: 18px;
   box-shadow: 0 4px 12px rgba(0,0,0,0.04);
 }
-
 .text {
   font-size: 14px;
   line-height: 1.6;
-  margin: 14px 0 18px;
+  margin-top: 14px;
   color: #444;
 }
-
 .profile {
   display: flex;
   align-items: center;
@@ -61,67 +52,101 @@
   background: #f5f5f5;
   padding: 10px;
   border-radius: 12px;
-
   h4 {
     font-size: 15px;
     margin: 0;
   }
-
   p {
     font-size: 12px;
     color: #777;
     margin: 0;
   }
-
   img {
     border-radius: 10px;
   }
 }
-
 /* CONTROLS */
+// .controls {
+//   display: flex;
+//   justify-content: center;
+//   gap: 14px;
+//   margin-top: 35px;
+//   button {
+//     width: 44px;
+//     height: 44px;
+//     border-radius: 50%;
+//     border: none;
+//     background: #fff;
+//     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+//     cursor: pointer;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     font-size: 18px;
+//     transition: all 0.25s ease;
+//   }
+// }
+// /* ACTIVE BUTTON */
+// .active {
+//   svg {
+//     color: #F6550A;
+//   }
+//   &:hover {
+//     background: #F6550A;
+//     svg {
+//       color: #fff;
+//     }
+//   }
+// }
+// .disabled {
+//   opacity: 0.35;
+//   cursor: not-allowed;
+
+//   svg {
+//     color: #999;
+//   }
+// }
 .controls {
   display: flex;
   justify-content: center;
   gap: 14px;
   margin-top: 35px;
-
+.buttons {
+  display: flex;
+  gap: 14px;
   button {
     width: 44px;
     height: 44px;
     border-radius: 50%;
     border: none;
-    background: #fff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-    cursor: pointer;
+    background: #ffffff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 18px;
+    cursor: pointer;
     transition: all 0.25s ease;
-  }
-}
-
-/* ACTIVE BUTTON */
-.active {
-  svg {
-    color: #F6550A;
-  }
-
-  &:hover {
-    background: #F6550A;
-
     svg {
-      color: #fff;
+      font-size: 18px;
+      color: #aaa;
+      transition: color 0.25s ease;
+    }
+    &:hover {
+      box-shadow: 0 10px 26px rgba(246, 85, 10, 0.35);
+      svg {
+        color: #f6550A;
+      }
     }
   }
 }
-
-/* DISABLED BUTTON */
-.disabled {
-  opacity: 0.35;
-  cursor: not-allowed;
-
-  svg {
-    color: #999;
+}
+@media (min-width: 1250px) and (max-width: 2000px) {
+  .card{
+    height: 22em;
+  }
+}
+@media (min-width: 1050px) and (max-width: 1248px) {
+  .card{
+    height: 26em;
   }
 }

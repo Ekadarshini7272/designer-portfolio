@@ -3,10 +3,10 @@ import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import styles from './homecontainer.module.scss';
 import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
-import logoimg from '../../../public/images/logoimg.png';
-import profileimg from '../../../public/images/profileimg.png';
-import linkedinimg from '../../../public/images/linkedinimg.png';
-import resumeimg from '../../../public/images/resumeimg.png';
+import logoimg from '../../../public/images/iconlogoimg.png';
+import profileimg from '../../../public/images/icardimg.png';
+import linkedinimg from '../../../public/images/socialicon/lniconimg.png';
+import resumeimg from '../../../public/images/socialicon/resumeiconimg.png';
 import gridframeimg from '../../../public/images/gridframeimg.png';
 import gbrand1 from '../../../public/images/gbrand1.png';
 import gbrand2 from '../../../public/images/gbrand2.png';
@@ -111,17 +111,6 @@ const HomeContainer = () => {
       container.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
-  // const cards = [
-  //   user1, user2, user3, user4, user5, user6,
-  //   user7, user8, user9, user10, user11, user12,
-  // ];
-  // const totalPages = 2;
-  // const handlePrev = () => {
-  //   if (page > 0) setPage(page - 1);
-  // };
-  // const handleNext = () => {
-  //   if (page < totalPages - 1) setPage(page + 1);
-  // };
   return (
     <section className={styles.homeSection}>
       <Container>
@@ -142,25 +131,14 @@ const HomeContainer = () => {
                 </span>
                 <p>{sliderData[activeIndex].text}</p>
               </div>
-
               <div className={styles.controls}>
                 <div className={styles.gridImgWrap}>
                   <Image src={gridframeimg} alt="grid" />
                 </div>
-                <div className={styles.buttons}>
-                  <button
-                    onClick={prevSlide}
-                    className={activeIndex === sliderData.length - 1 ? styles.activeBtn : ""}
-                  >
-                    <FiArrowLeft />
-                  </button>
-                  <button
-                    onClick={nextSlide}
-                    className={activeIndex !== sliderData.length - 1 ? styles.activeBtn : ""}
-                  >
-                    <FiArrowRight />
-                  </button>
-                </div>
+                  <div className={styles.buttons}>
+                    <button onClick={prevSlide}><FiArrowLeft/></button>
+                    <button onClick={nextSlide}><FiArrowRight/></button>
+                  </div>
                 <div className={styles.gridImgWrap}>
                   <Image src={gridframeimg} alt="grid" />
                 </div>
@@ -175,7 +153,7 @@ const HomeContainer = () => {
                 alt="profile"
                 className={styles.profileImg}
                 width={269}
-                height={416}
+                height={500}
               />
             </div>
             <Row className="g-4 mt-1">
@@ -313,9 +291,9 @@ const HomeContainer = () => {
                       {index === 3 && "Empowering Brands with Authenticity, Insights, and Engagement"}
                     </h4>
                     {/* Bottom right meta */}
-                    <p className={styles.workMeta}>
+                    <div className={styles.workMeta}>
                       By: Me & PLM & Dev Team
-                    </p>
+                    </div>
 
                   </div>
                 </Col>
@@ -323,7 +301,7 @@ const HomeContainer = () => {
             </Row>
           </Col>
         </Row>
-        <Testimonial/>
+        <Testimonial />
       </Container>
     </section>
   );

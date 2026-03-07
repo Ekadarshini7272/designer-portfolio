@@ -4,76 +4,47 @@ import Image from "next/image";
 import { FiArrowUpRight } from "react-icons/fi";
 import styles from "./project.module.scss";
 import professional1 from "../../../public/images/professionalimg.png";
-
-/* =======================
-   JSON DATA (single source)
-======================= */
-const projectData = [
-  {
-    id: 1,
-    tag: "Professional Work",
-    title: "Success Metrics That Redefined Growth",
-    author: "By: Me & PLM & Dev Team",
-    image: professional1,
-  },
-  {
-    id: 2,
-    tag: "Professional Work",
-    title: "Reduce stress of OPS team : How?",
-    author: "By: Me & PLM & Dev Team",
-    image: professional1,
-  },
-  {
-    id: 3,
-    tag: "Professional Work",
-    title: "And how it became a money minting machine for O4S",
-    author: "By: Me & PLM & Dev Team",
-    image: professional1,
-  },
-  {
-    id: 4,
-    tag: "Professional Work",
-    title: "Empowering Brands with Authenticity, Insights, and Engagement",
-    author: "By: Me & PLM & Dev Team",
-    image: professional1,
-  },
-  {
-    id: 5,
-    tag: "Professional Work",
-    title: "How it became a money minting machine for O4S",
-    author: "By: Me & PLM & Dev Team",
-    image: professional1,
-  },
-  {
-    id: 6,
-    tag: "Professional Work",
-    title: "Reduce stress of OPS team : How?",
-    author: "By: Me & PLM & Dev Team",
-    image: professional1,
-  },
-];
-
 const Project = () => {
   return (
     <section className={styles.homeSection}>
       <Container>
-        <Row className="g-4">
-          {projectData.map((item) => (
-            <Col key={item.id} md={6}>
-              <div className={styles.projectCard}>
-                <span className={styles.arrowIcon}>
-                  <FiArrowUpRight />
-                </span>
-                <p className={styles.tag}>{item.tag}</p>
-                <div className={styles.imageWrapper}>
-                  <Image src={item.image} alt={item.title} className={styles.image} width={536} height={334}/>
-                </div>
-                <h4 className={styles.title}>{item.title}</h4>
-                <p className={styles.author}>{item.author}</p>
-              </div>
-            </Col>
-          ))}
-        </Row>
+         <Row className="g-4">
+              {[0, 1, 2, 3, 4, 5].map((_, index) => (
+                <Col lg={6} key={index}>
+                  <div className={styles.professionalCard}>
+                    {/* Top bar */}
+                    <div className={styles.cardTop}>
+                      <span className={styles.workTag}>Professional Work</span>
+                      <span className={styles.topArrow}>
+                        <FiArrowUpRight />
+                      </span>
+                    </div>
+                    {/* Image */}
+                    <div className={styles.workImage}>
+                      <Image
+                        src={professional1}
+                        alt="Professional Work"
+                        width={536} height={334}
+                      />
+                    </div>
+                    {/* Title */}
+                    <h4 className={styles.workTitle}>
+                      {index === 0 && "Success Metrics That Redefined Growth"}
+                      {index === 1 && "Reduce stress of OPS team ! How?"}
+                      {index === 2 && "And how it became a money minting machine for O4S"}
+                      {index === 3 && "How it became a money minting machine for O4S"}
+                      {index === 4 && "Empowering Brands with Authenticity, Insights, and Engagement"}
+                      {index === 5 && "Reduce stress of OPS team : How?"}
+                    </h4>
+                    {/* Bottom right meta */}
+                    <div className={styles.workMeta}>
+                      By: Me & PLM & Dev Team
+                    </div>
+
+                  </div>
+                </Col>
+              ))}
+            </Row>
       </Container>
     </section>
   );

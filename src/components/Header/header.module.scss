@@ -23,20 +23,24 @@
 /* Nav Links */
 .navLink {
 font-weight: 500;
-font-style: SemiBold;
 font-size: 16px;
 line-height: 100%;
 letter-spacing: 5%;
 text-align: center;
 text-decoration: none;
 color: #959595;
+transition: 0.3s;
   svg {
     font-size: 16px;
   }
   &:hover {
-    color: #000000;
-    font-weight: 600;
+     color: #000000;
+     font-weight: 500;
   }
+}
+.active {
+   color: #000000;
+  font-weight: 500;
 }
 /* Location */
 .location {
@@ -53,8 +57,8 @@ color: #959595;
 }
 .locationImages {
   position: absolute;
-  top: 120%;
-  left: 40;
+  top: 90%;
+  left: -10px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;

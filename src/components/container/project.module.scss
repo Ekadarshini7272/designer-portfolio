@@ -2,72 +2,80 @@
   padding: 120px 0 80px;
   margin-bottom: 2em;
 }
-.projectCard {
+/*PROFESSIONAL WORK SECTION*/
+.professionalCard {
+  background: #faf9f6;
+  border-radius: 24px;
+  padding: 18px;
   position: relative;
-  background: #FFFFFF;
-  border-radius: 50px;
-  padding: 24px;
   height: 100%;
   cursor: pointer;
-  transition: all 0.35s ease;
+  /* smooth lift */
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
   &:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
-    .arrowIcon {
-      background: #f6550a;
-      color: #ffffff;
-      transform: translate(4px, -4px);
-    }
-    .image {
-      transform: scale(1.05);
-    }
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.06);
+  }
+  /* hover image zoom */
+  &:hover .workImage img {
+    transform: scale(1.05);
+  }
+  &:hover .topArrow {
+    // transform: rotate(-45deg) scale(1.08);
+    background: #f6550a;
+    color: #ffffff;
+  }
+  &:hover .workImage {
+    box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02),
+      0 12px 24px rgba(0, 0, 0, 0.06);
   }
 }
-.arrowIcon {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 36px;
-  height: 36px;
+.cardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+.workTag {
+  font-size: 12px;
+  padding: 6px 12px;
+  border-radius: 20px;
+  background: #ffffff;
+  color: #777;
+}
+.topArrow {
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
-  border: 1px solid #e5e5e5;
+  background: #ffffff;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
   color: #f6550a;
-  background: #ffffff;
+  font-size: 16px;
   transition: all 0.35s ease;
-  z-index: 2;
 }
-.tag {
-  font-size: 13px;
-  color: #9b9b9b;
-  margin-bottom: 16px;
+.workImage {
+  background: #f3f2ef;
+  border-radius: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 18px;
+  transition: box-shadow 0.35s ease;
+  img {
+    border-radius: 16px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
 }
-.imageWrapper {
-  position: relative;
-  width: 100%;
-  height: 220px;
-  border-radius: 16px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  background: #F6F6F3
+.workTitle {
+font-weight: 500;
+font-size: 18px;
+line-height: 100%;
+letter-spacing: 5%;
 }
-
-.image {
-  object-fit: cover;
-  transition: transform 0.35s ease;
-}
-.title {
-  font-size: 18px;
-  font-weight: 600;
-  color: #1a1a1a;
-  margin-bottom: 8px;
-  line-height: 1.4;
-}
-.author {
-  font-size: 14px;
-  color: #8a8a8a;
-  text-align: right;
+.workMeta {
+  font-size: 12px;
+  color: #888;
 }

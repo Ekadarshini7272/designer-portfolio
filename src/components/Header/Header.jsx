@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Navbar, Nav, Container } from 'react-bootstrap';
+import { usePathname } from "next/navigation";
 import Image from 'next/image';
 // import { FaMapMarkerAlt } from 'react-icons/fa';
 // import { BsGridFill } from 'react-icons/bs';
@@ -15,9 +16,10 @@ import odisha3 from '../../../public/images/odisha3.png';
 import odisha4 from '../../../public/images/odisha4.png';
 import odisha5 from '../../../public/images/odisha5.png';
 import styles from './header.module.scss';
-import logo from '../../../public/images/logo.png';
+import logo from '../../../public/images/headerlogoimg.png';
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
+  const pathname = usePathname();
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 60);
     window.addEventListener('scroll', onScroll);
@@ -30,10 +32,10 @@ const Header = () => {
           <Image src={logo} alt="prabhu" width={84} height={66} priority />
         </Link>
         <Nav className={styles.navMenu}>
-          <Link href="/projects" className={styles.navLink}>
+          <Link href="/projects" className={`${styles.navLink} ${pathname === "/projects" ? styles.active : ""}`}>
             <span>🎬 Projects</span>
           </Link>
-          <Link href="/about" className={styles.navLink}>
+          <Link href="/about" className={`${styles.navLink} ${pathname === "/about" ? styles.active : ""}`}>
             <span>👀 Know me</span>
           </Link>
           <Link href="#playground" className={`${styles.navLink} ${styles.hasTooltip}`}>
@@ -47,13 +49,12 @@ const Header = () => {
         </Nav>
 <div className={styles.location}>
   <span className={styles.locationText}>📍 Odisha, India</span>
-
   <div className={styles.locationImages}>
-    <Image src={odisha1} alt="odisha" width={60} height={60} />
-    <Image src={odisha2} alt="odisha" width={60} height={60} />
-    <Image src={odisha3} alt="odisha" width={60} height={60} />
-    <Image src={odisha4} alt="odisha" width={60} height={60} />
-    <Image src={odisha5} alt="odisha" width={60} height={60} />
+    <Image src={odisha1} alt="odisha" width={185} height={185} />
+    <Image src={odisha2} alt="odisha" width={185} height={185} />
+    <Image src={odisha3} alt="odisha" width={185} height={185} />
+    <Image src={odisha4} alt="odisha" width={185} height={185} />
+    <Image src={odisha5} alt="odisha" width={185} height={185} />
   </div>
 </div>
 
