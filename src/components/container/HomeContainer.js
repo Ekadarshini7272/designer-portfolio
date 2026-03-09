@@ -262,9 +262,9 @@ const HomeContainer = () => {
           </Col>
         </Row>
         {/* PROFESSIONAL WORK SECTION */}
-        <Row className="mt-2">
+        <Row className="mt-5">
           <Col>
-            <Row className="g-4 mt-2">
+            <Row className="g-4">
               {[1, 2, 3, 4].map((_, index) => (
                 <Col lg={6} key={index}>
                   <div className={styles.professionalCard}>

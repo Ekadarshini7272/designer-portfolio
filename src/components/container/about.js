@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col, Button } from "react-bootstrap";
 import Image from "next/image";
+import Link from 'next/link';
 import { FiArrowUpRight} from 'react-icons/fi';
 import Batchdigit1 from "../../../public/images/batchdigit1.png";
 import Batchdigit2 from "../../../public/images/batchdigit2.png";
@@ -23,14 +24,6 @@ import tool6 from '../../../public/images/softtools/softTool6.png';
 import tool7 from '../../../public/images/softtools/softTool7.png';
 import tool8 from '../../../public/images/softtools/softTool8.png';
 import tool9 from '../../../public/images/softtools/softTool9.png';
-import frame1 from '../../../public/images/frame1.png';
-import frame2 from '../../../public/images/frame2.png';
-import frame3 from '../../../public/images/frame3.png';
-import frame4 from '../../../public/images/frame4.png';
-import frame5 from '../../../public/images/frame5.png';
-import frame6 from '../../../public/images/frame6.png';
-import frame7 from '../../../public/images/frame7.png';
-import frame8 from '../../../public/images/frame8.png';
 import eye from '../../../public/images/eye.png';
 import grpchildrens from '../../../public/images/grpchildrens.png';
 import insect from '../../../public/images/insect.png';
@@ -40,51 +33,9 @@ import boat from '../../../public/images/boat.png';
 import twochild from '../../../public/images/twochild.png';
 import smilechild from '../../../public/images/smilechild.png';
 import styles from './about.module.scss';
+import SelfPhotoGrid from "./selfphotogrid";
 
 const About = () => {
-  // const brandListRef = useRef(null);
-  // const autoScrollRef = useRef(null);
-  // useEffect(() => {
-  //   const container = brandListRef.current;
-  //   if (!container) return;
-  //   const scrollAmount = 180;
-  //   const delay = 2000;
-  //   const startAutoScroll = () => {
-  //     autoScrollRef.current = setInterval(() => {
-  //       if (
-  //         container.scrollLeft + container.clientWidth >=
-  //         container.scrollWidth
-  //       ) {
-  //         container.scrollTo({
-  //           left: 0,
-  //           behavior: "smooth",
-  //         });
-  //       } else {
-  //         container.scrollBy({
-  //           left: scrollAmount,
-  //           behavior: "smooth",
-  //         });
-  //       }
-  //     }, delay);
-  //   };
-
-  //   const stopAutoScroll = () => {
-  //     if (autoScrollRef.current) {
-  //       clearInterval(autoScrollRef.current);
-  //       autoScrollRef.current = null;
-  //     }
-  //   };
-  //   // Start initially
-  //   startAutoScroll();
-  //   // Pause on hover
-  //   container.addEventListener("mouseenter", stopAutoScroll);
-  //   container.addEventListener("mouseleave", startAutoScroll);
-  //   return () => {
-  //     stopAutoScroll();
-  //     container.removeEventListener("mouseenter", stopAutoScroll);
-  //     container.removeEventListener("mouseleave", startAutoScroll);
-  //   };
-  // }, []);
   const tools = [tool1, tool2, tool3, tool4, tool5, tool6, tool7, tool8, tool9];
   return (
     <section className={styles.homeSection}>
@@ -155,9 +106,9 @@ const About = () => {
                 <span className={styles.expDate}>May 2020 - April 2023</span>
               </div>
               <div className={styles.expFooter}>
-                <Button className={styles.footerCta} href="https://www.linkedin.com/in/19design97/" target="_blank" rel="noopener noreferrer">
+                <Link className={styles.footerCta} href="https://www.linkedin.com/in/19design97/" target="_blank" rel="noopener noreferrer">
                   See Full Experience <span>↗</span>
-                </Button>
+                </Link>
               </div>
             </div>
           </Col>
@@ -231,112 +182,29 @@ const About = () => {
             </a>
           </Col>
         </Row>
-        {/* Tools Section */}
-        {/* <Row className="mt-5">
-          <Col>
-            <div className={styles.globalBrandSection}>
-              <div className={styles.question}>
-                ⚙️ The Magical Tools
-              </div>
-              <div className={styles.brandList} ref={brandListRef}>
-                <div className={styles.brandItem}>
-                  <Image src={tool1} alt="Brand 1" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={tool2} alt="Brand 2" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={tool3} alt="Brand 3" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={tool4} alt="Brand 4" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={tool5} alt="Brand 5" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={tool6} alt="Brand 6" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={tool7} alt="Brand 7" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={tool8} alt="Brand 8" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={tool9} alt="Brand 9" />
-                </div>
-              </div>
-            </div>
-          </Col>
-        </Row> */}
         <Row className="mt-5">
           <Col>
             <div className={styles.globalBrandSection}>
-
-              {/* Title */}
-              <div className={styles.brandTitle}>
-                ⚙️ The Magical Tools
-              </div>
-
-              {/* Scrolling Container */}
+              <div className={styles.brandTitle}>⚙️ The Magical Tools</div>
               <div className={styles.brandSlider}>
-
                 <div className={styles.brandTrack}>
-
-                  {/* First set */}
                   {tools.map((tool, index) => (
                     <div className={styles.brandItem} key={index}>
                       <Image src={tool} alt="tool" height={99} width={99}/>
                     </div>
                   ))}
-
                   {/* Duplicate set for seamless scroll */}
                   {tools.map((tool, index) => (
                     <div className={styles.brandItem} key={`dup-${index}`}>
                       <Image src={tool} alt="tool" height={99} width={99}/>
                     </div>
                   ))}
-
                 </div>
-
               </div>
-
             </div>
           </Col>
         </Row>
-        {/* Own Image grid section */}
-        <section className={styles.cameraSection}>
-          <div className={styles.cameraCard}>
-            <p className={styles.question}>📸 Check out what my camera captures when I'm off duty!</p>
-            {/* TOP GRID */}
-            <div className={styles.topGrid}>
-              {/* Left 4 images */}
-              <div className={styles.leftGrid}>
-                <div className={styles.imgWrap}><Image src={frame1} alt="" /></div>
-                <div className={styles.imgWrap}><Image src={frame2} alt="" /></div>
-                <div className={styles.imgWrap}><Image src={frame4} alt="" /></div>
-                <div className={styles.imgWrap}><Image src={frame5} alt="" /></div>
-              </div>
-              {/* Right tall image */}
-              <div className={styles.rightGrid}>
-                <Image src={frame3} alt="" />
-              </div>
-            </div>
-            {/* BOTTOM GRID */}
-            <div className={styles.bottomGrid}>
-              <div className={styles.imgWrap}><Image src={frame6} alt="" /></div>
-              <div className={styles.imgWrap}><Image src={frame7} alt="" /></div>
-              <div className={styles.imgWrap}><Image src={frame8} alt="" /></div>
-            </div>
-            <div className={styles.expFooter}>
-              <Button className={styles.footerCta}>
-                See Full Experience <span>↗</span>
-              </Button>
-            </div>
-          </div>
-        </section>
-        {/* Photography image grid section */}
+        <SelfPhotoGrid/>
         <section className={styles.cameraSection}>
           <div className={styles.cameraCard}>
             <p className={styles.question}>📸 Check out what my camera sees!</p>

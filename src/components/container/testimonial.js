@@ -116,7 +116,7 @@ const Testimonial = () => {
           <div
             className={styles.slider}
             style={{
-              transform: `translateX(-${index * 85}%)`
+              transform: `translateX(calc(-${index * 85}% - ${index * 24}px))`
             }}
           >
             {Array.from({ length: totalSlides }).map((_, slideIndex) => {

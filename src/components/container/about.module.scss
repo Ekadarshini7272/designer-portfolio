@@ -26,29 +26,6 @@ letter-spacing: 2%;
 color: #D1D3D6;
 text-align: right;
 }
-// .typobold{
-// font-weight: 600;
-// font-size: 45px;
-// line-height: 114%;
-// letter-spacing: 2%;
-// color: #000000;
-// text-align: right;
-
-// /* animation */
-// opacity: 0;
-// transform: translateY(40px);
-// animation: textReveal 1s ease forwards;
-// }
-// /* delay second bold line */
-// .typobold:last-child{
-// animation-delay: 0.6s;
-// }
-// @keyframes textReveal {
-//   to {
-//     opacity: 1;
-//     transform: translateY(0);
-//   }
-// }
 .typobold{
 font-weight: 600;
 font-size: 45px;
@@ -138,7 +115,7 @@ animation-delay: 0.9s;
 .experienceCard {
   background: #f3f1ec;
   border-radius: 28px;
-  padding: 28px 32px;
+  padding: 28px 28px;
 }
 .expHeader {
   display: inline-block;
@@ -185,6 +162,7 @@ animation-delay: 0.9s;
     font-size: 14px;
     cursor: pointer;
     color: #6b6b6b;
+    text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 6px;
@@ -248,83 +226,11 @@ animation-delay: 0.9s;
   background: #ff4d00;
   color: #ffffff;
 }
-//Social Card CTA section
-/* Global Brand Section */
-// .globalBrandSection {
-//   background: #ffffff;
-//   border-radius: 32px;
-//   padding: 40px 32px;
-// }
-// /* Title pill */
-// .brandTitle {
-//   display: inline-flex;
-//   align-items: center;
-//   gap: 8px;
-//   background: #f5f5f3;
-//   border-radius: 999px;
-//   padding: 10px 18px;
-//   font-size: 14px;
-//   color: #666;
-//   margin-bottom: 28px;
-// }
-// /* Brand row */
-// .brandList {
-//   display: flex;
-//   align-items: center;
-//   gap: 24px;
-//   overflow-x: auto;
-//   padding-bottom: 10px;
-//   /* hide scrollbar */
-//   scrollbar-width: none;
-//   &::-webkit-scrollbar {
-//     display: none;
-//   }
-// }
-// /* Each logo card */
-// .brandItem {
-//   flex: 0 0 auto;
-//   width: 120px;
-//   height: 90px;
-//   background: #ffffff;
-//   border-radius: 20px;
-//   // box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   transition: transform 0.25s ease, box-shadow 0.25s ease;
-//   img {
-//     max-width: 70%;
-//     height: auto;
-//     transition: all 0.25s ease;
-//   }
-//   &:hover {
-//     transform: translateY(-6px);
-//     box-shadow: 0 16px 40px rgba(0, 0, 0, 0.12);
-//     img {
-//       filter: grayscale(0%);
-//       opacity: 1;
-//     }
-//   }
-// }
-// /* Responsive */
-// @media (max-width: 575px) {
-//   .globalBrandSection {
-//     padding: 28px 20px;
-//   }
-//   .brandItem {
-//     width: 100px;
-//     height: 80px;
-//   }
-// }
-/* Global Brand Section */
-/* Global Brand Section */
 .globalBrandSection {
   background: #ffffff;
   border-radius: 32px;
   padding: 40px 32px;
 }
-
-/* Title pill */
 .brandTitle {
   display: inline-flex;
   align-items: center;
@@ -336,27 +242,19 @@ animation-delay: 0.9s;
   color: #666;
   margin-bottom: 28px;
 }
-
-/* Slider wrapper */
 .brandSlider {
   overflow: hidden;
   position: relative;
 }
-
-/* Moving track */
 .brandTrack {
   display: flex;
   gap: 24px;
   width: max-content;
   animation: scrollBrand 25s linear infinite;
 }
-
-/* Pause on hover */
 .brandSlider:hover .brandTrack {
   animation-play-state: paused;
 }
-
-/* Logo card */
 .brandItem {
   flex: 0 0 auto;
   width: 120px;
@@ -366,14 +264,11 @@ animation-delay: 0.9s;
   display: flex;
   align-items: center;
   justify-content: center;
-
   img {
     max-width: 70%;
     height: auto;
   }
 }
-
-/* Smooth infinite animation */
 @keyframes scrollBrand {
   from {
     transform: translateX(0);
@@ -382,88 +277,23 @@ animation-delay: 0.9s;
     transform: translateX(-50%);
   }
 }
-
 /* Responsive */
 @media (max-width: 575px) {
   .globalBrandSection {
     padding: 28px 20px;
   }
-
   .brandItem {
     width: 100px;
     height: 80px;
   }
 }
-/* ---------- CAMERA SECTION ---------- */
-.cameraSection {
-  background: #f6f6f6;
-  margin-top: 2em;
-}
-.cameraCard {
-  max-width: 1100px;
-  margin: auto;
-  background: #fff;
-  border-radius: 28px;
-  padding: 32px;
-}
-.title {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 24px;
-}
-/* ---------- TOP GRID ---------- */
-.topGrid {
-  display: grid;
-  grid-template-columns: 1fr 0.9fr;
-  gap: 20px;
-}
-/* Left 4 images */
-.leftGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-}
-/* Right tall image */
-.rightGrid {
-  position: relative;
-  border-radius: 22px;
-  overflow: hidden;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-/* ---------- BOTTOM GRID ---------- */
-.bottomGrid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  margin-top: 20px;
-}
-/* ---------- IMAGE WRAPPER ---------- */
-.imgWrap {
-  position: relative;
-  border-radius: 22px;
-  overflow: hidden;
-  img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-/* ---------- CTA ---------- */
-/* ---------- RESPONSIVE ---------- */
-@media (max-width: 768px) {
-  .topGrid {
-    grid-template-columns: 1fr;
-  }
-
-  .bottomGrid {
-    grid-template-columns: 1fr;
-  }
-}
 // Photography image grid
+.cameraSection{
+  margin-top: 3em;
+  background-color: #FFF;
+  padding: 32px;
+  border-radius: 32px;
+}
 .cameraGrid {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
