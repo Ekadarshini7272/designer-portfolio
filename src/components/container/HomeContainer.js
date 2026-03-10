@@ -35,9 +35,32 @@ import gbrand24 from '../../../public/images/gbrand24.png';
 import professional1 from '../../../public/images/professionalimg.png';
 import Testimonial from '../container/testimonial';
 const HomeContainer = () => {
+  const profileRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const brandListRef = useRef(null);
   const autoScrollRef = useRef(null);
+  //funnctionality for profile icard mousemovement parallax effect
+  const handleMouseMove = (e) => {
+    const card = profileRef.current;
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const moveX = (x - rect.width / 2) / 8;
+    const moveY = (y - rect.height / 2) / 8;
+    const img = card.querySelector("img");
+    const cursor = card.querySelector(`.${styles.cursor}`);
+    img.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.03)`;
+    cursor.style.left = `${x}px`;
+    cursor.style.top = `${y}px`;
+  };
+const handleMouseLeave = () => {
+  const card = profileRef.current;
+  const img = card.querySelector("img");
+  const cursor = card.querySelector(`.${styles.cursor}`);
+
+  img.style.transform = "translate(0px,0px) scale(1)";
+  cursor.style.opacity = "0";
+};
   // slider JSON content
   const sliderData = [
     {
@@ -135,10 +158,10 @@ const HomeContainer = () => {
                 <div className={styles.gridImgWrap}>
                   <Image src={gridframeimg} alt="grid" />
                 </div>
-                  <div className={styles.buttons}>
-                    <button onClick={prevSlide}><FiArrowLeft/></button>
-                    <button onClick={nextSlide}><FiArrowRight/></button>
-                  </div>
+                <div className={styles.buttons}>
+                  <button onClick={prevSlide}><FiArrowLeft /></button>
+                  <button onClick={nextSlide}><FiArrowRight /></button>
+                </div>
                 <div className={styles.gridImgWrap}>
                   <Image src={gridframeimg} alt="grid" />
                 </div>
@@ -147,7 +170,17 @@ const HomeContainer = () => {
           </Col>
           {/* RIGHT COLUMN */}
           <Col lg={6}>
-            <div className={styles.profileCard}>
+          <div
+  className={styles.profileCard}
+  ref={profileRef}
+  onMouseMove={handleMouseMove}
+  onMouseLeave={handleMouseLeave}
+  onMouseEnter={() => {
+    const cursor = profileRef.current.querySelector(`.${styles.cursor}`);
+    cursor.style.opacity = "1";
+  }}
+>
+              <div className={styles.cursor}></div>
               <Image
                 src={profileimg}
                 alt="profile"
@@ -184,78 +217,80 @@ const HomeContainer = () => {
                 🌐 See My Collaborators (Global Brand)
               </div>
               {/* Brand logos */}
-              <div className={styles.brandList} ref={brandListRef}>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand1} alt="Brand 1" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand2} alt="Brand 2" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand3} alt="Brand 3" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand4} alt="Brand 4" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand5} alt="Brand 5" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand6} alt="Brand 6" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand7} alt="Brand 7" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand8} alt="Brand 8" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand9} alt="Brand 9" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand10} alt="Brand 10" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand11} alt="Brand 11" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand12} alt="Brand 12" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand13} alt="Brand 13" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand14} alt="Brand 14" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand15} alt="Brand 15" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand16} alt="Brand 16" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand17} alt="Brand 17" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand18} alt="Brand 18" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand19} alt="Brand 19" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand20} alt="Brand 20" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand21} alt="Brand 21" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand22} alt="Brand 22" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand23} alt="Brand 23" />
-                </div>
-                <div className={styles.brandItem}>
-                  <Image src={gbrand24} alt="Brand 24" />
+              <div className={styles.brandSlider}>
+                <div className={styles.brandList} ref={brandListRef}>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand1} alt="Brand 1" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand2} alt="Brand 2" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand3} alt="Brand 3" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand4} alt="Brand 4" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand5} alt="Brand 5" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand6} alt="Brand 6" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand7} alt="Brand 7" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand8} alt="Brand 8" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand9} alt="Brand 9" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand10} alt="Brand 10" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand11} alt="Brand 11" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand12} alt="Brand 12" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand13} alt="Brand 13" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand14} alt="Brand 14" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand15} alt="Brand 15" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand16} alt="Brand 16" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand17} alt="Brand 17" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand18} alt="Brand 18" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand19} alt="Brand 19" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand20} alt="Brand 20" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand21} alt="Brand 21" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand22} alt="Brand 22" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand23} alt="Brand 23" />
+                  </div>
+                  <div className={styles.brandItem}>
+                    <Image src={gbrand24} alt="Brand 24" />
+                  </div>
                 </div>
               </div>
             </div>

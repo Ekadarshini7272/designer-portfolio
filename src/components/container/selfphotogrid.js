@@ -24,6 +24,15 @@ import image19 from "../../../public/images/selfimage/image19.png";
 import image20 from "../../../public/images/selfimage/image20.png";
 import image21 from "../../../public/images/selfimage/image21.png";
 import image22 from "../../../public/images/selfimage/image22.png";
+import click1 from "../../../public/images/selfimage/click1.png";
+import click2 from "../../../public/images/selfimage/click2.png";
+import click3 from "../../../public/images/selfimage/click3.png";
+import click4 from "../../../public/images/selfimage/click4.png";
+import click5 from "../../../public/images/selfimage/click5.png";
+import click6 from "../../../public/images/selfimage/click6.png";
+import click7 from "../../../public/images/selfimage/click7.png";
+import click8 from "../../../public/images/selfimage/click8.png";
+import click9 from "../../../public/images/selfimage/click9.png";
 import { FiLink } from "react-icons/fi";
 
 const images = [
@@ -36,55 +45,85 @@ const imagesecond = [
     image17, image18, image19, image20, image21, image22
 ]
 
+const photographyimg = [
+    click1, click2, click3, click4, click5, click6, click7, click8, click9
+]
 const SelfPhotoGrid = () => {
     return (
-        <Row className="mt-5">
-            <Col>
-                <div className={styles.photoWrapper}>
-                    <div className={styles.title}>
-                        📸 Check out what my camera captures when I'm off duty!
-                    </div>
-                    <Row>
-                        <div className={styles.slider}>
-                            <div className={styles.track}>
-                                {images.map((img, index) => (
-                                    <div className={styles.card} key={index}>
-                                        <Image src={img} alt="photo" />
-                                    </div>
-                                ))}
-                                {images.map((img, index) => (
-                                    <div className={styles.card} key={`dup-${index}`}>
-                                        <Image src={img} alt="photo" />
-                                    </div>
-                                ))}
+        <>
+            <Row className="mt-5">
+                <Col>
+                    <div className={styles.photoWrapper}>
+                        <div className={styles.title}>📸 Check out what my camera captures when I'm off duty!</div>
+                        <Row>
+                            <div className={styles.slider}>
+                                <div className={styles.track}>
+                                    {images.map((img, index) => (
+                                        <div key={index}>
+                                            <Image src={img} alt="photo" height={395} width={261} />
+                                        </div>
+                                    ))}
+                                    {images.map((img, index) => (
+                                        <div key={`dup-${index}`}>
+                                            <Image src={img} alt="photo" height={395} width={261} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
-                    </Row>
-                    <Row className="mt-4">
-                        <div className={styles.slider}>
-                            <div className={styles.trackReverse}>
-                                {imagesecond.map((img, index) => (
-                                    <div className={styles.card} key={index}>
-                                        <Image src={img} alt="photo" />
-                                    </div>
-                                ))}
-                                {imagesecond.map((img, index) => (
-                                    <div className={styles.card} key={`dup-${index}`}>
-                                        <Image src={img} alt="photo" />
-                                    </div>
-                                ))}
+                        </Row>
+                        <Row className="mt-4">
+                            <div className={styles.slider}>
+                                <div className={styles.trackReverse}>
+                                    {imagesecond.map((img, index) => (
+                                        <div key={index}>
+                                            <Image src={img} alt="photo" height={395} width={261} />
+                                        </div>
+                                    ))}
+                                    {imagesecond.map((img, index) => (
+                                        <div key={`dup-${index}`}>
+                                            <Image src={img} alt="photo" height={395} width={261} />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
+                        </Row>
+                        <div className={styles.expFooter}>
+                            <Link className={styles.footerCta} href="https://www.linkedin.com/in/19design97/" target="_blank" rel="noopener noreferrer">
+                                See Full Experience <span>↗</span>
+                            </Link>
                         </div>
-                    </Row>
-                    <div className={styles.expFooter}>
-                        <Link className={styles.footerCta} href="https://www.linkedin.com/in/19design97/" target="_blank" rel="noopener noreferrer">
-                            See Full Experience <span>↗</span>
-                        </Link>
                     </div>
-                </div>
-
-            </Col>
-        </Row>
+                </Col>
+            </Row>
+            <Row className="mt-5">
+                <Col>
+                    <div className={styles.photoWrapper}>
+                        <div className={styles.title}>📸 Check out what my camera sees!</div>
+                        <Row>
+                            <div className={styles.slider}>
+                                <div className={styles.track}>
+                                    {photographyimg.map((img, index) => (
+                                        <div key={index}>
+                                            <Image src={img} alt="photo" height={395} width={261} />
+                                        </div>
+                                    ))}
+                                    {photographyimg.map((img, index) => (
+                                        <div key={`dup-${index}`}>
+                                            <Image src={img} alt="photo" height={395} width={261} />
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </Row>
+                        <div className={styles.expFooter}>
+                            <Link className={styles.footerCta} href="https://www.instagram.com/19photography97/" target="_blank" rel="noopener noreferrer">
+                                See Full Experience <span>↗</span>
+                            </Link>
+                        </div>
+                    </div>
+                </Col>
+            </Row>
+        </>
     );
 };
 export default SelfPhotoGrid;

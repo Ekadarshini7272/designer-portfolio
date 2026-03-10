@@ -19,8 +19,36 @@
     text-align: center;
   }
 }
+// .sliderWrapper {
+//   overflow: hidden;
+// }
 .sliderWrapper {
   overflow: hidden;
+  position: relative;
+
+  /* fade overlays */
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 90px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  /* left fade */
+  &::before {
+    left: 0;
+    background: linear-gradient(to right, #ECECE8 0%, transparent 10%);
+  }
+
+  /* right fade */
+  &::after {
+    right: 0;
+    background: linear-gradient(to left, #ECECE8 0%, transparent 10%);
+  }
 }
 .slider {
   display: flex;

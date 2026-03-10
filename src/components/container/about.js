@@ -205,7 +205,7 @@ const About = () => {
           </Col>
         </Row>
         <SelfPhotoGrid/>
-        <section className={styles.cameraSection}>
+        {/* <section className={styles.cameraSection}>
           <div className={styles.cameraCard}>
             <p className={styles.question}>📸 Check out what my camera sees!</p>
             <div className={styles.cameraGrid}>
@@ -247,7 +247,7 @@ const About = () => {
               </Button>
             </div>
           </div>
-        </section>
+        </section> */}
       </Container>
     </section>
   );
