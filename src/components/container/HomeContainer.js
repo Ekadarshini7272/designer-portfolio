@@ -8,30 +8,30 @@ import profileimg from '../../../public/images/icardimg.png';
 import linkedinimg from '../../../public/images/socialicon/lniconimg.png';
 import resumeimg from '../../../public/images/socialicon/resumeiconimg.png';
 import gridframeimg from '../../../public/images/gridframeimg.png';
-import gbrand1 from '../../../public/images/gbrand1.png';
-import gbrand2 from '../../../public/images/gbrand2.png';
-import gbrand3 from '../../../public/images/gbrand3.png';
-import gbrand4 from '../../../public/images/gbrand4.png';
-import gbrand5 from '../../../public/images/gbrand5.png';
-import gbrand6 from '../../../public/images/gbrand6.png';
-import gbrand7 from '../../../public/images/gbrand7.png';
-import gbrand8 from '../../../public/images/gbrand8.png';
-import gbrand9 from '../../../public/images/gbrand9.png';
-import gbrand10 from '../../../public/images/gbrand10.png';
-import gbrand11 from '../../../public/images/gbrand11.png';
-import gbrand12 from '../../../public/images/gbrand12.png';
-import gbrand13 from '../../../public/images/gbrand13.png';
-import gbrand14 from '../../../public/images/gbrand14.png';
-import gbrand15 from '../../../public/images/gbrand15.png';
-import gbrand16 from '../../../public/images/gbrand16.png';
-import gbrand17 from '../../../public/images/gbrand17.png';
-import gbrand18 from '../../../public/images/gbrand18.png';
-import gbrand19 from '../../../public/images/gbrand19.png';
-import gbrand20 from '../../../public/images/gbrand20.png';
-import gbrand21 from '../../../public/images/gbrand21.png';
-import gbrand22 from '../../../public/images/gbrand22.png';
-import gbrand23 from '../../../public/images/gbrand23.png';
-import gbrand24 from '../../../public/images/gbrand24.png';
+import workbrand1 from '../../../public/images/workingbrands/brandwork1.png'
+import workbrand2 from '../../../public/images/workingbrands/brandwork2.png';
+import workbrand3 from '../../../public/images/workingbrands/brandwork3.png';
+import workbrand4 from '../../../public/images/workingbrands/brandwork4.png';
+import workbrand5 from '../../../public/images/workingbrands/brandwork5.png';
+import workbrand6 from '../../../public/images/workingbrands/brandwork6.png';
+import workbrand7 from '../../../public/images/workingbrands/brandwork7.png';
+import workbrand8 from '../../../public/images/workingbrands/brandwork8.png';
+import workbrand9 from '../../../public/images/workingbrands/brandwork9.png';
+import workbrand10 from '../../../public/images/workingbrands/brandwork10.png';
+import workbrand11 from '../../../public/images/workingbrands/brandwork11.png';
+import workbrand12 from '../../../public/images/workingbrands/brandwork12.png';
+import workbrand13 from '../../../public/images/workingbrands/brandwork13.png';
+import workbrand14 from '../../../public/images/workingbrands/brandwork14.png';
+import workbrand15 from '../../../public/images/workingbrands/brandwork15.png';
+import workbrand16 from '../../../public/images/workingbrands/brandwork16.png';
+import workbrand17 from '../../../public/images/workingbrands/brandwork17.png';
+import workbrand18 from '../../../public/images/workingbrands/brandwork18.png';
+import workbrand19 from '../../../public/images/workingbrands/brandwork19.png';
+import workbrand20 from '../../../public/images/workingbrands/brandwork20.png';
+import workbrand21 from '../../../public/images/workingbrands/brandwork21.png';
+import workbrand22 from '../../../public/images/workingbrands/brandwork22.png';
+import workbrand23 from '../../../public/images/workingbrands/brandwork23.png';
+import workbrand24 from '../../../public/images/workingbrands/brandwork24.png';
 import professional1 from '../../../public/images/professionalimg.png';
 import Testimonial from '../container/testimonial';
 const HomeContainer = () => {
@@ -53,14 +53,14 @@ const HomeContainer = () => {
     cursor.style.left = `${x}px`;
     cursor.style.top = `${y}px`;
   };
-const handleMouseLeave = () => {
-  const card = profileRef.current;
-  const img = card.querySelector("img");
-  const cursor = card.querySelector(`.${styles.cursor}`);
+  const handleMouseLeave = () => {
+    const card = profileRef.current;
+    const img = card.querySelector("img");
+    const cursor = card.querySelector(`.${styles.cursor}`);
 
-  img.style.transform = "translate(0px,0px) scale(1)";
-  cursor.style.opacity = "0";
-};
+    img.style.transform = "translate(0px,0px) scale(1)";
+    cursor.style.opacity = "0";
+  };
   // slider JSON content
   const sliderData = [
     {
@@ -134,6 +134,11 @@ const handleMouseLeave = () => {
       container.removeEventListener("mouseleave", handleMouseLeave);
     };
   }, []);
+
+  const workingbrands = [workbrand1, workbrand2, workbrand3, workbrand4, workbrand5, workbrand6, workbrand7, workbrand8,
+    workbrand9, workbrand10, workbrand11, workbrand12, workbrand13, workbrand14, workbrand15, workbrand16,
+    workbrand17, workbrand18, workbrand19, workbrand20, workbrand21, workbrand22, workbrand23, workbrand24
+  ];
   return (
     <section className={styles.homeSection}>
       <Container>
@@ -170,16 +175,16 @@ const handleMouseLeave = () => {
           </Col>
           {/* RIGHT COLUMN */}
           <Col lg={6}>
-          <div
-  className={styles.profileCard}
-  ref={profileRef}
-  onMouseMove={handleMouseMove}
-  onMouseLeave={handleMouseLeave}
-  onMouseEnter={() => {
-    const cursor = profileRef.current.querySelector(`.${styles.cursor}`);
-    cursor.style.opacity = "1";
-  }}
->
+            <div
+              className={styles.profileCard}
+              ref={profileRef}
+              onMouseMove={handleMouseMove}
+              onMouseLeave={handleMouseLeave}
+              onMouseEnter={() => {
+                const cursor = profileRef.current.querySelector(`.${styles.cursor}`);
+                cursor.style.opacity = "1";
+              }}
+            >
               <div className={styles.cursor}></div>
               <Image
                 src={profileimg}
@@ -216,81 +221,13 @@ const handleMouseLeave = () => {
               <div className={styles.question}>
                 🌐 See My Collaborators (Global Brand)
               </div>
-              {/* Brand logos */}
               <div className={styles.brandSlider}>
                 <div className={styles.brandList} ref={brandListRef}>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand1} alt="Brand 1" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand2} alt="Brand 2" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand3} alt="Brand 3" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand4} alt="Brand 4" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand5} alt="Brand 5" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand6} alt="Brand 6" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand7} alt="Brand 7" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand8} alt="Brand 8" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand9} alt="Brand 9" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand10} alt="Brand 10" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand11} alt="Brand 11" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand12} alt="Brand 12" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand13} alt="Brand 13" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand14} alt="Brand 14" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand15} alt="Brand 15" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand16} alt="Brand 16" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand17} alt="Brand 17" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand18} alt="Brand 18" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand19} alt="Brand 19" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand20} alt="Brand 20" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand21} alt="Brand 21" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand22} alt="Brand 22" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand23} alt="Brand 23" />
-                  </div>
-                  <div className={styles.brandItem}>
-                    <Image src={gbrand24} alt="Brand 24" />
-                  </div>
+                  {workingbrands.map((brand, index) => (
+                    <div className={styles.brandItem} key={index}>
+                      <Image src={brand} alt={`Brand ${index + 1}`}  height={99} width={99}/>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>

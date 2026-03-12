@@ -24,14 +24,6 @@ import tool6 from '../../../public/images/softtools/softTool6.png';
 import tool7 from '../../../public/images/softtools/softTool7.png';
 import tool8 from '../../../public/images/softtools/softTool8.png';
 import tool9 from '../../../public/images/softtools/softTool9.png';
-import eye from '../../../public/images/eye.png';
-import grpchildrens from '../../../public/images/grpchildrens.png';
-import insect from '../../../public/images/insect.png';
-import monkey from '../../../public/images/monkey.png';
-import diya from '../../../public/images/diya.png';
-import boat from '../../../public/images/boat.png';
-import twochild from '../../../public/images/twochild.png';
-import smilechild from '../../../public/images/smilechild.png';
 import styles from './about.module.scss';
 import SelfPhotoGrid from "./selfphotogrid";
 

@@ -4,4 +4,32 @@
 body {
   font-family: 'Inter', sans-serif;
   background-color: #f6f6f3;
+   cursor: none;
+}
+.cursor {
+  position: fixed;
+  width: 14px;
+  height: 14px;
+  background: #f6550A;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: transform 0.15s ease, width 0.2s ease, height 0.2s ease;
+}
+
+.cursor-ring {
+  position: fixed;
+  width: 25px;
+  height: 25px;
+  border: 2px solid #f6550A;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  transition: transform 0.25s ease;
+}
+.cursor.hover {
+  width: 20px;
+  height: 20px;
 }
