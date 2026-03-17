@@ -5,18 +5,23 @@ import Link from 'next/link';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { usePathname } from "next/navigation";
 import Image from 'next/image';
-// import { FaMapMarkerAlt } from 'react-icons/fa';
-// import { BsGridFill } from 'react-icons/bs';
-// import { HiOutlineUser } from 'react-icons/hi';
-// import { GiMaterialsScience } from 'react-icons/gi';
-// import { MdProductionQuantityLimits } from 'react-icons/md';
+import { FiFilm } from 'react-icons/fi';
+import { HiOutlineUser } from 'react-icons/hi';
+import { MdOutlineScience } from 'react-icons/md';
+import { FiBox } from 'react-icons/fi';
+import { IoLocationOutline } from 'react-icons/io5';
+import navitem1 from "../../../public/images/navitem1.png";
+import navitem2 from "../../../public/images/navitem2.png";
+import navitem3 from "../../../public/images/navitem3.png";
+import navitem4 from "../../../public/images/navitem4.png";
+import navitem5 from '../../../public/images/navitem5.png';
 import odisha1 from '../../../public/images/odisha1.png';
 import odisha2 from '../../../public/images/odisha2.png';
 import odisha3 from '../../../public/images/odisha3.png';
 import odisha4 from '../../../public/images/odisha4.png';
 import odisha5 from '../../../public/images/odisha5.png';
 import styles from './header.module.scss';
-import logo from '../../../public/images/headerlogoimg.png';
+import logo from '../../../public/images/headerlogo.png';
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
@@ -31,24 +36,42 @@ const Header = () => {
         <Link href="/" className={styles.logo}>
           <Image src={logo} alt="prabhu" width={84} height={66} priority />
         </Link>
-        <Nav className={styles.navMenu}>
-          <Link href="/projects" className={`${styles.navLink} ${pathname === "/projects" ? styles.active : ""}`}>
-            <span>🎬 Projects</span>
-          </Link>
-          <Link href="/about" className={`${styles.navLink} ${pathname === "/about" ? styles.active : ""}`}>
-            <span>👀 Know me</span>
-          </Link>
-          <Link href="#playground" className={`${styles.navLink} ${styles.hasTooltip}`}>
-            <span>🛝 Playground</span>
-            <span className={styles.tooltip}>Coming soon</span>
-          </Link>
-          <Link href="#products" className={`${styles.navLink} ${styles.hasTooltip}`}>
-            <span>📦 Products</span>
-            <span className={styles.tooltip}>Coming soon</span>
-          </Link>
-        </Nav>
+      <Nav className={styles.navMenu}>
+  <Link href="/projects" className={`${styles.navLink} ${pathname === "/projects" ? styles.active : ""}`}>
+    <span className={styles.navItem}>
+      <span className={styles.iconCircle}><Image src={navitem1} alt="Projects" width={20} height={20} /></span>
+      Projects
+    </span>
+  </Link>
+
+  <Link href="/about" className={`${styles.navLink} ${pathname === "/about" ? styles.active : ""}`}>
+    <span className={styles.navItem}>
+      <span className={styles.iconCircle}><Image src={navitem2} alt="About" width={20} height={20} /></span>
+      Know me
+    </span>
+  </Link>
+
+  <Link href="#playground" className={`${styles.navLink} ${styles.hasTooltip}`}>
+    <span className={styles.navItem}>
+      <span className={styles.iconCircle}><Image src={navitem3} alt="Playground" width={20} height={20} /></span>
+      Playground
+    </span>
+    <span className={styles.tooltip}>Coming soon</span>
+  </Link>
+
+  <Link href="#products" className={`${styles.navLink} ${styles.hasTooltip}`}>
+    <span className={styles.navItem}>
+      <span className={styles.iconCircle}><Image src={navitem4} alt="Products" width={20} height={20} /></span>
+      Products
+    </span>
+    <span className={styles.tooltip}>Coming soon</span>
+  </Link>
+</Nav>
 <div className={styles.location}>
-  <span className={styles.locationText}>📍 Odisha, India</span>
+    <span className={styles.locationText}>
+    <Image src={navitem5} height={20} width={20} className={styles.locationIcon} />
+    Odisha, India
+  </span>
   <div className={styles.locationImages}>
     <Image src={odisha1} alt="odisha" width={185} height={185} />
     <Image src={odisha2} alt="odisha" width={185} height={185} />
@@ -57,7 +80,6 @@ const Header = () => {
     <Image src={odisha5} alt="odisha" width={185} height={185} />
   </div>
 </div>
-
       </Container>
     </Navbar>
   );

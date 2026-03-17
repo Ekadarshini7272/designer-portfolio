@@ -2,52 +2,62 @@
   padding: 120px 0 80px;
   margin-bottom: 2em;
 }
-.topCard{
-    background-color: #FFFFFF;
-    border-radius: 24px;
-    padding: 22px;
+
+.topCard {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
 }
-.cardhead{
-font-weight: 400;
-font-size: 40px;
-line-height: 100%;
-letter-spacing: 0%;
-color: #2B2B2B;
+
+.cardhead {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0%;
+  color: #2B2B2B;
 }
-.cardpara{
-    margin-bottom: 0.6em;
+
+.cardpara {
+  margin-top: 0.8em;
+  margin-bottom: 1em;
 }
-.cardpara, .cardtext{
-font-weight: 500;
-font-style: Medium;
-font-size: 16px;
-line-height: 100%;
-letter-spacing: 5%;
-color: #8E8E8E;
+
+.cardpara,
+.cardtext {
+  font-weight: 500;
+  font-style: Medium;
+  font-size: 16px;
+  line-height: 100%;
+  letter-spacing: 5%;
+  color: #8E8E8E;
 }
 
 //ratingproduct section
-.imgflexdiv{
-    display: flex;
-    gap: 1.2em;
-    margin-top: 1.2em;
+.imgflexdiv {
+  display: flex;
+  gap: 1.2em;
+  margin-top: 1.5em;
 }
+
 //chanllenges section
 .challengesSection {
- background-color: #FFFFFF;
- border-radius: 24px;
- padding: 22px;
- align-items: center;
- gap: 40px;
- display: flex;
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
+  align-items: center;
+  gap: 40px;
+  display: flex;
 }
+
 .contentBox {
   flex: 1;
 }
 .title {
-  font-size: 26px;
-  font-weight: 700;
-  margin-bottom: 18px;
+font-weight: 600;
+font-size: 24px;
+line-height: 35px;
+letter-spacing: 0%;
+margin-bottom: 18px;
 }
 .challengeList {
   padding-left: 32px;
@@ -57,4 +67,157 @@ color: #8E8E8E;
     margin-bottom: 10px;
     color: #333;
   }
+}
+.casestudyImgSec{
+  text-align: center;
+}
+//CaseStudy section
+.caseStudySection {
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
+}
+.imageWrapper {
+  position: relative;
+  width: 100%;
+  height: 921px; // use your Figma image ratio
+  margin-bottom: 24px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.image {
+  object-fit: cover;
+}
+//userpersona section
+.userpersonaSection{
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
+}
+.personaTitle{
+font-weight: 400;
+font-size: 24px;
+line-height: 35px;
+letter-spacing: 0%;
+}
+//feature list section
+.featureList{
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
+}
+.imageWrapperfeature{
+  position: relative;
+  width: 100%;
+  height: 273px; // use your Figma image ratio
+  margin-bottom: 24px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.imagefeature{
+ object-fit: cover;
+}
+.featurecondiv{
+  margin-top: 1em;
+  // margin-left: 24px;
+}
+.featurehead{
+font-weight: 600;
+font-size: 24px;
+line-height: 35px;
+letter-spacing: 0%;
+margin-left: 24px;
+}
+.featurecontent{
+font-weight: 400;
+font-size: 24px;
+line-height: 35px;
+letter-spacing: 0%;
+margin-left: 24px;
+}
+.featureLi{
+  margin-left: 2em;
+}
+.featureLipara{
+  margin-left: 3em;
+}
+//flow section
+.flowSection{
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
+}
+.imageWrapperflow{
+  position: relative;
+  width: 100%;
+  height: 1004px; // use your Figma image ratio
+  margin-bottom: 24px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.imageflow{
+  object-fit: cover;
+}
+//wireframing section
+.wireFramingSection{
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
+}
+.framingdiv{
+  display: flex;
+  gap: 2em;
+}
+.imageWrapperframeb{
+  position: relative;
+  width: 100%;
+  height: 359px; // use your Figma image ratio
+  overflow: hidden;
+}
+.imageframeb{
+object-fit: cover;
+}
+//fewfeature section
+.fewfeatureSection{
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
+}
+.fewimgcol1 {
+  text-align: left;
+}
+.fewimgcol2 {
+  text-align: right;
+}
+.fewimgflex {
+  display: flex;
+  gap: 1.2em;
+}
+.fewimgcol2 {
+  justify-content: flex-end;
+}
+.flextext1 .flextext2{
+font-weight: 400;
+font-size: 18.97px;
+line-height: 100%;
+letter-spacing: 0%;
+}
+.flextext2{
+  text-align: left !important;
+}
+//Archivement section
+.archivementsection{
+  background-color: #FFFFFF;
+  border-radius: 24px;
+  padding: 24px;
+}
+.imageWrapperarchivement{
+  position: relative;
+  width: 100%;
+  height: 670px; // use your Figma image ratio
+  margin-bottom: 24px;
+  overflow: hidden;
+}
+.imagearchievement{
+  object-fit: cover;
 }

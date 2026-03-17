@@ -30,6 +30,19 @@
       0 12px 24px rgba(0, 0, 0, 0.06);
   }
 }
+.inactiveCard {
+  filter: grayscale(100%);
+  opacity: 0.6;
+  cursor: not-allowed;
+
+  /* Disable hover effects */
+  pointer-events: none;
+
+  .topArrow {
+    background: #e0e0e0;
+    color: #999;
+  }
+}
 .cardTop {
   display: flex;
   align-items: center;

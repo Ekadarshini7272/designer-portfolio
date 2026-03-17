@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
+import Link from "next/link";
 import styles from './homecontainer.module.scss';
 import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
 import logoimg from '../../../public/images/iconlogoimg.png';
@@ -225,7 +226,7 @@ const HomeContainer = () => {
                 <div className={styles.brandList} ref={brandListRef}>
                   {workingbrands.map((brand, index) => (
                     <div className={styles.brandItem} key={index}>
-                      <Image src={brand} alt={`Brand ${index + 1}`}  height={99} width={99}/>
+                      <Image src={brand} alt={`Brand ${index + 1}`} height={99} width={99} />
                     </div>
                   ))}
                 </div>
@@ -237,39 +238,49 @@ const HomeContainer = () => {
         <Row className="mt-5">
           <Col>
             <Row className="g-4">
-              {[1, 2, 3, 4].map((_, index) => (
-                <Col lg={6} key={index}>
-                  <div className={styles.professionalCard}>
-                    {/* Top bar */}
-                    <div className={styles.cardTop}>
-                      <span className={styles.workTag}>Professional Work</span>
+              <Col lg={6}>
+                <div className={styles.professionalCard}>
+                  <div className={styles.cardTop}>
+                    <span className={styles.workTag}>Professional Work</span>
+                    <Link href="/gynger" className={styles.viewDetails}>
                       <span className={styles.topArrow}>
                         <FiArrowUpRight />
                       </span>
-                    </div>
-                    {/* Image */}
-                    <div className={styles.workImage}>
-                      <Image
-                        src={professional1}
-                        alt="Professional Work"
-                        width={536} height={334}
-                      />
-                    </div>
-                    {/* Title */}
-                    <h4 className={styles.workTitle}>
-                      {index === 0 && "Success Metrics That Redefined Growth"}
-                      {index === 1 && "Reduce stress of OPS team ! How?"}
-                      {index === 2 && "And how it became a money minting machine for O4S"}
-                      {index === 3 && "Empowering Brands with Authenticity, Insights, and Engagement"}
-                    </h4>
-                    {/* Bottom right meta */}
-                    <div className={styles.workMeta}>
-                      By: Me & PLM & Dev Team
-                    </div>
-
+                    </Link>
                   </div>
-                </Col>
-              ))}
+                  <div className={styles.workImage}>
+                    <Image src={professional1} alt="Professional Work" width={536} height={334} />
+                  </div>
+                  <h4 className={styles.workTitle}>
+                    How it became a money minting machine for O4S
+                  </h4>
+                  <div className={styles.workMeta}>
+                    By: Me & PLM & Dev Team
+                  </div>
+                </div>
+              </Col>
+              <Col lg={6}>
+                <div className={`${styles.professionalCard} ${styles.inactiveCard}`}>
+                  <div className={styles.cardTop}>
+                    <span className={styles.workTag}>Professional Work</span>
+                    <span className={styles.topArrow}>
+                      <FiArrowUpRight />
+                    </span>
+                  </div>
+
+                  <div className={styles.workImage}>
+                    <Image src={professional1} alt="Professional Work" width={536} height={334} />
+                  </div>
+
+                  <h4 className={styles.workTitle}>
+                    Success Metrics That Redefined Growth
+                  </h4>
+
+                  <div className={styles.workMeta}>
+                    By: Me & PLM & Dev Team
+                  </div>
+                </div>
+              </Col>
             </Row>
           </Col>
         </Row>
