@@ -258,11 +258,11 @@ animation-delay: 0.9s;
   }
   &::before {
     left: 0;
-    background: linear-gradient(to right, #ffffff 0%, transparent 70%);
+    background: linear-gradient(to right, #ffffff 0%, transparent 100%);
   }
   &::after {
     right: 0;
-    background: linear-gradient(to left, #ffffff 0%, transparent 170%);
+    background: linear-gradient(to left, #ffffff 0%, transparent 100%);
   }
 }
 .brandTrack {

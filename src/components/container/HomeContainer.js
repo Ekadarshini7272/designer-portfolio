@@ -239,14 +239,13 @@ const HomeContainer = () => {
           <Col>
             <Row className="g-4">
               <Col lg={6}>
+              <Link href="/gynger" className={styles.viewDetails}>
                 <div className={styles.professionalCard}>
                   <div className={styles.cardTop}>
                     <span className={styles.workTag}>Professional Work</span>
-                    <Link href="/gynger" className={styles.viewDetails}>
                       <span className={styles.topArrow}>
                         <FiArrowUpRight />
                       </span>
-                    </Link>
                   </div>
                   <div className={styles.workImage}>
                     <Image src={professional1} alt="Professional Work" width={536} height={334} />
@@ -258,6 +257,7 @@ const HomeContainer = () => {
                     By: Me & PLM & Dev Team
                   </div>
                 </div>
+                </Link>
               </Col>
               <Col lg={6}>
                 <div className={`${styles.professionalCard} ${styles.inactiveCard}`}>

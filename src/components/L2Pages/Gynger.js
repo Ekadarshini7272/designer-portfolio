@@ -18,7 +18,7 @@ import gridcrow1 from "../../../public/images/L2Images/gynger/gridcrow1.png";
 import challengeimg from "../../../public/images/L2Images/gynger/challengeimg.png";
 import solutionimg from "../../../public/images/L2Images/gynger/sollution.png";
 import casestudyImg from "../../../public/images/L2Images/gynger/casestudyImg.png";
-import userPersonaImg from "../../../public/images/L2Images/gynger/userPersonaImg.png";
+import userPersonaImg from "../../../public/images/L2Images/gynger/distributor.png";
 import featureList from "../../../public/images/L2Images/gynger/featureList.png";
 import flowDesign from "../../../public/images/L2Images/gynger/flowDesign.png";
 import framerowcola from "../../../public/images/L2Images/gynger/row1a.png";
@@ -26,6 +26,7 @@ import framerowcolb from "../../../public/images/L2Images/gynger/row1b.png";
 import framerowcolc from "../../../public/images/L2Images/gynger/row1c.png";
 import frameb from "../../../public/images/L2Images/gynger/row2.png";
 import framec from "../../../public/images/L2Images/gynger/row3.png";
+import fewfeatureList from "../../../public/images/L2Images/gynger/fewfeatureimg.png";
 import featuregrid1 from "../../../public/images/L2Images/gynger/featuregrid1.png";
 import featuregrid2 from "../../../public/images/L2Images/gynger/featuregrid2.png";
 import featuregrid3 from "../../../public/images/L2Images/gynger/featuregrid3.png";
@@ -148,8 +149,8 @@ const Gynger = () => {
             <div className={styles.casestudyImgSec}>
               <Image src={userPersonaImg} height={950} width={910} />
             </div>
-            <h4 className="personaTitle">We talked to over 50 retailers.<br />
-              Tried to figure out what they found easy or hard to use in the App. The main points I tried to focus on were:</h4>
+            <h5 className={styles.personaTitle}>We talked to over 50 retailers.<br />
+              Tried to figure out what they found easy or hard to use in the App. The main points I tried to focus on were:</h5>
             <ul className={styles.challengeList}>
               <li>Their age & education</li>
               <li>Readability of the scheme banner image</li>
@@ -249,8 +250,8 @@ const Gynger = () => {
         <Row className="mt-5">
           <div className={styles.fewfeatureSection}>
             <h3 className={styles.title}>Few feature list</h3>
-            <h5>We filtered out some features by validating them with tech, business and other stakeholders and decided to list down the MVP version of what we want in the App. Some of the major changes we made were -</h5>
-            <Row className="mt-4">
+            <h5 className={styles.fewfeaturecontent}>We filtered out some features by validating them with tech, business and other stakeholders and decided to list down the MVP version of what we want in the App. Some of the major changes we made were -</h5>
+            {/* <Row className="mt-4">
               <Col md={6} className={styles.fewimgcol1}>
                 <div className={styles.fewimgflex}>
                   <Image src={featuregrid1} height={268} width={224} />
@@ -265,7 +266,10 @@ const Gynger = () => {
                 </div>
                 <h6 className={styles.flextext2}>**Making the points to money conversion more interactive</h6>
               </Col>
-            </Row>
+            </Row> */}
+             <div className={styles.imageWrapperfewfeature}>
+            <Image src={fewfeatureList} className={styles.imagefewfeature} fill/>
+            </div>
           </div>
         </Row>
         {/* Archievement section */}

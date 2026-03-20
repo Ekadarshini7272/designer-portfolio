@@ -5,15 +5,19 @@ import Link from 'next/link';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import { usePathname } from "next/navigation";
 import Image from 'next/image';
-import { FiFilm } from 'react-icons/fi';
-import { HiOutlineUser } from 'react-icons/hi';
-import { MdOutlineScience } from 'react-icons/md';
-import { FiBox } from 'react-icons/fi';
-import { IoLocationOutline } from 'react-icons/io5';
+// import { FiFilm } from 'react-icons/fi';
+// import { HiOutlineUser } from 'react-icons/hi';
+// import { MdOutlineScience } from 'react-icons/md';
+// import { FiBox } from 'react-icons/fi';
+// import { IoLocationOutline } from 'react-icons/io5';
 import navitem1 from "../../../public/images/navitem1.png";
 import navitem2 from "../../../public/images/navitem2.png";
-import navitem3 from "../../../public/images/navitem3.png";
+// import navitem3 from "../../../public/images/navitem3.png";
 import navitem4 from "../../../public/images/navitem4.png";
+import navhover1 from "../../../public/images/iconb1.png";
+import navhover2 from "../../../public/images/iconb2.png";
+// import navhover3 from "../../../public/images/iconb3.png";
+import navhover4 from "../../../public/images/iconb4.png";
 import navitem5 from '../../../public/images/navitem5.png';
 import odisha1 from '../../../public/images/odisha1.png';
 import odisha2 from '../../../public/images/odisha2.png';
@@ -36,50 +40,62 @@ const Header = () => {
         <Link href="/" className={styles.logo}>
           <Image src={logo} alt="prabhu" width={84} height={66} priority />
         </Link>
-      <Nav className={styles.navMenu}>
-  <Link href="/projects" className={`${styles.navLink} ${pathname === "/projects" ? styles.active : ""}`}>
-    <span className={styles.navItem}>
-      <span className={styles.iconCircle}><Image src={navitem1} alt="Projects" width={20} height={20} /></span>
-      Projects
-    </span>
-  </Link>
+        <Nav className={styles.navMenu}>
+          <Link href="/projects" className={`${styles.navLink} ${pathname === "/projects" ? styles.active : ""}`}>
+            <span className={styles.navItem}>
+              <span className={styles.iconCircle}>
+                <Image src={navitem1} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
+                <Image src={navhover1} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
+              </span>
+              Projects
+            </span>
+          </Link>
 
-  <Link href="/about" className={`${styles.navLink} ${pathname === "/about" ? styles.active : ""}`}>
-    <span className={styles.navItem}>
-      <span className={styles.iconCircle}><Image src={navitem2} alt="About" width={20} height={20} /></span>
-      Know me
-    </span>
-  </Link>
+          <Link href="/about" className={`${styles.navLink} ${pathname === "/about" ? styles.active : ""}`}>
+            <span className={styles.navItem}>
+              <span className={styles.iconCircle}>
+                <Image src={navitem2} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
+                <Image src={navhover2} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
+              </span>
+              Know me
+            </span>
+          </Link>
 
-  <Link href="#playground" className={`${styles.navLink} ${styles.hasTooltip}`}>
+          {/* <Link href="#playground" className={`${styles.navLink} ${styles.hasTooltip}`}>
     <span className={styles.navItem}>
-      <span className={styles.iconCircle}><Image src={navitem3} alt="Playground" width={20} height={20} /></span>
+       <span className={styles.iconCircle}>
+                <Image src={navitem3} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
+                <Image src={navhover3} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
+              </span>
       Playground
     </span>
     <span className={styles.tooltip}>Coming soon</span>
-  </Link>
+  </Link> */}
 
-  <Link href="#products" className={`${styles.navLink} ${styles.hasTooltip}`}>
-    <span className={styles.navItem}>
-      <span className={styles.iconCircle}><Image src={navitem4} alt="Products" width={20} height={20} /></span>
-      Products
-    </span>
-    <span className={styles.tooltip}>Coming soon</span>
-  </Link>
-</Nav>
-<div className={styles.location}>
-    <span className={styles.locationText}>
-    <Image src={navitem5} height={20} width={20} className={styles.locationIcon} />
-    Odisha, India
-  </span>
-  <div className={styles.locationImages}>
-    <Image src={odisha1} alt="odisha" width={185} height={185} />
-    <Image src={odisha2} alt="odisha" width={185} height={185} />
-    <Image src={odisha3} alt="odisha" width={185} height={185} />
-    <Image src={odisha4} alt="odisha" width={185} height={185} />
-    <Image src={odisha5} alt="odisha" width={185} height={185} />
-  </div>
-</div>
+          <Link href="#products" className={`${styles.navLink} ${styles.hasTooltip}`}>
+            <span className={styles.navItem}>
+              <span className={styles.iconCircle}>
+                <Image src={navitem4} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
+                <Image src={navhover4} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
+              </span>
+              Products
+            </span>
+            <span className={styles.tooltip}>Coming soon</span>
+          </Link>
+        </Nav>
+        <div className={styles.location}>
+          <span className={styles.locationText}>
+            <Image src={navitem5} height={20} width={20} className={styles.locationIcon} />
+            Odisha, India
+          </span>
+          <div className={styles.locationImages}>
+            <Image src={odisha1} alt="odisha" width={185} height={185} />
+            <Image src={odisha2} alt="odisha" width={185} height={185} />
+            <Image src={odisha3} alt="odisha" width={185} height={185} />
+            <Image src={odisha4} alt="odisha" width={185} height={185} />
+            <Image src={odisha5} alt="odisha" width={185} height={185} />
+          </div>
+        </div>
       </Container>
     </Navbar>
   );

@@ -240,11 +240,11 @@
 }
 .brandSlider::before {
   left: 0;
-  background: linear-gradient(to right, #fff 0%, transparent 50%);
+  background: linear-gradient(to right, #fff 0%, transparent 100%);
 }
 .brandSlider::after {
   right: 0;
-  background: linear-gradient(to left, #fff 0%, transparent 50%);
+  background: linear-gradient(to left, #fff 0%, transparent 100%);
 }
 .brandItem {
   flex: 0 0 auto;
@@ -284,6 +284,9 @@
   }
 }
 /*PROFESSIONAL WORK SECTION*/
+.viewDetails{
+  text-decoration: none;
+}
 .professionalCard {
   background: #faf9f6;
   border-radius: 24px;
@@ -365,6 +368,7 @@ font-weight: 500;
 font-size: 18px;
 line-height: 100%;
 letter-spacing: 5%;
+color: #000
 }
 .workMeta {
   font-size: 12px;
