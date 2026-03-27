@@ -260,7 +260,8 @@ const HomeContainer = () => {
                 </Link>
               </Col>
               <Col lg={6}>
-                <div className={`${styles.professionalCard} ${styles.inactiveCard}`}>
+              <Link href="/apnaklub" className={styles.viewDetails}>
+                <div className={styles.professionalCard}>
                   <div className={styles.cardTop}>
                     <span className={styles.workTag}>Professional Work</span>
                     <span className={styles.topArrow}>
@@ -280,6 +281,7 @@ const HomeContainer = () => {
                     By: Me & PLM & Dev Team
                   </div>
                 </div>
+                </Link>
               </Col>
             </Row>
           </Col>

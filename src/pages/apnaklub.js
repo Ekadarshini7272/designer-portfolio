@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap';
 import MainLayout from '../layout/MainLayout';
-import Apnaclub from '../components/L2Pages/Apnaclub';
+import Apnaklub from '../components/L2Pages/Apnaklub';
 import Cursor from "../components/Cursor";
 
 export default function Home() {
@@ -9,7 +9,7 @@ export default function Home() {
       <Cursor />
       <MainLayout>
         <Container>
-          <Apnaclub />
+          <Apnaklub />
         </Container>
       </MainLayout>
     </>
