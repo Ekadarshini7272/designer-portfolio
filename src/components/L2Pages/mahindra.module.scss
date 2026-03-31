@@ -1,0 +1,160 @@
+.homeSection {
+  padding: 120px 0 80px;
+}
+.sliderWrapper {
+  position: relative;
+  overflow: hidden;
+  height: 80vh;
+  border-radius: 20px;
+  background: #f5f5f5;
+}
+.sliderTrack {
+  display: flex;
+  transition: transform 0.6s ease;
+  height: 100%;
+}
+.slide {
+  min-width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* ===== Slide 1 ===== */
+.centerContent {
+  max-width: 700px;
+  h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+  }
+  p {
+    color: #888;
+  }
+  span {
+    font-size: 12px;
+    color: #aaa;
+  }
+}
+/* ===== Slide 2 Image Layout ===== */
+// .slidesecond {
+//   padding: 1em; // equal spacing all around (like figma)
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+// .secondpage {
+//   width: 100%;
+//   height: 100%;
+// }
+// .secondImageWrapper {
+//   width: 100%;
+//   height: calc(80vh - 2em); // keep space inside slider height
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+// }
+// .secondImage {
+//   width: 100%;
+//   height: 100%;
+//   object-fit: contain; // prevents cropping
+// }
+/* ===== Slide 2 Image Layout ===== */
+.slidesecond {
+  padding: 1em; // same spacing as design frame
+  display: flex;
+}
+.secondpage {
+  width: 100%;
+  height: 100%;
+}
+.secondImageWrapper {
+  position: relative;
+  width: 100%;
+  height: calc(80vh - 2em); // fill available slide height
+}
+.secondImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; // fill frame without cropping
+}
+/* ===== Slide 3 Layout ===== */
+.slidethird {
+  justify-content: center;
+  align-items: center;
+}
+.thirdImageWrapper {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+}
+.thirdImage {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.thirdText {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+  font-weight: 500;
+  color: #555;
+  text-align: center;
+}
+/* ===== Slide 4 Layout ===== */
+/* ===== Slide 4 Layout ===== */
+
+.slidefourth {
+  padding: 1em;   // match other slides spacing
+  align-items: flex-start; // push image down slightly so controls stay below
+}
+
+.fourthImageWrapper {
+  width: 100%;
+  max-width: 1300px;
+  height: calc(80vh - 80px); // keep inside slider height safely
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fourthImage {
+  width: 100%;
+  height: 100%;
+  object-fit: contain; // prevents cropping
+  border-radius: 10px;
+}
+/* Controls */
+.controls {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.page {
+  background: #fff;
+  padding: 1em;
+  border-radius: 20px;
+  font-size: 14px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+  button {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 1px solid #ddd;
+    background: #fff;
+    cursor: pointer;
+    &:hover {
+      background: #ff5a1f;
+      color: #fff;
+    }
+    &:disabled {
+      opacity: 0.4;
+    }
+  }
+}

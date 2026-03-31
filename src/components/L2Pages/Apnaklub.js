@@ -121,7 +121,7 @@ const Apnaclub = () => {
                     <div className={`${styles.slide} ${styles.slideFifth}`}>
                         <div className={styles.fourthWrapper}>
                             <div className={styles.leftContent}>
-                                <h3 className={styles.fourthTitle}>Big Card Design</h3>
+                                <h3 className={styles.fourthTitle}>Category Section</h3>
                                 <div className={styles.mobileWrapper}>
                                     <div className={styles.mobileBox}>
                                         <Image

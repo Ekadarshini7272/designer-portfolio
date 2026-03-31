@@ -5,6 +5,9 @@ import Link from "next/link";
 import { FiArrowUpRight } from "react-icons/fi";
 import styles from "./project.module.scss";
 import professional1 from "../../../public/images/professionalimg.png";
+import gynger from "../../../public/images/L2Images/gynger/gynger.png";
+import apnaklub from "../../../public/images/L2Images/apnaklub/apnaklub.png";
+import mahindra from "../../../public/images/L2Images/mahindra/mahindra.png";
 
 const Project = () => {
   return (
@@ -12,7 +15,49 @@ const Project = () => {
       <Container>
         <Row className="g-4">
           <Col lg={6}>
-             <a href="/gynger" className={styles.viewDetails}>
+            <a href="/gynger" className={styles.viewDetails}>
+              <div className={styles.professionalCard}>
+                <div className={styles.cardTop}>
+                  <span className={styles.workTag}>Professional Work</span>
+                  <span className={styles.topArrow}>
+                    <FiArrowUpRight />
+                  </span>
+                </div>
+                <div className={styles.workImage}>
+                  <Image src={gynger} alt="Professional Work" width={536} height={334} />
+                </div>
+                <h4 className={styles.workTitle}>
+                  How it became a money minting machine for O4S
+                </h4>
+                <div className={styles.workMeta}>
+                  By: Me & PLM & Dev Team
+                </div>
+              </div>
+            </a>
+          </Col>
+          <Col lg={6}>
+            <a href="/apnaklub" className={styles.viewDetails}>
+              <div className={styles.professionalCard}>
+                <div className={styles.cardTop}>
+                  <span className={styles.workTag}>Professional Work</span>
+                  <span className={styles.topArrow}>
+                    <FiArrowUpRight />
+                  </span>
+                </div>
+                <div className={styles.workImage}>
+                  <Image src={apnaklub} alt="Professional Work" width={536} height={334} />
+                </div>
+                <h4 className={styles.workTitle}>
+                  Success Metrics That Redefined Growth
+                </h4>
+                <div className={styles.workMeta}>
+                  By: Me & PLM & Dev Team
+                </div>
+              </div>
+            </a>
+          </Col>
+          <Col lg={6}>
+           <a href="/mahindra" className={styles.viewDetails}>
             <div className={styles.professionalCard}>
               <div className={styles.cardTop}>
                 <span className={styles.workTag}>Professional Work</span>
@@ -21,10 +66,10 @@ const Project = () => {
                 </span>
               </div>
               <div className={styles.workImage}>
-                <Image src={professional1} alt="Professional Work" width={536} height={334}/>
+                <Image src={mahindra} alt="Professional Work" width={536} height={334} />
               </div>
               <h4 className={styles.workTitle}>
-                How it became a money minting machine for O4S
+                Reduce stress of OPS team ! How?
               </h4>
               <div className={styles.workMeta}>
                 By: Me & PLM & Dev Team
@@ -33,68 +78,19 @@ const Project = () => {
             </a>
           </Col>
           <Col lg={6}>
-          <a href="/apnaklub" className={styles.viewDetails}>
-          <div className={styles.professionalCard}>
+            <div className={`${styles.professionalCard} ${styles.inactiveCard}`}>
               <div className={styles.cardTop}>
                 <span className={styles.workTag}>Professional Work</span>
                 <span className={styles.topArrow}>
                   <FiArrowUpRight />
                 </span>
               </div>
-
               <div className={styles.workImage}>
                 <Image src={professional1} alt="Professional Work" width={536} height={334}/>
               </div>
-
-              <h4 className={styles.workTitle}>
-                Success Metrics That Redefined Growth
-              </h4>
-
-              <div className={styles.workMeta}>
-                By: Me & PLM & Dev Team
-              </div>
-            </div>
-  </a>
-          </Col>
-          <Col lg={6}>
-         <div className={`${styles.professionalCard} ${styles.inactiveCard}`}>
-              <div className={styles.cardTop}>
-                <span className={styles.workTag}>Professional Work</span>
-                <span className={styles.topArrow}>
-                  <FiArrowUpRight />
-                </span>
-              </div>
-
-              <div className={styles.workImage}>
-                <Image src={professional1} alt="Professional Work" width={536} height={334}/>
-              </div>
-
-              <h4 className={styles.workTitle}>
-                Reduce stress of OPS team ! How?
-              </h4>
-
-              <div className={styles.workMeta}>
-                By: Me & PLM & Dev Team
-              </div>
-            </div>
-          </Col>
-          <Col lg={6}>
-          <div className={`${styles.professionalCard} ${styles.inactiveCard}`}>
-              <div className={styles.cardTop}>
-                <span className={styles.workTag}>Professional Work</span>
-                <span className={styles.topArrow}>
-                  <FiArrowUpRight />
-                </span>
-              </div>
-
-              <div className={styles.workImage}>
-                <Image src={professional1} alt="Professional Work" width={536} height={334}/>
-              </div>
-
               <h4 className={styles.workTitle}>
                 And how it became a money minting machine for O4S
               </h4>
-
               <div className={styles.workMeta}>
                 By: Me & PLM & Dev Team
               </div>

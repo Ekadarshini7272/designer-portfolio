@@ -33,7 +33,8 @@ import workbrand21 from '../../../public/images/workingbrands/brandwork21.png';
 import workbrand22 from '../../../public/images/workingbrands/brandwork22.png';
 import workbrand23 from '../../../public/images/workingbrands/brandwork23.png';
 import workbrand24 from '../../../public/images/workingbrands/brandwork24.png';
-import professional1 from '../../../public/images/professionalimg.png';
+import gynger from "../../../public/images/L2Images/gynger/gynger.png";
+import apnaklub from "../../../public/images/L2Images/apnaklub/apnaklub.png";
 import Testimonial from '../container/testimonial';
 const HomeContainer = () => {
   const profileRef = useRef(null);
@@ -248,7 +249,7 @@ const HomeContainer = () => {
                       </span>
                   </div>
                   <div className={styles.workImage}>
-                    <Image src={professional1} alt="Professional Work" width={536} height={334} />
+                    <Image src={gynger} alt="Professional Work" width={536} height={334} />
                   </div>
                   <h4 className={styles.workTitle}>
                     How it became a money minting machine for O4S
@@ -270,7 +271,7 @@ const HomeContainer = () => {
                   </div>
 
                   <div className={styles.workImage}>
-                    <Image src={professional1} alt="Professional Work" width={536} height={334} />
+                    <Image src={apnaklub} alt="Professional Work" width={536} height={334} />
                   </div>
 
                   <h4 className={styles.workTitle}>
