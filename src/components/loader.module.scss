@@ -1,0 +1,65 @@
+.loaderWrapper {
+  position: fixed;
+  inset: 0;
+  background: #ffffff;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoBox {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Logo animation */
+.logo {
+  width: 130px;
+  height: auto;
+  animation: logoZoom 1s ease-in-out forwards;
+}
+
+/* Text animation */
+.tagline {
+  position: absolute;
+  top: 170%;
+  left: 50%;
+  transform: translate(-50%, -120%);
+  opacity: 0;
+
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+
+  animation: slideDownFade 0.9s ease forwards;
+}
+
+/* Logo zoom effect */
+@keyframes logoZoom {
+  0% {
+    transform: scale(0.7);
+    opacity: 0;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Text slide from top */
+@keyframes slideDownFade {
+  0% {
+    transform: translate(-50%, -180%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-50%, -120%);
+    opacity: 1;
+  }
+}

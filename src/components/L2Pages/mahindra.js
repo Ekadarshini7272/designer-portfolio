@@ -8,7 +8,7 @@ import thirdsec from "../../../public/images/L2Images/mahindra/thirdsec.png";
 import fourthsec from "../../../public/images/L2Images/mahindra/fourthsec.png";
 const Mahindra = () => {
     const [current, setCurrent] = useState(0);
-    const totalSlides = 4;
+    const totalSlides = 5;
     const nextSlide = () => {
         if (current < totalSlides - 1) setCurrent(current + 1);
     };
@@ -67,6 +67,12 @@ const Mahindra = () => {
                                 className={styles.fourthImage}
                                 priority
                             />
+                        </div>
+                    </div>
+                     {/* ===== SLIDE 5===== */}
+                    <div className={styles.slide}>
+                        <div className={styles.centerContent}>
+                            <h2>Thank You</h2>
                         </div>
                     </div>
                 </div>

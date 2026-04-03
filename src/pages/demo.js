@@ -1,6 +1,6 @@
 import { Container } from 'react-bootstrap';
 import MainLayout from '../layout/MainLayout';
-import About from '../components/container/about';
+import Demo from '../components/L2Pages/Demo';
 import Cursor from "../components/Cursor";
 import Loader from "../components/loader";
 
@@ -11,10 +11,10 @@ export default function Home() {
       <Cursor />
       <MainLayout>
         <Container>
-          <About />
+          <Demo />
         </Container>
       </MainLayout>
-       </Loader>
+        </Loader>
     </>
   );
 }
