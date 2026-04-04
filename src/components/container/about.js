@@ -99,7 +99,7 @@ const About = () => {
               </div>
               <div className={styles.expFooter}>
                 <Link className={styles.footerCta} href="https://www.linkedin.com/in/19design97/" target="_blank" rel="noopener noreferrer">
-                  See Full Experience <span>↗</span>
+                  See Full Experience <span><FiArrowUpRight /></span>
                 </Link>
               </div>
             </div>

@@ -7,7 +7,7 @@
  display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: #f5f5f3;
+  border: 2px solid #EFF0F1;
   border-radius: 999px;
   padding: 10px 18px;
   font-size: 14px;
@@ -84,8 +84,7 @@
 .expFooter {
   margin-top: 20px;
   .footerCta {
-    background-color: #fff;
-    border: 2px solid #F6F6F3;
+   border : 2px solid #EFF0F1;
     box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);
     text-decoration: none;
     border-radius: 24px;
@@ -97,8 +96,9 @@
     align-items: center;
     gap: 6px;
     span {
-      color: #f6550a;
-      font-weight: 600;
+         color: #f6550a;
+    font-weight: 600;
+    font-size: 18px;
     }
     &:hover {
       box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.08);

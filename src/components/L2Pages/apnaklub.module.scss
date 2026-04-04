@@ -24,10 +24,11 @@
   max-width: 700px;
   h2 {
     font-size: 28px;
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
   }
   p {
     color: #888;
+     margin-bottom: 0.5em;
   }
   span {
     font-size: 12px;
@@ -202,7 +203,7 @@ width: 38em;
 margin-bottom: 0.5em;
 }
 .rightContenteighth{
-  margin-top: 0em;
+  margin-top: 2em;
 }
 .infoCardeighthsec {
   background: #fff;
@@ -236,6 +237,17 @@ margin-bottom: 0.5em;
 .rightContentninth{
   margin-top: 7em;
 }
+.rightContentfourteen{
+  margin-top: 0em;
+}
+/* ===== Slide 11 ===== */
+.rightContenteleven{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 6em;
+}
 /* Controls */
 .controls {
   position: absolute;
@@ -254,6 +266,7 @@ margin-bottom: 0.5em;
   font-size: 14px;
    border: 1px solid #E1E1E1;
    box-shadow: 0px 5px 10px 2px #D9D9D980;
+   color: #959595;
 
 }
 .buttons {
@@ -265,6 +278,8 @@ margin-bottom: 0.5em;
     border-radius: 50%;
      border: 1px solid #E1E1E1;
     background: #ffffff;
+    margin-top: 5px;
+      color: #959595;
     box-shadow: 0px 5px 10px 2px #D9D9D980;
     cursor: pointer;
     &:hover {

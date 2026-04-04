@@ -24,10 +24,11 @@
   max-width: 700px;
   h2 {
     font-size: 28px;
-    margin-bottom: 10px;
+    margin-bottom: 0.5em;
   }
   p {
     color: #888;
+    margin-bottom: 0.5em;
   }
   span {
     font-size: 12px;
@@ -61,6 +62,8 @@
 .slidesecond {
   padding: 1em; // same spacing as design frame
   display: flex;
+   align-items: center;
+justify-content: center;
 }
 .secondpage {
   width: 100%;
@@ -69,11 +72,12 @@
 .secondImageWrapper {
   position: relative;
   width: 100%;
-  height: calc(80vh - 2em); // fill available slide height
+  // height: calc(80vh - 2em); // fill available slide height
+  height : 450px;
 }
 .secondImage {
   width: 100%;
-  height: 100%;
+  height: 400px;
   object-fit: contain; // fill frame without cropping
 }
 /* ===== Slide 3 Layout ===== */
@@ -140,6 +144,7 @@
   border-radius: 1em;
   font-size: 14px;
    border: 1px solid #E1E1E1;
+  color: #959595;
    box-shadow: 0px 5px 10px 2px #D9D9D980;
 
 }
@@ -152,6 +157,8 @@
     border-radius: 50%;
      border: 1px solid #E1E1E1;
     background: #ffffff;
+    margin-top: 5px;
+    color: #959595;
     box-shadow: 0px 5px 10px 2px #D9D9D980;
     cursor: pointer;
     &:hover {

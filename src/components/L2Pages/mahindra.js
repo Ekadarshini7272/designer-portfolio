@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 import Image from "next/image";
 import styles from "./mahindra.module.scss";
 import { FiArrowLeft, FiArrowRight } from "react-icons/fi";
-import firstsec from "../../../public/images/L2Images/mahindra/firstsec.png";
+import firstsec from "../../../public/images/L2Images/mahindra/secondimgsec.png";
 import thirdsec from "../../../public/images/L2Images/mahindra/thirdsec.png";
 import fourthsec from "../../../public/images/L2Images/mahindra/fourthsec.png";
 const Mahindra = () => {

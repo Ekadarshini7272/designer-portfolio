@@ -34,11 +34,11 @@ const Loader = ({ children }) => {
               priority
             />
 
-            {showText && (
+            {/* {showText && (
               <h6 className={styles.tagline}>
                 The fastest designer
               </h6>
-            )}
+            )} */}
           </div>
         </div>
       ) : (

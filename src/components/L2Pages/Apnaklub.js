@@ -149,9 +149,9 @@ const Apnaclub = () => {
                                         <li>Irrelevant and misaligned images, combined with inconsistent background colours, undermine the visual coherence, negatively impacting the overall user experience.</li>
                                     </ul>
                                 </div>
-                                <div className={styles.navbtn}>View Solution
+                                {/* <div className={styles.navbtn}>View Solution
                                     <div><FiArrowRight className={styles.arrowbtn} /></div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -178,9 +178,9 @@ const Apnaclub = () => {
                                 <div className={styles.imgspan}>After</div>
                             </div>
                             <div className={styles.rightContentsixth}>
-                                <div className={styles.navbtn}>
+                                {/* <div className={styles.navbtn}>
                                     <div><FiArrowLeft className={styles.arrowbtn} /></div>View Solution
-                                </div>
+                                </div> */}
                                 <div className={styles.infoCard}>
                                     <h4>Challenges:</h4>
                                     <ul>
@@ -354,7 +354,7 @@ const Apnaclub = () => {
                                 </div>
                                 <div className={styles.imgspan}>Before</div>
                             </div>
-                            <div className={styles.rightContentfifth}>
+                            <div className={styles.rightContenteleven}>
                                 <div className={styles.infoCard}>
                                     <h4>Challenges:</h4>
                                     <ul>
@@ -365,9 +365,9 @@ const Apnaclub = () => {
                                         <li>Heavy Buttons: The "Add to Cart" buttons were bulky and took up too much space.</li>
                                     </ul>
                                 </div>
-                                <div className={styles.navbtn}>View Solution
+                                {/* <div className={styles.navbtn}>View Solution
                                     <div><FiArrowRight className={styles.arrowbtn} /></div>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>
@@ -394,9 +394,9 @@ const Apnaclub = () => {
                                 <div className={styles.imgspan}>After</div>
                             </div>
                             <div className={styles.rightContentsixth}>
-                                <div className={styles.navbtn}>
+                                {/* <div className={styles.navbtn}>
                                     <div><FiArrowLeft className={styles.arrowbtn} /></div>View Solution
-                                </div>
+                                </div> */}
                                 <div className={styles.infoCard}>
                                     <h4>Challenges:</h4>
                                     <ul>
@@ -459,7 +459,7 @@ const Apnaclub = () => {
                                             className={styles.gifImage}
                                         />
                                     </div>
-                                    <div className={styles.rightContenteighth}>
+                                    <div className={styles.rightContentfourteen}>
                                         <div className={styles.infoCardeighthsec}>
                                             <h4>Challenges:</h4>
                                             <ul>
@@ -496,7 +496,7 @@ const Apnaclub = () => {
                                             className={styles.gifImage}
                                         />
                                     </div>
-                                    <div className={styles.rightContenteighth}>
+                                    <div className={styles.rightContentfourteen}>
                                         <div className={styles.infoCardeighthsec}>
                                             <h4>Challenges:</h4>
                                             <ul>

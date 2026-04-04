@@ -18,7 +18,7 @@ import navhover1 from "../../../public/images/iconb1.png";
 import navhover2 from "../../../public/images/iconb2.png";
 // import navhover3 from "../../../public/images/iconb3.png";
 import navhover4 from "../../../public/images/iconb4.png";
-import navitem5 from '../../../public/images/navitem5.png';
+import navitem5 from '../../../public/images/locamap.png';
 import odisha1 from '../../../public/images/odisha1.png';
 import odisha2 from '../../../public/images/odisha2.png';
 import odisha3 from '../../../public/images/odisha3.png';

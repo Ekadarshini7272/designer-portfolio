@@ -22,7 +22,8 @@
 }
 .question {
   display: inline-block;
-  background: #f5f5f3;
+  // background: #f5f5f3;
+  border : 2px solid #EFF0F1;
   border-radius: 24px;
   padding: 8px 14px;
   font-size: 13px;
@@ -30,7 +31,7 @@
   margin-bottom: 20px;
 }
 .contentBox {
-  background: #f6f5f2;
+  background: #EFF0F1;
   border-radius: 28px;
   padding: 32px;
   min-height: 260px;

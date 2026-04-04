@@ -2,6 +2,7 @@ import { Row, Col, Button } from "react-bootstrap";
 import styles from "./selfphotogrid.module.scss";
 import Image from "next/image";
 import Link from 'next/link';
+import { FiArrowUpRight} from 'react-icons/fi';
 import image1 from "../../../public/images/selfimage/image1.png";
 import image2 from "../../../public/images/selfimage/image2.png";
 import image3 from "../../../public/images/selfimage/image3.png";
@@ -89,7 +90,7 @@ const SelfPhotoGrid = () => {
                         </Row>
                         <div className={styles.expFooter}>
                             <Link className={styles.footerCta} href="https://www.linkedin.com/in/19design97/" target="_blank" rel="noopener noreferrer">
-                                See Full Experience <span>↗</span>
+                                See Full Experience <span><FiArrowUpRight /></span>
                             </Link>
                         </div>
                     </div>
@@ -117,7 +118,7 @@ const SelfPhotoGrid = () => {
                         </Row>
                         <div className={styles.expFooter}>
                             <Link className={styles.footerCta} href="https://www.instagram.com/19photography97/" target="_blank" rel="noopener noreferrer">
-                                See Full Experience <span>↗</span>
+                                See Full Experience <span><FiArrowUpRight /></span>
                             </Link>
                         </div>
                     </div>

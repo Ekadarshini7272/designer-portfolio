@@ -1,288 +1,331 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import Image from "next/image";
 import styles from "./gynger.module.scss";
-import gridrow1 from "../../../public/images/L2Images/gynger/gridrow1.png";
-import gridrow2 from "../../../public/images/L2Images/gynger/gridrow2.png";
-import gridrow3 from "../../../public/images/L2Images/gynger/gridrow3.png";
-import gridrow4 from "../../../public/images/L2Images/gynger/gridrow4.png";
-import gridrow5 from "../../../public/images/L2Images/gynger/gridrow5.png";
-import gridrow6 from "../../../public/images/L2Images/gynger/gridrow6.png";
-import gridbrow1 from "../../../public/images/L2Images/gynger/gridbrow1.png";
-import gridbrow2 from "../../../public/images/L2Images/gynger/gridbrow2.png";
-import gridbrow3 from "../../../public/images/L2Images/gynger/gridbrow3.png";
-import gridbrow4 from "../../../public/images/L2Images/gynger/gridbrow4.png";
-import gridbrow5 from "../../../public/images/L2Images/gynger/gridbrow5.png";
-import gridbrow6 from "../../../public/images/L2Images/gynger/gridbrow6.png";
-import gridcrow1 from "../../../public/images/L2Images/gynger/gridcrow1.png";
-import challengeimg from "../../../public/images/L2Images/gynger/challengeimg.png";
-import solutionimg from "../../../public/images/L2Images/gynger/sollution.png";
-import casestudyImg from "../../../public/images/L2Images/gynger/casestudyImg.png";
-import userPersonaImg from "../../../public/images/L2Images/gynger/distributor.png";
-import featureList from "../../../public/images/L2Images/gynger/featureList.png";
-import flowDesign from "../../../public/images/L2Images/gynger/flowDesign.png";
-import framerowcola from "../../../public/images/L2Images/gynger/row1a.png";
-import framerowcolb from "../../../public/images/L2Images/gynger/row1b.png";
-import framerowcolc from "../../../public/images/L2Images/gynger/row1c.png";
-import frameb from "../../../public/images/L2Images/gynger/row2.png";
-import framec from "../../../public/images/L2Images/gynger/row3.png";
-import fewfeatureList from "../../../public/images/L2Images/gynger/fewfeatureimg.png";
-import featuregrid1 from "../../../public/images/L2Images/gynger/featuregrid1.png";
-import featuregrid2 from "../../../public/images/L2Images/gynger/featuregrid2.png";
-import featuregrid3 from "../../../public/images/L2Images/gynger/featuregrid3.png";
-import featuregrid4 from "../../../public/images/L2Images/gynger/featuregrid4.png";
-import archivementImg from "../../../public/images/L2Images/gynger/archievement.png";
-const Gynger = () => {
+import { FiArrowLeft, FiArrowRight, FiChevronUp } from "react-icons/fi";
+import gynsec1a from "../../../public/images/L2Images/gynger/gynsec1a.png";
+import gynsec1b from "../../../public/images/L2Images/gynger/gynsec1b.png";
+import gynsec1c from "../../../public/images/L2Images/gynger/gynsec1c.png";
+import gynsec5 from "../../../public/images/L2Images/gynger/casestudyImg.png";
+import gynsec8 from "../../../public/images/L2Images/gynger/gyn9thsecimg.png";
+import tenthsec1 from "../../../public/images/L2Images/gynger/tenthsec1.png";
+import tenthsec2 from "../../../public/images/L2Images/gynger/tenthsec2.png";
+// import gyn11a from "../../../public/images/L2Images/gynger/gyn11a.png";
+// import gyn11b from "../../../public/images/L2Images/gynger/gyn11b.png";
+// import gyn11c from "../../../public/images/L2Images/gynger/gyn11c.png";
+// import gyn11d from "../../../public/images/L2Images/gynger/gyn11d.png";
+// import gyn11e from "../../../public/images/L2Images/gynger/gyn11e.png";
+import gyn11sec from "../../../public/images/L2Images/gynger/gyn11sec.png";
+import gynsec12a from "../../../public/images/L2Images/gynger/gynsec12a.png";
+import gynsec12b from "../../../public/images/L2Images/gynger/gynsec12b.png";
+import gynsec13a from "../../../public/images/L2Images/gynger/gyn13a.png";
+import gynsec13b from "../../../public/images/L2Images/gynger/gyn13b.png";
+import gynsec13c from "../../../public/images/L2Images/gynger/gyn13c.png"; 
+import gyn14sec from "../../../public/images/L2Images/gynger/gyn14sec.png";
+
+const Demo = () => {
+  const [current, setCurrent] = useState(0);
+  const [showQuestions, setShowQuestions] = useState(false);
+  const totalSlides = 15;
+  const nextSlide = () => {
+    if (current < totalSlides - 1) setCurrent(current + 1);
+  };
+  const prevSlide = () => {
+    if (current > 0) setCurrent(current - 1);
+  };
   return (
     <section className={styles.homeSection}>
-      <Container>
-        <Row className={styles.topCard}>
-          <h2 className={styles.cardhead}>And how it became a money minting machine for O4S</h2>
-          <div className={styles.cardpara}>2020-2023</div>
-          <div className={styles.cardtext}>Mobile, User Persona, Flow</div>
-        </Row>
-        {/* Rating product section */}
-        <Row className="mt-5">
-          <div className={styles.topCard}>
-            <div className={styles.imgflexdiv}>
-              <Image src={gridrow1} alt="Grid Row 1" height={93} width={93} />
-              <Image src={gridrow2} alt="Grid Row 2" height={93} width={125} />
-              <Image src={gridrow3} alt="Grid Row 3" height={93} width={125} />
-              <Image src={gridrow4} alt="Grid Row 4" height={93} width={188} />
-              <Image src={gridrow5} alt="Grid Row 5" height={93} width={188} />
-              <Image src={gridrow6} alt="Grid Row 6" height={93} width={188} />
-            </div>
-            <div className={styles.imgflexdiv}>
-              <Image src={gridbrow1} alt="Grid Row 1" height={93} width={93} />
-              <Image src={gridbrow2} alt="Grid Row 2" height={93} width={125} />
-              <Image src={gridbrow3} alt="Grid Row 3" height={93} width={125} />
-              <Image src={gridbrow4} alt="Grid Row 4" height={93} width={125} />
-              <Image src={gridbrow5} alt="Grid Row 5" height={93} width={188} />
-              <Image src={gridbrow6} alt="Grid Row 6" height={93} width={188} />
-            </div>
-            <div className={styles.imgflexdiv}>
-              <Image src={gridcrow1} alt="Grid Row 1" height={93} width={93} />
-              <Image src={gridbrow2} alt="Grid Row 2" height={93} width={125} />
-              <Image src={gridbrow3} alt="Grid Row 3" height={93} width={125} />
-              <Image src={gridbrow4} alt="Grid Row 4" height={93} width={125} />
-              <Image src={gridbrow5} alt="Grid Row 5" height={93} width={188} />
-              <Image src={gridbrow6} alt="Grid Row 6" height={93} width={188} />
+      <Container className={styles.sliderWrapper}>
+        <div className={styles.sliderTrack} style={{ transform: `translateX(-${current * 100}%)` }}>
+          {/* ===== SLIDE 1 (Your first screen) ===== */}
+          <div className={styles.slide}>
+            <div className={styles.centerContent}>
+              <h2>And how it became a money minting machine for O4S</h2>
+              <p>2020-2023</p>
+              <span>Mobile, User Persona, Flow</span>
             </div>
           </div>
-        </Row>
-        {/* challengeand solution section */}
-        <Row className="mt-5">
-          <div className={styles.challengesSection}>
-            <div className={styles.imageBox}>
-              <Image
-                src={challengeimg}
-                alt="Challenges Illustration"
-                height={315} width={220}
-              />
+          {/* ===== SLIDE 2 ===== */}
+          <div className={`${styles.slide} ${styles.slidesecond}`}>
+            <div className={styles.secondSlideWrapper}>
+              <div className={styles.card}>
+                <Image src={gynsec1a} alt="card1" className={styles.img} />
+              </div>
+              <div className={styles.card}>
+                <Image src={gynsec1b} alt="card2" className={styles.img} />
+              </div>
+              <div className={styles.card}>
+                <Image src={gynsec1c} alt="card3" className={styles.img} />
+              </div>
             </div>
-            <div className={styles.contentBox}>
-              <h3 className={styles.title}>Challenges:</h3>
-              <ul className={styles.challengeList}>
-                <li>Retailers select competitive brands to enhance profits and gain incentives.</li>
-                <li>Brands find it challenging to monitor retailer performance, as they typically only track supply to distributors.</li>
-                <li>Distributors may manipulate information for their own advantage, resulting in poor communication.</li>
-                <li>Engaging retailers and motivating them to prioritize specificproducts is difficult.</li>
-                <li>There is a lack of a reliable system to identify which retailers are effectively promoting their products.</li>
+          </div>
+          {/* ===== SLIDE 3 ===== */}
+          <div className={`${styles.slide} ${styles.slideThird}`}>
+            <div className={styles.challengeWrapper}>
+              <h3>What are the Challenges:</h3>
+              <ul>
+                <li>Retailers pick top brands to boost profits and earn perks.</li>
+                <li>Brands struggle to track retailer performance beyond distributor supply.</li>
+                <li>Distributors may distort info, causing communication gaps.</li>
+                <li>Hard to engage retailers to focus on key products.</li>
+                <li>No reliable system to spot retailers promoting products well.</li>
               </ul>
             </div>
           </div>
-        </Row>
-        {/*solution section */}
-        <Row className="mt-5">
-          <div className={styles.challengesSection}>
-            <div className={styles.contentBox}>
-              <h3 className={styles.title}>Solutions:</h3>
-              <ul className={styles.challengeList}>
-                <li>Retailers select competitive brands to enhance profits and gain incentives.</li>
-                <li>Brands find it challenging to monitor retailer performance, as they typically only track supply to distributors.</li>
-                <li>Distributors may manipulate information for their own advantage, resulting in poor communication.</li>
-                <li>Engaging retailers and motivating them to prioritize specificproducts is difficult.</li>
-                <li>There is a lack of a reliable system to identify which retailers are effectively promoting their products.</li>
+          {/* ===== SLIDE 4 ===== */}
+          <div className={`${styles.slide} ${styles.slideThird}`}>
+            <div className={styles.challengeWrapper}>
+              <h3>We got some Solution: </h3>
+              <ul>
+                <li>Connects brands with retailers for better communication</li>
+                <li>Enables trade promotions to boost visibility</li>
+                <li>Rewards retailers to increase loyalty</li>
+                <li>Provides insights on retailer activities and sales</li>
+                <li>Tracks product pushes for smarter decisions</li>
               </ul>
             </div>
-            <div className={styles.imageBox}>
-              <Image
-                src={solutionimg}
-                alt="Challenges Illustration"
-                height={315} width={220}
-              />
-            </div>
           </div>
-        </Row>
-        {/* Case study section */}
-        <Row className="mt-5">
-          <div className={styles.caseStudySection}>
+          {/* ===== SLIDE 5 ===== */}
+          <div className={`${styles.slide} ${styles.slideFifth}`}>
             <div className={styles.imageWrapper}>
               <Image
-                src={casestudyImg}
+                src={gynsec5}
                 alt="case study"
                 fill
-                className={styles.image}
+                className={styles.fullImage}
+                priority
               />
             </div>
-            <h3 className={styles.title}>Case study & then??:</h3>
-            <ul className={styles.challengeList}>
-              <li>Increase brand awareness and enable direct engagement between brands and retailers.</li>
-              <li>Retailers, consumers, and brands benefit from trade promotions and loyalty programs.</li>
-              <li>Users can earn and redeem reward points anytime, without third-party intervention.</li>
-              <li>O4S introduces 100% traceability with unique QR codes on product labels.</li>
-              <li>Retailers scan QR codes via Gynger to earn points.</li>
-              <li>Points can be redeemed as cash, vouchers, or gifts, making the process rewarding and convenient.</li>
-            </ul>
-            <h3 className={styles.title}>Then ??? After Few Years:</h3>
-            <ul className={styles.challengeList}>
-              <li>Despite a strong user base, uninstalls increased when no schemes were active.</li>
-              <li>To address this, we began researching ways to enhance the app’s experience.</li>
-              <li>Focused on adding new features to boost user engagement.</li>
-            </ul>
           </div>
-        </Row>
-        {/* User persona section */}
-        <Row className="mt-5">
-          <div className={styles.userpersonaSection}>
-            <h3 className={styles.title}>User Persona :</h3>
-            <div className={styles.casestudyImgSec}>
-              <Image src={userPersonaImg} height={950} width={910} />
-            </div>
-            <h5 className={styles.personaTitle}>We talked to over 50 retailers.<br />
-              Tried to figure out what they found easy or hard to use in the App. The main points I tried to focus on were:</h5>
-            <ul className={styles.challengeList}>
-              <li>Their age & education</li>
-              <li>Readability of the scheme banner image</li>
-              <li>Usability of scanner</li>
-              <li>Reason for uninstalling the Apps</li>
-              <li>Points usage & expiration</li>
-              <li>Their industry type</li>
-              <li>What type of Apps do they usually use?</li>
-              <li>How many people did they work with in the shop?</li>
-              <li>What type of information did they wish they knew about the brand?</li>
-              <li>How did they get to know about what brands to tie up with?</li>
-              <li>How did they get to know about new offers and schemes by the brand?</li>
-              <li>How did they record their sales? Was their current system full-proof?</li>
-              <li>Did they need help understanding Gynger?</li>
-            </ul>
-          </div>
-        </Row>
-        {/* Feature section */}
-        <Row className="mt-5">
-          <div className={styles.featureList}>
-            <h3 className={styles.title}>Proposed feature list :</h3>
-            <div className={styles.imageWrapperfeature}>
-            <Image src={featureList} className={styles.imagefeature} fill/>
-            </div>
-            <div className={styles.featurecondiv}>
-              <h5>User Onboarding</h5>
-              <li className={styles.featureLi}>Video tutorial at the beginning of the app to guide users through its features.</li>
-            </div>
-            <div className={styles.featurecondiv}>
-              <h5>User Personas</h5>
-              <li className={styles.featureLi}>Secondary user personas to assist the primary user in scanning products, managed through their profile page.</li>
-            </div>
-            <div className={styles.featurecondiv}>
-              <h5>Notifications</h5>
-              <li className={styles.featureLi}>Real-time alerts for promotions, orders, and other updates.</li>
-            </div>
-            <div className={styles.featurecondiv}>
-              <h5>Profile Management</h5>
-              <li className={styles.featureLi}>User profile containing :</li>
-              <li className={styles.featureLipara}>Contacts</li>
-              <li className={styles.featureLipara}>Payment information</li>
-              <li className={styles.featureLipara}>Address book</li>
-              <li className={styles.featureLipara}>Analytics</li>
-            </div>
-            <div className={styles.featurecondiv}>
-              <h5>Brand Zone</h5>
-              <li className={styles.featureLi}>A dedicated section for brands to upload and manage content, including :</li>
-              <li className={styles.featureLipara}>Brand stories</li>
-              <li className={styles.featureLipara}>Promotional cards</li>
-              <li className={styles.featureLipara}>Community</li>
-              <li className={styles.featureLipara}>Leaderboards</li>
-              <li className={styles.featureLipara}>Brand catalog (users can order products from distributors)</li>
-            </div>
-            <div className={styles.featurecondiv}>
-              <h5>Transaction Management</h5>
-              <li className={styles.featureLi}>Detailed transaction page for tracking earnings and burning of points.</li>
-            </div>
-            <div className={styles.featurecondiv}>
-              <h5>Gamification</h5>
-              <li className={styles.featureLi}>Features designed to enhance user engagement through game-like elements.</li>
-            </div>
-            <div className={styles.featurecondiv}>
-              <h5>Gynger Mart</h5>
-              <li className={styles.featureLi}>A virtual shop through which retailers can place orders.</li>
+          {/* ===== SLIDE 6 ===== */}
+          <div className={`${styles.slide} ${styles.slideThird}`}>
+            <div className={styles.challengeWrapper}>
+              <h3>Some study & then??</h3>
+              <ul>
+                <li>Increase brand awareness and enable direct engagement between brands and retailers.</li>
+                <li>Retailers, consumers, and brands benefit from trade promotions and loyalty programs.</li>
+                <li>Users can earn and redeem reward points anytime, without third-party intervention.</li>
+                <li>O4S introduces 100% traceability with unique QR codes on product labels.</li>
+                <li>Retailers scan QR codes via Gynger to earn points.</li>
+                <li>Points can be redeemed as cash, vouchers, or gifts, making the process rewarding and convenient.</li>
+              </ul>
             </div>
           </div>
-        </Row>
-        {/* Flow section */}
-        <Row className="mt-5">
-          <div className={styles.flowSection}>
-            <h3 className={styles.title}>The Flow</h3>
-            <div className={styles.imageWrapperflow}>
-            <Image src={flowDesign} fill className={styles.imageflow} />
+          {/* ===== SLIDE 7 ===== */}
+          <div className={`${styles.slide} ${styles.slideThird}`}>
+            <div className={styles.challengeWrapper}>
+              <h3>Something went wrong after few years:</h3>
+              <ul>
+                <li>Despite a strong user base, uninstalls increased when no schemes were active.</li>
+                <li>To address this, we began researching ways to enhance the app’s experience.</li>
+                <li>Focused on adding new features to boost user engagement.</li>
+              </ul>
             </div>
           </div>
-        </Row>
-        {/* Wire framing section */}
-        <Row className="mt-5">
-          <div className={styles.wireFramingSection}>
-            <h3 className={styles.title}>Wire-framing & ideation</h3>
-            <div className={styles.framingdiv}>
-              <Image src={framerowcola} height={327} width={244} />
-              <Image src={framerowcolb} height={327} width={244} />
-              <Image src={framerowcolc} height={327} width={383} />
-            </div>
-            <div className="mt-5 mb-5">
-             <div className={styles.imageWrapperframeb}>
-            <Image src={frameb} fill className={styles.imageframeb} />
-            </div>
-            </div>
-            <div className={styles.imageWrapperframeb}>
-            <Image src={framec} fill className={styles.imageframeb} />
-            </div>
-          </div>
-        </Row>
-        {/* Few feature section */}
-        <Row className="mt-5">
-          <div className={styles.fewfeatureSection}>
-            <h3 className={styles.title}>Few feature list</h3>
-            <h5 className={styles.fewfeaturecontent}>We filtered out some features by validating them with tech, business and other stakeholders and decided to list down the MVP version of what we want in the App. Some of the major changes we made were -</h5>
-            {/* <Row className="mt-4">
-              <Col md={6} className={styles.fewimgcol1}>
-                <div className={styles.fewimgflex}>
-                  <Image src={featuregrid1} height={268} width={224} />
-                  <Image src={featuregrid2} height={229} width={224} />
+          {/* ===== SLIDE 8 ===== */}
+          <div className={`${styles.slide} ${styles.slideEight}`}>
+            <div className={styles.eightWrapper}>
+              <div className={styles.leftImg}>
+                <Image src={gynsec8} alt="user study" className={styles.eigthimg} />
+              </div>
+              <div className={styles.rightContent}>
+                <h3>We talked to over 50 retailers. Tried to figure out what they found easy or hard to use in the App. The main points I tried to focus on were:</h3>
+                <div
+                  className={styles.toggleBtn}
+                  onClick={() => setShowQuestions(!showQuestions)}
+                >
+                  <span>View Few “Q”</span>
+                  <span className={`${styles.arrow} ${showQuestions ? styles.down : ""}`}>
+                    <FiChevronUp />
+                  </span>
                 </div>
-                <h6 className={styles.flextext1}>**Focusing more on the banner image and the scheme card</h6>
-              </Col>
-              <Col md={6} className={styles.fewimgcol2}>
-                <div className={styles.fewimgflex}>
-                  <Image src={featuregrid3} height={243} width={224} />
-                  <Image src={featuregrid4} height={347} width={225} />
+                <div className={`${styles.accordion} ${showQuestions ? styles.open : ""}`}>
+                  <ul className={styles.questionList}>
+                    <li>Their age & education</li>
+                    <li>Readability of the scheme banner image</li>
+                    <li>Usability of scanner</li>
+                    <li>Reason for uninstalling the Apps</li>
+                    <li>Points usage & expiration</li>
+                    <li>Their industry type</li>
+                    <li>What type of Apps do they usually use?</li>
+                    <li>How many people did they work with in the shop?</li>
+                    <li>What type of information did they wish they knew about the brand?</li>
+                    <li>How did they get to know about what brands to tie up with?</li>
+                    <li>How did they get to know about new offers and schemes by the brand?</li>
+                    <li>How did they record their sales? Was their current system full-proof?</li>
+                    <li>Did they need help understanding Gynger?</li>
+                  </ul>
                 </div>
-                <h6 className={styles.flextext2}>**Making the points to money conversion more interactive</h6>
-              </Col>
-            </Row> */}
-             <div className={styles.imageWrapperfewfeature}>
-            <Image src={fewfeatureList} className={styles.imagefewfeature} fill/>
+              </div>
             </div>
           </div>
-        </Row>
-        {/* Archievement section */}
-        <Row className="mt-5">
-          <div className={styles.archivementsection}>
-            <h3 className={styles.title}>Achievements</h3>
-            <div className={styles.imageWrapperarchivement}>
-            <Image src={archivementImg} fill className={styles.imagearchievement} />
+          {/* ===== SLIDE 9 ===== */}
+          <div className={`${styles.slide} ${styles.slideNine}`}>
+            <div className={styles.nineWrapper}>
+              <h2 className={styles.title}>Proposed feature list</h2>
+              <div className={styles.grid}>
+                <div className={styles.col}>
+                  <div className={styles.featureCard}>
+                    <h4>User Onboarding</h4>
+                    <p>Video tutorial at the beginning of the app to guide users through its features.</p>
+                  </div>
+                  <div className={styles.featureCard}>
+                    <h4>Notifications</h4>
+                    <p>Real-time alerts for promotions, orders, and other updates.</p>
+                  </div>
+                  <div className={styles.featureCard}>
+                    <h4>Brand Zone</h4>
+                    <ul>
+                      <li>Brand stories</li>
+                      <li>Promotional cards</li>
+                      <li>Community</li>
+                      <li>Leaderboards</li>
+                      <li>Brand catalog</li>
+                    </ul>
+                  </div>
+                  <div className={styles.featureCard}>
+                    <h4>Gamification</h4>
+                    <p>Features designed to enhance user engagement through game-like elements.</p>
+                  </div>
+                </div>
+                <div className={styles.col}>
+                  <div className={styles.featureCard}>
+                    <h4>User Personas</h4>
+                    <p>Secondary user personas to assist the primary user in scanning products.</p>
+                  </div>
+                  <div className={styles.featureCard}>
+                    <h4>Profile Management</h4>
+                    <ul>
+                      <li>Contacts</li>
+                      <li>Payment information</li>
+                      <li>Address book</li>
+                      <li>Analytics</li>
+                    </ul>
+                  </div>
+                  <div className={styles.featureCard}>
+                    <h4>Transaction Management</h4>
+                    <p>Detailed transaction page for tracking earnings and burning of points.</p>
+                  </div>
+                  <div className={styles.featureCard}>
+                    <h4>Gynger Mart</h4>
+                    <p>A virtual shop through which retailers can place orders.</p>
+                  </div>
+                  <h6>More...</h6>
+                </div>
+              </div>
             </div>
           </div>
-        </Row>
+          {/* ===== SLIDE 10 ===== */}
+          <div className={`${styles.slide} ${styles.slideTen}`}>
+            <div className={styles.tenWrapper}>
+              <h2 className={styles.tenTitle}>The Flow</h2>
+              <div className={styles.tenGrid}>
+                <div className={styles.tenLeft}>
+                  <Image
+                    src={tenthsec1}
+                    alt="flow diagram"
+                    className={styles.tenImg}
+                  />
+                </div>
+                <div className={styles.tenRight}>
+                  <Image
+                    src={tenthsec2}
+                    alt="handwritten flow"
+                    className={styles.tenImg}
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* ===== SLIDE 11: Wire-framing & ideation ===== */}
+          <div className={`${styles.slide} ${styles.slideWireframe}`}>
+            <div className={styles.wireframeWrapper}>
+              <h2 className={styles.wireframeTitle}>
+                Wire-framing & ideation
+              </h2>
+              <div className={styles.wireframeImageWrapper}>
+                <Image
+                  src={gyn11sec}
+                  alt="Wireframing and ideation layout"
+                  className={styles.wireframeImage}
+                  priority
+                />
+              </div>
+            </div>
+          </div>
+           {/* ===== SLIDE 12 ===== */}
+          <div className={`${styles.slide} ${styles.slidetwelve}`}>
+            <div className={styles.twelveWrapper}>
+              <h2 className={styles.twelveTitle}>Few feature list</h2>    
+              <ul>
+                <li>Validated features with tech, business, and stakeholders</li>
+                <li>Defined MVP for the app</li>
+                <li>Implemented key changes based on feedback</li>
+              </ul> 
+               <div className={styles.twelveimggrid}>
+                <div>
+                  <Image src={gynsec12a} alt="Feature 1" className={styles.twelveImg} />
+                </div>
+                  <div>
+                  <Image src={gynsec12b} alt="Feature 2" className={styles.twelveImgb} />
+                </div>
+                </div>       
+            </div>
+          </div>
+           {/* ===== SLIDE 13 ===== */}
+            <div className={`${styles.slide} ${styles.slidethirteen}`}>
+              <div className={styles.thirteenWrapper}>
+              <h2 className={styles.thirteenTitle}>Few feature list</h2> 
+               <ul>
+                <li>Developed feature list and dashboard for client use</li>
+                <li>Supported 5 brands with white-label trade promotion platforms in 2022</li>
+                <li>Enabled brand-retailer interactions and incentives</li>
+                <li>Targeting 20 new clients by end of 2023</li>
+              </ul>
+              <div className={styles.thirteenimggrid}>
+                <div>
+                  <Image src={gynsec13a} alt="Feature 1" className={styles.thirteenImg} />
+                </div>
+                 <div>
+                  <Image src={gynsec13b} alt="Feature 2" className={styles.thirteenImg} />
+                </div>
+                <div>
+                  <Image src={gynsec13c} alt="Feature 3" className={styles.thirteenImg} />
+                </div>
+              </div>
+              </div>
+            </div>
+            {/* ===== SLIDE 14 ===== */}
+            <div className={`${styles.slide} ${styles.slidefourteen}`}>
+              <div className={styles.fourteenWrapper}>
+                <h2 className={styles.fourteenTitle}>Achievements</h2>
+                <Image src={gyn14sec} alt="Achievements" className={styles.fourteenImg}/>
+              </div>
+            </div>
+             {/* ===== SLIDE 15 ===== */}
+               <div className={styles.slide}>
+            <div className={styles.centerContent}>
+              <h2>Thank You</h2>
+            </div>
+          </div>
+        </div>
+        {/* Controls */}
+        <div className={styles.controls}>
+          <div className={styles.page}>
+            {String(current + 1).padStart(2, "0")}/
+            {String(totalSlides).padStart(2, "0")}
+          </div>
+          <div className={styles.buttons}>
+            <button onClick={prevSlide} disabled={current === 0}>
+              <FiArrowLeft />
+            </button>
+            <button onClick={nextSlide} disabled={current === totalSlides - 1}>
+              <FiArrowRight />
+            </button>
+          </div>
+        </div>
       </Container>
     </section>
   );
-}
-export default Gynger;
+};
+export default Demo;
