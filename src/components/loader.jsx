@@ -33,12 +33,12 @@ const Loader = ({ children }) => {
               className={styles.logo}
               priority
             />
-
+{/* 
             {showText && (
               <h6 className={styles.tagline}>
                 The fastest designer
               </h6>
-            )}
+            )} */}
           </div>
         </div>
       ) : (
