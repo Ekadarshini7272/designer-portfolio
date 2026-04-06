@@ -252,10 +252,10 @@ const HomeContainer = () => {
                     <Image src={gynger} alt="Professional Work" width={536} height={334} />
                   </div>
                   <h4 className={styles.workTitle}>
-                    How it became a money minting machine for O4S
+                   And how it became a money minting machine for O4S
                   </h4>
                   <div className={styles.workMeta}>
-                    By: Me & PLM & Dev Team
+                   2020-2023
                   </div>
                 </div>
                 </Link>
@@ -269,17 +269,14 @@ const HomeContainer = () => {
                       <FiArrowUpRight />
                     </span>
                   </div>
-
                   <div className={styles.workImage}>
                     <Image src={apnaklub} alt="Professional Work" width={536} height={334} />
                   </div>
-
                   <h4 className={styles.workTitle}>
-                    Success Metrics That Redefined Growth
+                    Driving Impact: Success Metrics That Redefined Growth
                   </h4>
-
                   <div className={styles.workMeta}>
-                    By: Me & PLM & Dev Team
+                    2023–2024
                   </div>
                 </div>
                 </Link>

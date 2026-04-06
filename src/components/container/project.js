@@ -27,10 +27,10 @@ const Project = () => {
                   <Image src={gynger} alt="Professional Work" width={536} height={334} />
                 </div>
                 <h4 className={styles.workTitle}>
-                  How it became a money minting machine for O4S
+                  And how it became a money minting machine for O4S
                 </h4>
                 <div className={styles.workMeta}>
-                  By: Me & PLM & Dev Team
+                  2020-2023
                 </div>
               </div>
             </a>
@@ -48,33 +48,33 @@ const Project = () => {
                   <Image src={apnaklub} alt="Professional Work" width={536} height={334} />
                 </div>
                 <h4 className={styles.workTitle}>
-                  Success Metrics That Redefined Growth
+                  Driving Impact: Success Metrics That Redefined Growth
                 </h4>
                 <div className={styles.workMeta}>
-                  By: Me & PLM & Dev Team
+                  2023–2024
                 </div>
               </div>
             </a>
           </Col>
           <Col lg={6}>
-           <a href="/mahindra" className={styles.viewDetails}>
-            <div className={styles.professionalCard}>
-              <div className={styles.cardTop}>
-                <span className={styles.workTag}>Professional Work</span>
-                <span className={styles.topArrow}>
-                  <FiArrowUpRight />
-                </span>
+            <a href="/mahindra" className={styles.viewDetails}>
+              <div className={styles.professionalCard}>
+                <div className={styles.cardTop}>
+                  <span className={styles.workTag}>Professional Work</span>
+                  <span className={styles.topArrow}>
+                    <FiArrowUpRight />
+                  </span>
+                </div>
+                <div className={styles.workImage}>
+                  <Image src={mahindra} alt="Professional Work" width={536} height={334} />
+                </div>
+                <h4 className={styles.workTitle}>
+                  Real HMI Screen Of Mahindra vehicle 9” & 10.25”
+                </h4>
+                <div className={styles.workMeta}>
+                  2025-2026
+                </div>
               </div>
-              <div className={styles.workImage}>
-                <Image src={mahindra} alt="Professional Work" width={536} height={334} />
-              </div>
-              <h4 className={styles.workTitle}>
-                Reduce stress of OPS team ! How?
-              </h4>
-              <div className={styles.workMeta}>
-                By: Me & PLM & Dev Team
-              </div>
-            </div>
             </a>
           </Col>
           <Col lg={6}>
@@ -86,7 +86,7 @@ const Project = () => {
                 </span>
               </div>
               <div className={styles.workImage}>
-                <Image src={professional1} alt="Professional Work" width={536} height={334}/>
+                <Image src={professional1} alt="Professional Work" width={536} height={334} />
               </div>
               <h4 className={styles.workTitle}>
                 And how it became a money minting machine for O4S
