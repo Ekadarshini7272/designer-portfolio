@@ -72,7 +72,7 @@ const Header = () => {
     <span className={styles.tooltip}>Coming soon</span>
   </Link> */}
 
-          <Link href="#products" className={`${styles.navLink} ${styles.hasTooltip}`}>
+        <Link href="/product" className={`${styles.navLink} ${pathname === "/product" ? styles.active : ""}`}>
             <span className={styles.navItem}>
               <span className={styles.iconCircle}>
                 <Image src={navitem4} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
@@ -80,7 +80,6 @@ const Header = () => {
               </span>
               Products
             </span>
-            <span className={styles.tooltip}>Coming soon</span>
           </Link>
         </Nav>
         <div className={styles.location}>
