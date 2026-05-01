@@ -6,7 +6,7 @@
 .viewDetails{
   text-decoration: none;
 }
-.professionalCard {
+.professionalCard, .professionalCard1 {
   background: #faf9f6;
   border-radius: 24px;
   padding: 18px;
@@ -32,6 +32,13 @@
   //   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.02),
   //     0 12px 24px rgba(0, 0, 0, 0.06);
   // }
+}
+.professionalCard1{
+  padding:0px;
+}
+.imgcoming{
+  border-radius: 0px;
+  object-fit: fill;
 }
 .inactiveCard {
   filter: grayscale(100%);

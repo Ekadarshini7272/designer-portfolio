@@ -36,6 +36,16 @@ const Header = () => {
           <Image src={logo} alt="prabhu" width={84} height={66} priority />
         </Link>
         <Nav className={styles.navMenu}>
+                    <Link href="/about" className={`${styles.navLink} ${pathname === "/about" ? styles.active : ""}`}>
+            <span className={styles.navItem}>
+              <span className={styles.iconCircle}>
+                <Image src={navitem2} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
+                <Image src={navhover2} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
+              </span>
+              Know me
+            </span>
+          </Link> 
+          
           <Link href="/projects" className={`${styles.navLink} ${pathname === "/projects" ? styles.active : ""}`}>
             <span className={styles.navItem}>
               <span className={styles.iconCircle}>
@@ -43,16 +53,6 @@ const Header = () => {
                 <Image src={navhover1} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
               </span>
               Projects
-            </span>
-          </Link>
-
-          <Link href="/about" className={`${styles.navLink} ${pathname === "/about" ? styles.active : ""}`}>
-            <span className={styles.navItem}>
-              <span className={styles.iconCircle}>
-                <Image src={navitem2} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
-                <Image src={navhover2} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
-              </span>
-              Know me
             </span>
           </Link>
 

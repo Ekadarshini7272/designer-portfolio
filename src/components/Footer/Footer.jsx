@@ -35,8 +35,8 @@ const Footer = () => {
             <div className={styles.linkGroup}>
               <Link href="/projects">Projects <FiArrowUpRight /></Link>
               <Link href="/about">Know me <FiArrowUpRight /></Link>
-              <Link href="/playground">Playground <FiArrowUpRight /></Link>
-              <Link href="/products">Products <FiArrowUpRight /></Link>
+              {/* <Link href="/playground">Playground <FiArrowUpRight /></Link> */}
+              <Link href="/product">Products <FiArrowUpRight /></Link>
             </div>
           </div>
           <div className={styles.bottom}> <span>©2026</span></div>
