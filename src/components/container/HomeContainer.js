@@ -73,7 +73,7 @@ const HomeContainer = () => {
     {
       label: "Recruiter",
       text:
-        "I’m a product designer with 5+ years of experience across brand and product, at companies large and small. I’m actively looking for a new role.",
+        "I’m a product designer with 6+ years of experience across brand and product, at companies large and small. I’m actively looking for a new role.",
     },
     {
       label: "Product Design",
