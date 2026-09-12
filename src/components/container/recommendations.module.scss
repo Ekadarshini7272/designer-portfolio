@@ -1,0 +1,285 @@
+.recommendationsPage {
+  background: #ffffff;
+  color: #242424;
+  min-height: 100svh;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    background-image: var(--page-grid);
+    background-position: center top;
+    background-repeat: repeat;
+    background-size: 1920px 1080px;
+    content: "";
+    filter: invert(1);
+    inset: 0;
+    opacity: 0.045;
+    pointer-events: none;
+    position: absolute;
+  }
+}
+
+.pageShell {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.recommendationsCard {
+  display: flex;
+  flex-direction: column;
+  height: min(860px, calc(100svh - 96px));
+  max-width: 680px;
+  padding: 16px;
+  width: 100%;
+}
+
+.recommendationsHeader {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  margin-bottom: 0;
+}
+
+.backLink,
+.recommendationsTitle {
+  align-items: center;
+  color: #a0a0a0;
+  display: inline-flex;
+  font-family: "Fragment Mono", "Courier New", monospace;
+  font-size: 16px;
+  font-weight: 400;
+  gap: 6px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.backLink {
+  justify-self: start;
+  transition: color 220ms ease, transform 220ms ease;
+
+  svg {
+    height: 25px;
+    width: 25px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: #202020;
+    transform: translateX(-3px);
+  }
+}
+
+.recommendationsTitle {
+  justify-self: center;
+  transition: color 220ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: #151515;
+
+    .greyTitleIcon {
+      opacity: 0;
+    }
+
+    .blackTitleIcon {
+      opacity: 1;
+    }
+  }
+}
+
+.titleIcon {
+  display: grid;
+  height: 18px;
+  width: 18px;
+
+  img {
+    grid-area: 1 / 1;
+    height: 18px;
+    object-fit: contain;
+    transition: opacity 220ms ease;
+    width: 18px;
+  }
+}
+
+.blackTitleIcon {
+  opacity: 0;
+}
+
+.cardStage {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;
+  justify-content: center;
+  position: relative;
+}
+
+.cardAura {
+  background: radial-gradient(circle, rgba(169, 199, 230, 0.22) 0%, rgba(255, 255, 255, 0) 68%);
+  filter: blur(14px);
+  height: 380px;
+  left: 50%;
+  opacity: 0.62;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 410px;
+}
+
+.recommendationStack {
+  animation: stampSwap 560ms cubic-bezier(0.2, 0.92, 0.24, 1) both;
+  filter: drop-shadow(0 22px 28px rgba(0, 0, 0, 0.12));
+  position: relative;
+  transform-origin: 50% 65%;
+  width: min(340px, 42vh, 50vw);
+  z-index: 1;
+}
+
+.recommendationImage {
+  display: block;
+  height: auto;
+  opacity: 1;
+  transform: rotate(var(--stamp-rotation));
+  transition: transform 380ms ease;
+  width: 100%;
+}
+
+.nextButton {
+  background: transparent;
+  border: 0;
+  bottom: calc(50% - 174px);
+  cursor: pointer;
+  display: grid;
+  height: 24px;
+  padding: 0;
+  position: absolute;
+  right: calc(50% - 214px);
+  width: 24px;
+  z-index: 2;
+
+  img {
+    grid-area: 1 / 1;
+    height: 24px;
+    object-fit: contain;
+    transition: opacity 220ms ease, transform 220ms ease;
+    width: 24px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    outline: none;
+
+    .nextButtonGrey {
+      opacity: 0;
+    }
+
+    .nextButtonBlack {
+      opacity: 1;
+      transform: translateY(2px);
+    }
+  }
+}
+
+.nextButtonBlack {
+  opacity: 0;
+}
+
+.recommendationsFooter {
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 25px;
+
+  p,
+  time {
+    color: #b0b0b0;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  p {
+    font-family: "Instrument Sans", Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+  }
+
+  time {
+    font-family: "Fragment Mono", "Courier New", monospace;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+
+@keyframes stampSwap {
+  0% {
+    transform: translateY(26px) rotate(-10deg) scale(0.88);
+  }
+
+  46% {
+    transform: translateY(-9px) rotate(4deg) scale(1.04);
+  }
+
+  72% {
+    transform: translateY(2px) rotate(-2deg) scale(0.985);
+  }
+
+  100% {
+    transform: translateY(0) rotate(0) scale(1);
+  }
+}
+
+@media (max-width: 820px) {
+  .recommendationsPage {
+    overflow: visible;
+  }
+
+  .pageShell {
+    align-items: flex-start;
+    padding: 40px 22px;
+  }
+
+  .recommendationsCard {
+    height: auto;
+    min-height: calc(100svh - 80px);
+    padding: 0;
+  }
+
+  .nextButton {
+    bottom: calc(50% - 152px);
+    right: calc(50% - 190px);
+  }
+}
+
+@media (max-width: 560px) {
+  .recommendationsHeader {
+    margin-bottom: 58px;
+  }
+
+  .recommendationStack {
+    width: min(280px, 72vw);
+  }
+
+  .cardAura {
+    height: 315px;
+    width: 330px;
+  }
+
+  .nextButton {
+    bottom: calc(50% - 138px);
+    right: calc(50% - 158px);
+  }
+
+  .recommendationsFooter {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+}

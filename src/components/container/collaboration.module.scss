@@ -1,0 +1,272 @@
+.collaborationPage {
+  background: #ffffff;
+  color: #242424;
+  min-height: 100svh;
+  overflow: hidden;
+  position: relative;
+
+  &::before {
+    background-image: var(--page-grid);
+    background-position: center top;
+    background-repeat: repeat;
+    background-size: 1920px 1080px;
+    content: "";
+    filter: invert(1);
+    inset: 0;
+    opacity: 0.045;
+    pointer-events: none;
+    position: absolute;
+  }
+}
+
+.pageShell {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  min-height: 100svh;
+  padding: 0 40px;
+  position: relative;
+  z-index: 1;
+}
+
+.collaborationCard {
+  display: flex;
+  flex-direction: column;
+  height: min(860px, calc(100svh - 96px));
+  max-width: 680px;
+  padding: 16px;
+  width: 100%;
+}
+
+.collaborationHeader {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  margin-bottom: 0;
+}
+
+.backLink,
+.collaborationTitle {
+  align-items: center;
+  color: #a0a0a0;
+  display: inline-flex;
+  font-family: "Fragment Mono", "Courier New", monospace;
+  font-size: 16px;
+  font-weight: 400;
+  gap: 6px;
+  line-height: 1;
+  text-decoration: none;
+}
+
+.backLink {
+  justify-self: start;
+  transition: color 220ms ease, transform 220ms ease;
+
+  svg {
+    height: 25px;
+    width: 25px;
+  }
+
+  &:hover,
+  &:focus-visible {
+    color: #202020;
+    transform: translateX(-3px);
+  }
+}
+
+.collaborationTitle {
+  justify-self: center;
+  transition: color 220ms ease;
+
+  &:hover,
+  &:focus-visible {
+    color: #151515;
+
+    .greyTitleIcon {
+      opacity: 0;
+    }
+
+    .blackTitleIcon {
+      opacity: 1;
+    }
+  }
+}
+
+.titleIcon {
+  display: grid;
+  height: 18px;
+  width: 18px;
+
+  img {
+    grid-area: 1 / 1;
+    height: 18px;
+    object-fit: contain;
+    transition: opacity 220ms ease;
+    width: 18px;
+  }
+}
+
+.blackTitleIcon {
+  opacity: 0;
+}
+
+.sliderWrap {
+  align-items: center;
+  display: flex;
+  flex: 1 1 auto;
+  justify-content: center;
+  min-height: 0;
+}
+
+.sliderViewport {
+  max-width: 520px;
+  overflow: hidden;
+  position: relative;
+  width: 520px;
+
+  &::before,
+  &::after {
+    content: "";
+    height: 100%;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 58px;
+    z-index: 2;
+  }
+
+  &::before {
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    left: 0;
+  }
+
+  &::after {
+    background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    right: 0;
+  }
+
+  &:hover {
+    .sliderTrack {
+      animation-play-state: paused;
+    }
+  }
+}
+
+.sliderTrack {
+  animation: brandSlide 36s linear infinite;
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  will-change: transform;
+}
+
+.brandCard {
+  align-items: center;
+  background: #ffffff;
+  border: 1px solid #eaeaea;
+  border-radius: 8px;
+  display: flex;
+  flex: 0 0 78px;
+  height: 78px;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-color 220ms ease, filter 220ms ease, transform 220ms ease;
+  width: 78px;
+}
+
+.brandLogo {
+  display: block;
+  filter: grayscale(1);
+  height: 100%;
+  object-fit: contain;
+  padding: 9px;
+  transition: filter 220ms ease, transform 220ms ease;
+  width: 100%;
+}
+
+.brandCard:hover,
+.brandCard:focus-within {
+  border-color: #dedede;
+  transform: translateY(-1px);
+
+  .brandLogo {
+    filter: grayscale(1) contrast(1.06);
+  }
+}
+
+.collaborationFooter {
+  align-items: center;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 25px;
+
+  p,
+  time {
+    color: #b0b0b0;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin: 0;
+  }
+
+  p {
+    font-family: "Instrument Sans", Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+  }
+
+  time {
+    font-family: "Fragment Mono", "Courier New", monospace;
+    line-height: 1;
+    white-space: nowrap;
+  }
+}
+
+@keyframes brandSlide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 6px));
+  }
+}
+
+@media (max-width: 820px) {
+  .collaborationPage {
+    overflow: visible;
+  }
+
+  .pageShell {
+    align-items: flex-start;
+    padding: 40px 22px;
+  }
+
+  .collaborationCard {
+    height: auto;
+    min-height: calc(100svh - 80px);
+    padding: 0;
+  }
+
+  .collaborationHeader {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 560px) {
+  .collaborationHeader {
+    margin-bottom: 0;
+  }
+
+  .sliderViewport {
+    max-width: min(520px, 100%);
+    width: 100%;
+  }
+
+  .collaborationFooter {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 14px;
+  }
+}

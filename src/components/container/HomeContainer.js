@@ -1,292 +1,165 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from './homecontainer.module.scss';
-import { FiArrowUpRight, FiArrowLeft, FiArrowRight } from 'react-icons/fi';
-import logoimg from '../../../public/images/iconlogoimg.png';
-import profileimg from '../../../public/images/icardimg.png';
-import linkedinimg from '../../../public/images/socialicon/lniconimg.png';
-import resumeimg from '../../../public/images/socialicon/resumeiconimg.png';
-import gridframeimg from '../../../public/images/gridframeimg.png';
-import workbrand1 from '../../../public/images/workingbrands/brandwork1.png'
-import workbrand2 from '../../../public/images/workingbrands/brandwork2.png';
-import workbrand3 from '../../../public/images/workingbrands/brandwork3.png';
-import workbrand4 from '../../../public/images/workingbrands/brandwork4.png';
-import workbrand5 from '../../../public/images/workingbrands/brandwork5.png';
-import workbrand6 from '../../../public/images/workingbrands/brandwork6.png';
-import workbrand7 from '../../../public/images/workingbrands/brandwork7.png';
-import workbrand8 from '../../../public/images/workingbrands/brandwork8.png';
-import workbrand9 from '../../../public/images/workingbrands/brandwork9.png';
-import workbrand10 from '../../../public/images/workingbrands/brandwork10.png';
-import workbrand11 from '../../../public/images/workingbrands/brandwork11.png';
-import workbrand12 from '../../../public/images/workingbrands/brandwork12.png';
-import workbrand13 from '../../../public/images/workingbrands/brandwork13.png';
-import workbrand14 from '../../../public/images/workingbrands/brandwork14.png';
-import workbrand15 from '../../../public/images/workingbrands/brandwork15.png';
-import workbrand16 from '../../../public/images/workingbrands/brandwork16.png';
-import workbrand17 from '../../../public/images/workingbrands/brandwork17.png';
-import workbrand18 from '../../../public/images/workingbrands/brandwork18.png';
-import workbrand19 from '../../../public/images/workingbrands/brandwork19.png';
-import workbrand20 from '../../../public/images/workingbrands/brandwork20.png';
-import workbrand21 from '../../../public/images/workingbrands/brandwork21.png';
-import workbrand22 from '../../../public/images/workingbrands/brandwork22.png';
-import workbrand23 from '../../../public/images/workingbrands/brandwork23.png';
-import workbrand24 from '../../../public/images/workingbrands/brandwork24.png';
-import gynger from "../../../public/images/L2Images/gynger/gynger.png";
-import apnaklub from "../../../public/images/L2Images/apnaklub/apnaklub.png";
-import Testimonial from '../container/testimonial';
-const HomeContainer = () => {
-  const profileRef = useRef(null);
-  const [activeIndex, setActiveIndex] = useState(0);
-  const brandListRef = useRef(null);
-  const autoScrollRef = useRef(null);
-  //funnctionality for profile icard mousemovement parallax effect
-  const handleMouseMove = (e) => {
-    const card = profileRef.current;
-    const rect = card.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    const moveX = (x - rect.width / 2) / 8;
-    const moveY = (y - rect.height / 2) / 8;
-    const img = card.querySelector("img");
-    const cursor = card.querySelector(`.${styles.cursor}`);
-    img.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.03)`;
-    cursor.style.left = `${x}px`;
-    cursor.style.top = `${y}px`;
-  };
-  const handleMouseLeave = () => {
-    const card = profileRef.current;
-    const img = card.querySelector("img");
-    const cursor = card.querySelector(`.${styles.cursor}`);
+import { Container, Row, Col } from "react-bootstrap";
+import { FiRefreshCw } from "react-icons/fi";
+import Header from "../Header/Header";
+import allbgimg from "../../../public/images/commonpageimg/allbgimg.png";
+import leftarrowdot from "../../../public/images/commonpageimg/commingdot.svg";
+import rightarrowdot from "../../../public/images/commonpageimg/rightarrowdot.png";
+import styles from "./homecontainer.module.scss";
 
-    img.style.transform = "translate(0px,0px) scale(1)";
-    cursor.style.opacity = "0";
-  };
-  // slider JSON content
-  const sliderData = [
-    {
-      label: "For Anyone",
-      text:
-        "Hello there, I’m a designer who cares about making beautiful things that help people.",
-    },
-    {
-      label: "Recruiter",
-      text:
-        "I’m a product designer with 6+ years of experience across brand and product, at companies large and small. I’m actively looking for a new role.",
-    },
-    {
-      label: "Product Design",
-      text:
-        "As a systems thinker, I prioritize quality in every detail. I’m here to collaborate and learn from you. Together, we’ll create something we can be proud of.",
-    },
-    {
-      label: "Product Manager",
-      text:
-        "I bring end-to-end product acumen, from vision and strategy to discovery and delivery. I’ll partner closely with you to generate the highest impact possible.",
-    },
-    {
-      label: "Engineers",
-      text:
-        "I’m highly technical and while I’m not an engineer, I know my way around code and can speak fluently with you.",
-    },
-    {
-      label: "Design Director",
-      text:
-        "I take pride in my craft and love mentoring earlier career designers. I develop cross-functional partnerships and thrive in complex, ambiguous environments.",
-    },
-  ];
-  const prevSlide = () => {
-    setActiveIndex((prev) =>
-      prev === 0 ? sliderData.length - 1 : prev - 1
-    );
-  };
-  const nextSlide = () => {
-    setActiveIndex((prev) =>
-      prev === sliderData.length - 1 ? 0 : prev + 1
-    );
-  };
-  //Functionality for auto-scrolling for global brand logos
+const projects = [
+  { year: "2025-26", name: "Mahindra IFVI", href: "/mahindra" },
+  { year: "2020-23", name: "ApnaKlub App", href: "/apnaklub" },
+  { year: "2025-26", name: "Extreme Network", href: "/projects" },
+  { year: "2020-23", name: "Gynger", href: "/gynger" },
+  { year: "2025-26", name: "SMS (ERP)", disabled: true },
+  { year: "2020-23", name: "Original4sure", href: "/projects" },
+];
+
+const workHeadings = [
+  ["Me Looking For You !", "Senior Product Designer"],
+  ["You Looking For Me !", "Senior UX/UI Designer"],
+  ["Lest Work Together !", "Lead Product Designer"],
+  ["You + Me + Figma = Magic", "Product Design Lead"],
+  ["Less Talk. More Design.", "Lead UX Designer"],
+  ["Think. Design. Ship.", "Design Lead"],
+  ["Found Your Designer", "Design Manager"],
+  ["Shall We Create?", "Product Design Manager"],
+  ["I Bring Good Pixels", "UX Design Manager"],
+  ["Ideas x Design", "AI Product Designer"],
+  ["Got Problems? Hi.", "Design Systems Lead"],
+];
+
+const workRows = [
+  ["Feb 2025 - Present", "VVDN", "Sr Designer"],
+  ["Jul 2023 - Feb 2025", "ApnaKlub", "Product designer"],
+  ["May 2020 - Apr 2023", "O4S", "Product Designer"],
+];
+
+const formatIstTime = () =>
+  new Intl.DateTimeFormat("en-IN", {
+    hour: "2-digit",
+    minute: "2-digit",
+    hour12: true,
+    timeZone: "Asia/Kolkata",
+  })
+    .format(new Date())
+    .replace(".", "")
+    .toUpperCase();
+
+const HomeContainer = () => {
+  const [workHeadingIndex, setWorkHeadingIndex] = useState(0);
+  const [currentTime, setCurrentTime] = useState(formatIstTime);
+  const [workTitle, workTitleMeta] = workHeadings[workHeadingIndex];
+
   useEffect(() => {
-    const container = brandListRef.current;
-    if (!container) return;
-    let speed = 0.7;
-    let isHovered = false;
-    const autoScroll = () => {
-      if (!isHovered) {
-        container.scrollLeft += speed;
-        // reset when reaching end
-        if (
-          container.scrollLeft + container.clientWidth >=
-          container.scrollWidth
-        ) {
-          container.scrollLeft = 0;
-        }
-      }
-      autoScrollRef.current = requestAnimationFrame(autoScroll);
-    };
-    autoScrollRef.current = requestAnimationFrame(autoScroll);
-    const handleMouseEnter = () => (isHovered = true);
-    const handleMouseLeave = () => (isHovered = false);
-    container.addEventListener("mouseenter", handleMouseEnter);
-    container.addEventListener("mouseleave", handleMouseLeave);
-    return () => {
-      cancelAnimationFrame(autoScrollRef.current);
-      container.removeEventListener("mouseenter", handleMouseEnter);
-      container.removeEventListener("mouseleave", handleMouseLeave);
-    };
+    const timer = window.setInterval(() => {
+      setCurrentTime(formatIstTime());
+    }, 30000);
+
+    return () => window.clearInterval(timer);
   }, []);
 
-  const workingbrands = [workbrand1, workbrand2, workbrand3, workbrand4, workbrand5, workbrand6, workbrand7, workbrand8,
-    workbrand9, workbrand10, workbrand11, workbrand12, workbrand13, workbrand14, workbrand15, workbrand16,
-    workbrand17, workbrand18, workbrand19, workbrand20, workbrand21, workbrand22, workbrand23, workbrand24
-  ];
+  const handleWorkRefresh = () => {
+    setWorkHeadingIndex((current) => (current + 1) % workHeadings.length);
+  };
+
   return (
-    <section className={styles.homeSection}>
-      <Container>
-        <Row className="g-4 align-items-stretch">
-          {/* LEFT COLUMN */}
-          <Col lg={6}>
-            <div className={styles.introCard}>
-              <Image src={logoimg} alt="icon" width={94} height={94} />
-              <h2> Hi, I’m Prabhu 👋 <br /> A Fastest Product designer <br />currently designing at VVDN.</h2>
+    <main
+      className={styles.homePage}
+      style={{ "--page-grid": `url(${allbgimg.src})` }}
+    >
+      <Container fluid className={styles.pageShell}>
+        <Header />
+
+        <section className={styles.homeContent} aria-label="Portfolio summary">
+          <p className={styles.statusLine}>
+            <span className={styles.statusDot} aria-hidden="true" />
+            Currently at <strong>VVDN</strong>, making ERP software feel awesome
+          </p>
+
+          <section className={styles.sectionBlock} aria-labelledby="project-title">
+            <h1 id="project-title" className={styles.sectionTitle}>
+              PROJECT
+            </h1>
+
+            <div className={styles.projectWrap}>
+              <div className={styles.comingSoon}>
+                <span>Coming soon...</span>
+                <Image src={leftarrowdot} alt="" width={100} height={45} />
+              </div>
+
+              <Row className={styles.projectGrid}>
+                {projects.map((project) => {
+                  const content = (
+                    <>
+                      <span className={styles.projectYear}>{project.year}</span>
+                      <span className={styles.projectName}>{project.name}</span>
+                    </>
+                  );
+
+                  return (
+                    <Col xs={12} sm={6} key={`${project.year}-${project.name}`}>
+                      {project.disabled ? (
+                        <span className={`${styles.projectItem} ${styles.disabledProject}`}>
+                          {content}
+                        </span>
+                      ) : (
+                        <Link href={project.href} className={styles.projectItem}>
+                          {content}
+                        </Link>
+                      )}
+                    </Col>
+                  );
+                })}
+              </Row>
             </div>
-            <div className={styles.sliderCard}>
-              <div className={styles.question}>
-                👀 What is my significance to you?
-              </div>
-              <div className={styles.contentBox}>
-                <span className={styles.label}>
-                  {sliderData[activeIndex].label}
-                </span>
-                <p>{sliderData[activeIndex].text}</p>
-              </div>
-              <div className={styles.controls}>
-                <div className={styles.gridImgWrap}>
-                  <Image src={gridframeimg} alt="grid" />
-                </div>
-                <div className={styles.buttons}>
-                  <button onClick={prevSlide}><FiArrowLeft /></button>
-                  <button onClick={nextSlide}><FiArrowRight /></button>
-                </div>
-                <div className={styles.gridImgWrap}>
-                  <Image src={gridframeimg} alt="grid" />
-                </div>
-              </div>
+          </section>
+
+          <section className={styles.sectionBlock} aria-labelledby="work-title">
+            <div className={styles.workHeading}>
+              <h2 id="work-title" className={styles.sectionTitle}>
+                WORK
+              </h2>
             </div>
-          </Col>
-          {/* RIGHT COLUMN */}
-          <Col lg={6}>
-            <div
-              className={styles.profileCard}
-              ref={profileRef}
-              onMouseMove={handleMouseMove}
-              onMouseLeave={handleMouseLeave}
-              onMouseEnter={() => {
-                const cursor = profileRef.current.querySelector(`.${styles.cursor}`);
-                cursor.style.opacity = "1";
-              }}
-            >
-              <div className={styles.cursor}></div>
-              <Image
-                src={profileimg}
-                alt="profile"
-                className={styles.profileImg}
-                width={269}
-                height={500}
-              />
-            </div>
-            <Row className="g-4 mt-1">
-              <Col md={6}>
-                <a href="https://www.linkedin.com/in/19design97/" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
-                  <div className={styles.smallCard}>
-                    <span className={styles.arrow}><FiArrowUpRight /></span>
-                    <Image src={linkedinimg} alt="LinkedIn" width={80} height={80} />
-                  </div>
-                </a>
-              </Col>
-              <Col md={6}>
-                <a href="https://drive.google.com/file/d/1iIKZjKxWkVUjfbABwKkcLb5uQu3my3xg/view?usp=sharing" target="_blank" rel="noopener noreferrer" className={styles.cardLink}>
-                  <div className={styles.smallCard}>
-                    <span className={styles.arrow}><FiArrowUpRight /></span>
-                    <Image src={resumeimg} alt="Resume" width={150} height={200} />
-                  </div>
-                </a>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-        {/* GLOBAL BRAND SECTION */}
-        <Row className="mt-5">
-          <Col>
-            <div className={styles.globalBrandSection}>
-              <div className={styles.question}>
-                🌐 See My Collaborators (Global Brand)
+
+            <div className={styles.workTable}>
+              <div className={styles.workSymbol}>{"\u221e"}</div>
+              <div className={styles.workIntro} key={`work-title-${workHeadingIndex}`}>
+                {workTitle}
               </div>
-              <div className={styles.brandSlider}>
-                <div className={styles.brandList} ref={brandListRef}>
-                  {workingbrands.map((brand, index) => (
-                    <div className={styles.brandItem} key={index}>
-                      <Image src={brand} alt={`Brand ${index + 1}`} height={99} width={99} />
-                    </div>
-                  ))}
-                </div>
+              <div className={styles.workIntroMeta}>
+                <span key={`work-role-${workHeadingIndex}`}>{workTitleMeta}</span>
+                <Image src={rightarrowdot} alt="" width={137} height={45} />
+                <button
+                  className={styles.refreshButton}
+                  onClick={handleWorkRefresh}
+                  type="button"
+                  aria-label="Change work heading"
+                >
+                  <FiRefreshCw aria-hidden="true" />
+                </button>
               </div>
+
+              {workRows.map(([date, company, role]) => (
+                <React.Fragment key={`${date}-${company}-${role}`}>
+                  <div className={styles.workDate}>{date}</div>
+                  <div className={styles.workCompany}>{company}</div>
+                  <div className={styles.workRole}>{role}</div>
+                </React.Fragment>
+              ))}
             </div>
-          </Col>
-        </Row>
-        {/* PROFESSIONAL WORK SECTION */}
-        <Row className="mt-5">
-          <Col>
-            <Row className="g-4">
-              <Col lg={6}>
-              <Link href="/gynger" className={styles.viewDetails}>
-                <div className={styles.professionalCard}>
-                  <div className={styles.cardTop}>
-                    <span className={styles.workTag}>Professional Work</span>
-                      <span className={styles.topArrow}>
-                        <FiArrowUpRight />
-                      </span>
-                  </div>
-                  <div className={styles.workImage}>
-                    <Image src={gynger} alt="Professional Work" width={536} height={334} />
-                  </div>
-                  <h4 className={styles.workTitle}>
-                   And how it became a money minting machine for O4S
-                  </h4>
-                  <div className={styles.workMeta}>
-                   2020-2023
-                  </div>
-                </div>
-                </Link>
-              </Col>
-              <Col lg={6}>
-              <Link href="/apnaklub" className={styles.viewDetails}>
-                <div className={styles.professionalCard}>
-                  <div className={styles.cardTop}>
-                    <span className={styles.workTag}>Professional Work</span>
-                    <span className={styles.topArrow}>
-                      <FiArrowUpRight />
-                    </span>
-                  </div>
-                  <div className={styles.workImage}>
-                    <Image src={apnaklub} alt="Professional Work" width={536} height={334} />
-                  </div>
-                  <h4 className={styles.workTitle}>
-                    Driving Impact: Success Metrics That Redefined Growth
-                  </h4>
-                  <div className={styles.workMeta}>
-                    2023–2024
-                  </div>
-                </div>
-                </Link>
-              </Col>
-            </Row>
-          </Col>
-        </Row>
-        <Testimonial />
+          </section>
+        </section>
+
+        <footer className={styles.homeFooter}>
+          <p>&quot;Design is not just what it looks like. Design is how it works.&quot;</p>
+          <time suppressHydrationWarning>{currentTime} IST</time>
+        </footer>
       </Container>
-    </section>
+    </main>
   );
 };
 

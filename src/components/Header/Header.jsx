@@ -1,97 +1,56 @@
-'use client';
+import Image from "next/image";
+import Link from "next/link";
+import { TbUser } from "react-icons/tb";
+import headerlogooverhover from "../../../public/images/commonpageimg/headerlogooverhover.png";
+import menuplaygroundgrey from "../../../public/images/commonpageimg/menuplaygroundgrey.png";
+import menuplaygroundblack from "../../../public/images/commonpageimg/menuplaygroundblack.png";
+import styles from "./header.module.scss";
 
-import { useEffect, useState } from 'react';
-import Link from 'next/link';
-import { Navbar, Nav, Container } from 'react-bootstrap';
-import { usePathname } from "next/navigation";
-import Image from 'next/image';
-import navitem1 from "../../../public/images/navitem1.png";
-import navitem2 from "../../../public/images/navitem2.png";
-// import navitem3 from "../../../public/images/navitem3.png";
-import navitem4 from "../../../public/images/navitem4.png";
-import navhover1 from "../../../public/images/iconb1.png";
-import navhover2 from "../../../public/images/iconb2.png";
-// import navhover3 from "../../../public/images/iconb3.png";
-import navhover4 from "../../../public/images/iconb4.png";
-import navitem5 from '../../../public/images/locamap.png';
-import odisha1 from '../../../public/images/odisha1.png';
-import odisha2 from '../../../public/images/odisha2.png';
-import odisha3 from '../../../public/images/odisha3.png';
-import odisha4 from '../../../public/images/odisha4.png';
-import odisha5 from '../../../public/images/odisha5.png';
-import styles from './header.module.scss';
-import logo from '../../../public/images/headerlogo.png';
 const Header = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const pathname = usePathname();
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 60);
-    window.addEventListener('scroll', onScroll);
-    return () => window.removeEventListener('scroll', onScroll);
-  }, []);
   return (
-    <Navbar expand="lg" fixed="top" className={`${styles.header} ${scrolled ? styles.scrolled : ''}`}>
-      <Container className={styles.containerHeader}>
-        <Link href="/" className={styles.logo}>
-          <Image src={logo} alt="prabhu" width={84} height={66} priority />
-        </Link>
-        <Nav className={styles.navMenu}>
-                    <Link href="/about" className={`${styles.navLink} ${pathname === "/about" ? styles.active : ""}`}>
-            <span className={styles.navItem}>
-              <span className={styles.iconCircle}>
-                <Image src={navitem2} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
-                <Image src={navhover2} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
-              </span>
-              Know me
-            </span>
-          </Link> 
-          
-          <Link href="/projects" className={`${styles.navLink} ${pathname === "/projects" ? styles.active : ""}`}>
-            <span className={styles.navItem}>
-              <span className={styles.iconCircle}>
-                <Image src={navitem1} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
-                <Image src={navhover1} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
-              </span>
-              Projects
-            </span>
-          </Link>
-
-          {/* <Link href="#playground" className={`${styles.navLink} ${styles.hasTooltip}`}>
-    <span className={styles.navItem}>
-       <span className={styles.iconCircle}>
-                <Image src={navitem3} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
-                <Image src={navhover3} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
-              </span>
-      Playground
-    </span>
-    <span className={styles.tooltip}>Coming soon</span>
-  </Link> */}
-
-        <Link href="/product" className={`${styles.navLink} ${pathname === "/product" ? styles.active : ""}`}>
-            <span className={styles.navItem}>
-              <span className={styles.iconCircle}>
-                <Image src={navitem4} alt="Projects" width={20} height={20} className={styles.defaultIcon} />
-                <Image src={navhover4} alt="Projects" width={20} height={20} className={styles.hoverIcon} />
-              </span>
-              Products
-            </span>
-          </Link>
-        </Nav>
-        <div className={styles.location}>
-          <span className={styles.locationText}>
-            <Image src={navitem5} height={20} width={20} className={styles.locationIcon} />
-            Odisha, India
+    <header className={styles.homeHeader}>
+      <Link href="/" className={styles.brand} aria-label="Go to home page">
+        <span className={styles.brandNameWrap}>
+          <span className={styles.hoverMark}>
+            <Image src={headerlogooverhover} alt="" fill sizes="200px" priority />
           </span>
-          <div className={styles.locationImages}>
-            <Image src={odisha1} alt="odisha" width={185} height={185} />
-            <Image src={odisha2} alt="odisha" width={185} height={185} />
-            <Image src={odisha3} alt="odisha" width={185} height={185} />
-            <Image src={odisha4} alt="odisha" width={185} height={185} />
-            <Image src={odisha5} alt="odisha" width={185} height={185} />
-          </div>
-        </div>
-      </Container>
-    </Navbar>
+          <span className={styles.brandName}>Prabhu Prasad Pradhan</span>
+        </span>
+        <span className={styles.brandRole}>Senior Product Designer</span>
+      </Link>
+
+      <nav className={styles.nav} aria-label="Main navigation">
+        <Link href="/about" className={styles.navItem} data-hover-label="the Human">
+          <TbUser aria-hidden="true" />
+          <span className={styles.label}>
+            <span>About</span>
+            <span>the Human</span>
+          </span>
+        </Link>
+        <Link href="/projects" className={styles.navItem} data-hover-label="the Mess">
+          <span className={styles.playgroundIcon} aria-hidden="true">
+            <Image
+              src={menuplaygroundgrey}
+              alt=""
+              className={styles.iconGrey}
+              width={16}
+              height={16}
+            />
+            <Image
+              src={menuplaygroundblack}
+              alt=""
+              className={styles.iconBlack}
+              width={16}
+              height={16}
+            />
+          </span>
+          <span className={styles.label}>
+            <span>Playground</span>
+            <span>the Mess</span>
+          </span>
+        </Link>
+      </nav>
+    </header>
   );
 };
 
