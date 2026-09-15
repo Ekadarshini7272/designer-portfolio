@@ -132,55 +132,57 @@ const Gallery = () => {
             </Link>
           </header>
 
-          <div className={styles.modeToggle} aria-label="Gallery mode">
-            {modes.map((mode) => {
-              const isActive = activeMode === mode.key;
+          <div className={styles.galleryContent}>
+            <div className={styles.modeToggle} aria-label="Gallery mode">
+              {modes.map((mode) => {
+                const isActive = activeMode === mode.key;
 
-              return (
-                <button
-                  type="button"
-                  className={`${styles.modeButton} ${isActive ? styles.activeMode : ""}`}
-                  onClick={() => setActiveMode(mode.key)}
-                  key={mode.key}
-                  aria-pressed={isActive}
-                >
-                  <span className={styles.modeIcon}>
-                    <Image
-                      src={mode.greyIcon}
-                      alt=""
-                      className={styles.modeGreyIcon}
-                      sizes="40px"
-                    />
-                    <Image
-                      src={mode.blackIcon}
-                      alt=""
-                      className={styles.modeBlackIcon}
-                      sizes="40px"
-                    />
-                  </span>
-                  <span className={styles.modeLabel}>{mode.label}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          <section className={styles.sliderWrap} aria-label={activeMode === "myphoto" ? "My photos" : "Photography"}>
-            <div className={styles.sliderViewport}>
-              <div className={styles.sliderTrack} key={activeMode}>
-                {loopImages.map((photo, index) => (
-                  <div className={styles.photoCard} key={`${activeMode}-${index}`}>
-                    <Image
-                      src={photo}
-                      alt=""
-                      className={styles.photo}
-                      sizes="82px"
-                      priority={index < 4}
-                    />
-                  </div>
-                ))}
-              </div>
+                return (
+                  <button
+                    type="button"
+                    className={`${styles.modeButton} ${isActive ? styles.activeMode : ""}`}
+                    onClick={() => setActiveMode(mode.key)}
+                    key={mode.key}
+                    aria-pressed={isActive}
+                  >
+                    <span className={styles.modeIcon}>
+                      <Image
+                        src={mode.greyIcon}
+                        alt=""
+                        className={styles.modeGreyIcon}
+                        sizes="40px"
+                      />
+                      <Image
+                        src={mode.blackIcon}
+                        alt=""
+                        className={styles.modeBlackIcon}
+                        sizes="40px"
+                      />
+                    </span>
+                    <span className={styles.modeLabel}>{mode.label}</span>
+                  </button>
+                );
+              })}
             </div>
-          </section>
+
+            <section className={styles.sliderWrap} aria-label={activeMode === "myphoto" ? "My photos" : "Photography"}>
+              <div className={styles.sliderViewport}>
+                <div className={styles.sliderTrack} key={activeMode}>
+                  {loopImages.map((photo, index) => (
+                    <div className={styles.photoCard} key={`${activeMode}-${index}`}>
+                      <Image
+                        src={photo}
+                        alt=""
+                        className={styles.photo}
+                        sizes="82px"
+                        priority={index < 4}
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </section>
+          </div>
 
           <footer className={styles.galleryFooter}>
             <p>&quot;Design is not just what it looks like. Design is how it works.&quot;</p>

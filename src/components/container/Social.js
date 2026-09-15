@@ -6,13 +6,13 @@ import { TbArrowLeft } from "react-icons/tb";
 import allbgimg from "../../../public/images/commonpageimg/allbgimg.png";
 import linkgrey from "../../../public/images/about/linkgrey.png";
 import linkblack from "../../../public/images/about/linkblack.png";
-import sociallink1 from "../../../public/images/alllinks/sociallink1.svg";
-import sociallink2 from "../../../public/images/alllinks/sociallink2.svg";
-import sociallink3 from "../../../public/images/alllinks/sociallink3.svg";
-import sociallink4 from "../../../public/images/alllinks/sociallink4.svg";
-import sociallink5 from "../../../public/images/alllinks/sociallink5.svg";
-import sociallink6 from "../../../public/images/alllinks/sociallink6.svg";
-import sociallink7 from "../../../public/images/alllinks/sociallink7.svg";
+import sociallink1 from "../../../public/images/alllinks/sociallink7.svg";
+import sociallink2 from "../../../public/images/alllinks/sociallink6.svg";
+import sociallink3 from "../../../public/images/alllinks/sociallink1.svg";
+import sociallink4 from "../../../public/images/alllinks/sociallink5.svg";
+import sociallink5 from "../../../public/images/alllinks/sociallink4.svg";
+import sociallink6 from "../../../public/images/alllinks/sociallink3.svg";
+import sociallink7 from "../../../public/images/alllinks/sociallink2.svg";
 import styles from "./social.module.scss";
 
 const socialLinks = [

@@ -1,6 +1,9 @@
 .homePage {
+  align-items: center;
   background: #ffffff;
   color: #242424;
+  display: flex;
+  justify-content: center;
   min-height: 100svh;
   overflow: hidden;
   position: relative;
@@ -20,15 +23,20 @@
 }
 
 .pageShell {
-  min-height: 100svh;
-  padding: 0 40px;
+  display: flex;
+  flex-direction: column;
+  height: min(860px, calc(100svh - 96px));
+  max-width: 680px;
+  padding: 16px;
   position: relative;
+  width: 100%;
   z-index: 1;
 }
 
 .homeContent {
   margin: clamp(37px, 5.2vh, 56px) auto 0;
-  max-width: 690px;
+  max-width: 680px;
+  width: 100%;
 }
 
 .statusLine {
@@ -160,7 +168,7 @@
     line-height: 1;
     width: 154px;
     z-index: 1;
-    margin-right: -26px;
+    margin-right: -24px;
   }
 
   img {
@@ -304,21 +312,17 @@
 
 .homeFooter {
   align-items: center;
+  border-top: 1px solid #eaeaea;
   display: flex;
   justify-content: space-between;
-  margin: clamp(70px, 6.8vh, 74px) auto 0;
-  max-width: 690px;
-  padding-bottom: 0;
+  margin: auto auto 0;
+  max-width: 680px;
+  padding-top: 25px;
   position: relative;
+  width: 100%;
 
   &::before {
-    background:#EAEAEA;
-    content: "";
-    height: 1.2px;
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: -28px;
+    display: none;
   }
 
   p,
@@ -343,8 +347,7 @@
 }
 
 @media (min-width: 721px) {
-  .homePage,
-  .pageShell {
+  .homePage {
     height: 100svh;
     max-height: 100svh;
   }
@@ -367,7 +370,9 @@
   }
 
   .pageShell {
-    padding: 0 22px;
+    height: auto;
+    min-height: 100svh;
+    padding: 40px 22px;
   }
 
   .homeContent {

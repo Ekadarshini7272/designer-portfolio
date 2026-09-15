@@ -117,6 +117,7 @@
   min-height: 0;
   justify-content: center;
   position: relative;
+      background-color: #ffffff;
 }
 
 .cardAura {
@@ -133,20 +134,35 @@
 
 .recommendationStack {
   animation: stampSwap 560ms cubic-bezier(0.2, 0.92, 0.24, 1) both;
-  filter: drop-shadow(0 22px 28px rgba(0, 0, 0, 0.12));
   position: relative;
   transform-origin: 50% 65%;
   width: min(340px, 42vh, 50vw);
   z-index: 1;
 }
 
+.nextRecommendationImage {
+  display: block;
+  filter: drop-shadow(0 18px 24px rgba(0, 0, 0, 0.1));
+  height: auto;
+  left: 0;
+  opacity: 0.42;
+  position: absolute;
+  top: 0;
+  transform: translate(18px, 18px) rotate(var(--next-rotation)) scale(0.96);
+  width: 100%;
+  z-index: 0;
+}
+
 .recommendationImage {
   display: block;
+  filter: drop-shadow(0 22px 28px rgba(0, 0, 0, 0.12));
   height: auto;
   opacity: 1;
+  position: relative;
   transform: rotate(var(--stamp-rotation));
   transition: transform 380ms ease;
   width: 100%;
+  z-index: 1;
 }
 
 .nextButton {
@@ -200,7 +216,7 @@
   p,
   time {
     color: #b0b0b0;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 400;
     letter-spacing: 0;
     margin: 0;
@@ -265,6 +281,10 @@
 
   .recommendationStack {
     width: min(280px, 72vw);
+  }
+
+  .nextRecommendationImage {
+    transform: translate(12px, 14px) rotate(var(--next-rotation)) scale(0.96);
   }
 
   .cardAura {

@@ -4,8 +4,7 @@
   gap: 58px;
   justify-content: space-between;
   margin: 0 auto;
-  max-width: 690px;
-  padding-top: clamp(70px, 10.4vh, 112px);
+  max-width: 680px;
   width: 100%;
 }
 
@@ -157,7 +156,6 @@
 @media (max-width: 720px) {
   .homeHeader {
     gap: 28px;
-    padding-top: 56px;
   }
 
   .nav {

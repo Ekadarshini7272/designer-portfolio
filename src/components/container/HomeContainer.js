@@ -5,17 +5,17 @@ import { Container, Row, Col } from "react-bootstrap";
 import { FiRefreshCw } from "react-icons/fi";
 import Header from "../Header/Header";
 import allbgimg from "../../../public/images/commonpageimg/allbgimg.png";
-import leftarrowdot from "../../../public/images/commonpageimg/commingdot.svg";
+import leftarrowdot from "../../../public/images/commonpageimg/rightdotimg.svg";
 import rightarrowdot from "../../../public/images/commonpageimg/rightarrowdot.png";
 import styles from "./homecontainer.module.scss";
 
 const projects = [
-  { year: "2025-26", name: "Mahindra IFVI", href: "/mahindra" },
-  { year: "2020-23", name: "ApnaKlub App", href: "/apnaklub" },
-  { year: "2025-26", name: "Extreme Network", href: "/projects" },
-  { year: "2020-23", name: "Gynger", href: "/gynger" },
+  { year: "2025-26", name: "Mahindra IFVI", href: "https://www.figma.com/proto/MVo0PfpWWBzMpB7WPvTiqA/CASE-Study--part-2-?node-id=2001-5011&viewport=176%2C120%2C0.28&t=oBsAeOQfuROkWb23-1&scaling=scale-down-width&content-scaling=fixed&page-id=1%3A2" },
+  { year: "2020-23", name: "ApnaKlub App", href: "https://www.figma.com/proto/MVo0PfpWWBzMpB7WPvTiqA/CASE-Study--part-2-?node-id=1-18108&viewport=489%2C-11%2C0.07&t=gHAQsAnddPXC7HOi-1&scaling=contain&content-scaling=fixed&starting-point-node-id=1%3A18108&page-id=1%3A5255" },
+  { year: "2025-26", name: "Extreme Network", href: "https://www.figma.com/proto/MVo0PfpWWBzMpB7WPvTiqA/CASE-Study--part-2-?node-id=2001-5213&viewport=236%2C424%2C0.25&t=GINh0IF2zurn25Ei-1&scaling=min-zoom&content-scaling=fixed&page-id=2001%3A5212" },
+  { year: "2020-23", name: "Gynger", href: "https://www.figma.com/proto/MVo0PfpWWBzMpB7WPvTiqA/CASE-Study--part-2-?node-id=1-18848&viewport=441%2C45%2C0.04&t=3bKJ5beuwv7AWPlb-1&scaling=contain&content-scaling=fixed&starting-point-node-id=1%3A18848&page-id=1%3A18404" },
   { year: "2025-26", name: "SMS (ERP)", disabled: true },
-  { year: "2020-23", name: "Original4sure", href: "/projects" },
+  { year: "2020-23", name: "Original4sure", href: "https://www.figma.com/proto/MVo0PfpWWBzMpB7WPvTiqA/CASE-Study--part-2-?node-id=8-1155&viewport=228%2C87%2C0.09&t=7Soq4PsaFFzvXXJN-1&scaling=contain&content-scaling=fixed&starting-point-node-id=8%3A1155&page-id=8%3A6" },
 ];
 
 const workHeadings = [
@@ -93,6 +93,7 @@ const HomeContainer = () => {
 
               <Row className={styles.projectGrid}>
                 {projects.map((project) => {
+                  const isExternal = project.href?.startsWith("http");
                   const content = (
                     <>
                       <span className={styles.projectYear}>{project.year}</span>
@@ -106,6 +107,15 @@ const HomeContainer = () => {
                         <span className={`${styles.projectItem} ${styles.disabledProject}`}>
                           {content}
                         </span>
+                      ) : isExternal ? (
+                        <a
+                          href={project.href}
+                          className={styles.projectItem}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {content}
+                        </a>
                       ) : (
                         <Link href={project.href} className={styles.projectItem}>
                           {content}

@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap";
 import { TbArrowLeft, TbCheck, TbUser } from "react-icons/tb";
 import allbgimg from "../../../public/images/commonpageimg/allbgimg.png";
 import aboutprofileimg from "../../../public/images/about/aboutprofileimg.jpg";
-import emailsideimg from "../../../public/images/about/emailsideimg.png";
+import emailsideimg from "../../../public/images/about/aboutdotimg.svg";
 import skillgrey from "../../../public/images/about/skillgrey.png";
 import skillblack from "../../../public/images/about/skillblack.png";
 import gallerygrey from "../../../public/images/about/gallerygrey.png";

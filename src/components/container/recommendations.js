@@ -96,6 +96,8 @@ const Recommendations = () => {
     setActiveIndex((current) => (current + 1) % recommendationCards.length);
   };
 
+  const nextIndex = (activeIndex + 1) % recommendationCards.length;
+
   return (
     <main
       className={styles.recommendationsPage}
@@ -130,9 +132,19 @@ const Recommendations = () => {
             <div className={styles.cardAura} aria-hidden="true" />
             <div
               className={styles.recommendationStack}
-              style={{ "--stamp-rotation": `${cardRotations[activeIndex]}deg` }}
+              style={{
+                "--stamp-rotation": `${cardRotations[activeIndex]}deg`,
+                "--next-rotation": `${cardRotations[nextIndex]}deg`,
+              }}
               key={activeIndex}
             >
+              <Image
+                src={recommendationCards[nextIndex]}
+                alt=""
+                aria-hidden="true"
+                className={styles.nextRecommendationImage}
+                sizes="190px"
+              />
               <Image
                 src={recommendationCards[activeIndex]}
                 alt={`Recommendation ${activeIndex + 1} of ${recommendationCards.length}`}
