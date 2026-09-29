@@ -79,6 +79,7 @@ const About = () => {
             </div>
           </header>
 
+          <div className={styles.aboutContent}>
           <section className={styles.profileRow}>
             <div className={styles.profileImageWrap}>
               <Image
@@ -149,6 +150,7 @@ const About = () => {
               </Link>
             ))}
           </nav>
+          </div>
 
           <footer className={styles.aboutFooter}>
             <p>&quot;Design is not just what it looks like. Design is how it works.&quot;</p>

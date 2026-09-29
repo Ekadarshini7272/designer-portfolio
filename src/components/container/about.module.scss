@@ -48,6 +48,13 @@
   margin-bottom: 44px;
 }
 
+.aboutContent {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+}
+
 .backLink,
 .aboutTitle {
   align-items: center;
@@ -382,6 +389,10 @@
     height: auto;
     min-height: calc(100svh - 80px);
     padding: 0;
+  }
+
+  .aboutContent {
+    flex: 0 0 auto;
   }
 
   .aboutHeader {

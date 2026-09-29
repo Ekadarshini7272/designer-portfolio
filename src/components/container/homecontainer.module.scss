@@ -35,7 +35,11 @@
 }
 
 .homeContent {
-  margin: clamp(37px, 5.2vh, 56px) auto 0;
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 auto;
   max-width: 680px;
   width: 100%;
 }
@@ -377,6 +381,8 @@
   }
 
   .homeContent {
+    display: block;
+    flex: 0 0 auto;
     margin-top: 58px;
   }
 
