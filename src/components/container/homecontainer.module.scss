@@ -23,9 +23,10 @@
 }
 
 .pageShell {
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  height: min(860px, calc(100svh - 96px));
+  height: min(1080px, calc(100svh - 96px));
   max-width: 680px;
   padding: 16px;
   position: relative;

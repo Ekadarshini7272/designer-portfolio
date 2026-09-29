@@ -12,8 +12,6 @@ const interactiveSelector = [
 ].join(",");
 
 let audioContext;
-let lastHoverAt = 0;
-let lastHoverTarget = null;
 
 const getAudioContext = () => {
   if (typeof window === "undefined") return null;
@@ -39,20 +37,18 @@ const playTone = (type) => {
   const oscillator = context.createOscillator();
   const gain = context.createGain();
   const now = context.currentTime;
-  const isClick = type === "click";
-
-  oscillator.type = isClick ? "triangle" : "sine";
-  oscillator.frequency.setValueAtTime(isClick ? 360 : 560, now);
-  oscillator.frequency.exponentialRampToValueAtTime(isClick ? 720 : 680, now + 0.055);
+  oscillator.type = "triangle";
+  oscillator.frequency.setValueAtTime(360, now);
+  oscillator.frequency.exponentialRampToValueAtTime(720, now + 0.055);
 
   gain.gain.setValueAtTime(0.0001, now);
-  gain.gain.exponentialRampToValueAtTime(isClick ? 0.042 : 0.018, now + 0.01);
-  gain.gain.exponentialRampToValueAtTime(0.0001, now + (isClick ? 0.14 : 0.075));
+  gain.gain.exponentialRampToValueAtTime(0.042, now + 0.01);
+  gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.14);
 
   oscillator.connect(gain);
   gain.connect(context.destination);
   oscillator.start(now);
-  oscillator.stop(now + (isClick ? 0.15 : 0.08));
+  oscillator.stop(now + 0.15);
 };
 
 const isValidTarget = (element) =>
@@ -67,42 +63,17 @@ const useInteractionSound = () => {
   useEffect(() => {
     if (router.pathname.startsWith("/recommendations")) return undefined;
 
-    const handlePointerOver = (event) => {
-      const target = event.target.closest(interactiveSelector);
-      const now = window.performance.now();
-
-      if (!isValidTarget(target) || target === lastHoverTarget || now - lastHoverAt < 65) {
-        return;
-      }
-
-      lastHoverTarget = target;
-      lastHoverAt = now;
-      playTone("hover");
-    };
-
-    const handlePointerOut = (event) => {
-      const target = event.target.closest(interactiveSelector);
-
-      if (target && !target.contains(event.relatedTarget)) {
-        lastHoverTarget = null;
-      }
-    };
-
     const handleClick = (event) => {
       const target = event.target.closest(interactiveSelector);
 
       if (isValidTarget(target)) {
-        playTone("click");
+        playTone();
       }
     };
 
-    document.addEventListener("pointerover", handlePointerOver, true);
-    document.addEventListener("pointerout", handlePointerOut, true);
     document.addEventListener("click", handleClick, true);
 
     return () => {
-      document.removeEventListener("pointerover", handlePointerOver, true);
-      document.removeEventListener("pointerout", handlePointerOut, true);
       document.removeEventListener("click", handleClick, true);
     };
   }, [router.pathname]);

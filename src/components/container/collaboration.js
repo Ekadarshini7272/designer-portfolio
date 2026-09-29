@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { TbArrowLeft } from "react-icons/tb";
-import allbgimg from "../../../public/images/commonpageimg/allbgimg.png";
+import allbgimg from "../../../public/images/commonpageimg/allbgimg.svg";
 import collaborationgrey from "../../../public/images/about/collaborationgrey.png";
 import collaborationblack from "../../../public/images/about/collaborationblack.png";
 import workbrand1 from "../../../public/images/workingbrands/brandwork1.png";

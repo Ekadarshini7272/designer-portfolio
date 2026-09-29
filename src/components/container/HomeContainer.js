@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 import { FiRefreshCw } from "react-icons/fi";
 import Header from "../Header/Header";
-import allbgimg from "../../../public/images/commonpageimg/allbgimg.png";
+import allbgimg from "../../../public/images/commonpageimg/allbgimg.svg";
 import leftarrowdot from "../../../public/images/commonpageimg/rightdotimg.svg";
 import rightarrowdot from "../../../public/images/commonpageimg/rightarrowdot.png";
 import styles from "./homecontainer.module.scss";

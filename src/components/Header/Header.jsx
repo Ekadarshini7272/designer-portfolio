@@ -24,7 +24,7 @@ const Header = () => {
           <TbUser aria-hidden="true" />
           <span className={styles.label}>
             <span>About</span>
-            <span>the Human</span>
+            <span className={styles.hoverLabel}>the Human</span>
           </span>
         </Link>
         <Link href="/projects" className={styles.navItem} data-hover-label="the Mess">
@@ -46,7 +46,7 @@ const Header = () => {
           </span>
           <span className={styles.label}>
             <span>Playground</span>
-            <span>the Mess</span>
+            <span className={styles.hoverLabel}>the Mess</span>
           </span>
         </Link>
       </nav>

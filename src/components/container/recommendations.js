@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { TbArrowLeft } from "react-icons/tb";
-import allbgimg from "../../../public/images/commonpageimg/allbgimg.png";
+import allbgimg from "../../../public/images/commonpageimg/allbgimg.svg";
 import recomendationgrey from "../../../public/images/about/recomendationgrey.png";
 import recomendationblack from "../../../public/images/about/recomendationblack.png";
 import reccomend1 from "../../../public/images/recomendation/recommend1.svg";

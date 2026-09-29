@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { TbArrowLeft } from "react-icons/tb";
-import allbgimg from "../../../public/images/commonpageimg/allbgimg.png";
+import allbgimg from "../../../public/images/commonpageimg/allbgimg.svg";
 import gallerygrey from "../../../public/images/about/gallerygrey.png";
 import galleryblack from "../../../public/images/about/galleryblack.png";
 import myphotogrey from "../../../public/images/gallery/myphotogrey.png";

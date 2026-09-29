@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { TbArrowLeft } from "react-icons/tb";
-import allbgimg from "../../../public/images/commonpageimg/allbgimg.png";
+import allbgimg from "../../../public/images/commonpageimg/allbgimg.svg";
 import skillgrey from "../../../public/images/about/skillgrey.png";
 import skillblack from "../../../public/images/about/skillblack.png";
 import geryarrow from "../../../public/images/slills/geryarrow.png";

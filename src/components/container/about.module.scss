@@ -30,9 +30,12 @@
 }
 
 .aboutCard {
+  background-color: #ffffff;
   display: flex;
   flex-direction: column;
-  height: min(860px, calc(100svh - 96px));
+  // Keep a constant 48px desktop breathing room while allowing tall screens
+  // to use their available vertical space instead of centering an 860px canvas.
+  height: min(1080px, calc(100svh - 96px));
   max-width: 680px;
   padding: 16px;
   width: 100%;

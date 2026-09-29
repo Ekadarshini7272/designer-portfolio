@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { TbArrowLeft, TbEye } from "react-icons/tb";
-import allbgimg from "../../../public/images/commonpageimg/allbgimg.png";
+import allbgimg from "../../../public/images/commonpageimg/allbgimg.svg";
 import cvgrey from "../../../public/images/about/cvgrey.png";
 import cvblack from "../../../public/images/about/cvblack.png";
 import resume from "../../../public/images/commonpageimg/resume.png";
