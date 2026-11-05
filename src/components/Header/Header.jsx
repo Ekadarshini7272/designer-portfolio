@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { TbUser } from "react-icons/tb";
 import headerlogooverhover from "../../../public/images/commonpageimg/headerlogooverhover.png";
+import namelogo from "../../../public/images/commonpageimg/namelogo.svg";
+import hovernamelogo from "../../../public/images/commonpageimg/hovernamelogo.svg";
 import menuplaygroundgrey from "../../../public/images/commonpageimg/menuplaygroundgrey.png";
 import menuplaygroundblack from "../../../public/images/commonpageimg/menuplaygroundblack.png";
 import styles from "./header.module.scss";
@@ -11,10 +13,11 @@ const Header = () => {
     <header className={styles.homeHeader}>
       <Link href="/" className={styles.brand} aria-label="Go to home page">
         <span className={styles.brandNameWrap}>
-          <span className={styles.hoverMark}>
-            <Image src={headerlogooverhover} alt="" fill sizes="200px" priority />
+          <span className={styles.hoverMark} aria-hidden="true">
+            <Image src={headerlogooverhover} alt="" fill sizes="280px" priority />
           </span>
-          <span className={styles.brandName}>Prabhu Prasad Pradhan</span>
+          <Image src={namelogo} alt="Prabhu Prasad Pradhan" className={styles.brandLogo} priority />
+          <Image src={hovernamelogo} alt="" aria-hidden="true" className={styles.brandLogoHover} priority />
         </span>
         <span className={styles.brandRole}>Lead Designer</span>
       </Link>

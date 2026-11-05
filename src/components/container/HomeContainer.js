@@ -4,9 +4,10 @@ import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
 import { FiRefreshCw } from "react-icons/fi";
 import Header from "../Header/Header";
-import allbgimg from "../../../public/images/commonpageimg/allbgimg.svg";
+import allbgimg from "../../../public/images/commonpageimg/bgsvgcommon.svg";
 import leftarrowdot from "../../../public/images/commonpageimg/rightdotimg.svg";
-import rightarrowdot from "../../../public/images/commonpageimg/rightarrowdot.png";
+import rightarrowdot from "../../../public/images/commonpageimg/rightsquaredot.svg";
+import promoted from "../../../public/images/commonpageimg/promoted.svg";
 import styles from "./homecontainer.module.scss";
 
 const projects = [
@@ -33,7 +34,7 @@ const workHeadings = [
 ];
 
 const workRows = [
-  ["Feb 2025 - Present", "VVDN", "Sr Designer"],
+  ["Feb 2025 - Present", "VVDN", "Lead Designer"],
   ["Jul 2023 - Feb 2025", "ApnaKlub", "Product designer"],
   ["May 2020 - Apr 2023", "O4S", "Product Designer"],
 ];
@@ -157,7 +158,12 @@ const HomeContainer = () => {
                 <React.Fragment key={`${date}-${company}-${role}`}>
                   <div className={styles.workDate}>{date}</div>
                   <div className={styles.workCompany}>{company}</div>
-                  <div className={styles.workRole}>{role}</div>
+                  <div className={styles.workRole}>
+                    {company === "VVDN" && (
+                      <Image src={promoted} alt="Promoted" className={styles.promotedBadge} />
+                    )}
+                    <span>{role}</span>
+                  </div>
                 </React.Fragment>
               ))}
             </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { TbArrowLeft, TbCheck, TbUser } from "react-icons/tb";
-import allbgimg from "../../../public/images/commonpageimg/allbgimg.svg";
+import allbgimg from "../../../public/images/commonpageimg/bgsvgcommon.svg";
 import aboutprofileimg from "../../../public/images/about/aboutprofileimg.jpg";
 import emailsideimg from "../../../public/images/about/aboutdotimg.svg";
 import skillgrey from "../../../public/images/about/skillgrey.png";
