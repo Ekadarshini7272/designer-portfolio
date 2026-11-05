@@ -19,7 +19,7 @@ const projects = [
 ];
 
 const workHeadings = [
-  ["Me Looking For You !", "Senior Product Designer"],
+  ["Me Looking For You !", "Lead Designer"],
   ["You Looking For Me !", "Senior UX/UI Designer"],
   ["Lest Work Together !", "Lead Product Designer"],
   ["You + Me + Figma = Magic", "Product Design Lead"],

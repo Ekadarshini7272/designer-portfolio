@@ -16,7 +16,7 @@ const Header = () => {
           </span>
           <span className={styles.brandName}>Prabhu Prasad Pradhan</span>
         </span>
-        <span className={styles.brandRole}>Senior Product Designer</span>
+        <span className={styles.brandRole}>Lead Designer</span>
       </Link>
 
       <nav className={styles.nav} aria-label="Main navigation">
