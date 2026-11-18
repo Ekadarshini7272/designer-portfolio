@@ -1,3 +1,5 @@
+@use "../../styles/variables" as colors;
+
 .homeHeader {
   align-items: flex-start;
   display: flex;
@@ -35,7 +37,9 @@
 .brandNameWrap {
   display: inline-grid;
   align-items: center;
+  grid-template-columns: minmax(0, 1fr);
   width: 264px;
+  max-width: 100%;
   height: 39px;
   position: relative;
   z-index: 1;
@@ -45,14 +49,17 @@
 .brandLogoHover {
   grid-area: 1 / 1;
   display: block;
+  width: 100%;
+  height: auto;
   pointer-events: none;
   transition: opacity 400ms ease-in-out;
   position: relative;
 }
 
 .hoverMark {
-  height: 34px;
-  width: calc(100% + 20px);
+  // Scale the original 287px border with the 264px wordmark.
+  width: calc(100% * 287 / 264);
+  height: auto;
   left: 50%;
   top: 50%;
   position: absolute;
@@ -102,67 +109,62 @@
   text-decoration: none;
   transition: color 220ms ease;
 
-  svg {
-    color: currentColor;
-    height: 16px;
-    stroke-width: 2;
-    width: 16px;
-  }
-
   &:hover,
   &:focus-visible {
     color: #202020;
 
-    .label span:first-child,
+    .label > :first-child,
     .iconGrey {
       opacity: 0;
     }
 
-    .label span:first-child {
-      transform: translateY(120%);
+    .label > :last-child {
+      clip-path: polygon(0 0, 100% 0, 100% 25%, 100% 50%, 100% 75%, 100% 100%, 0 100%);
     }
 
-    .label span:last-child,
     .iconBlack {
       opacity: 1;
-    }
-
-    .label span:last-child {
-      transform: translateY(0);
     }
   }
 }
 
 .label {
   display: inline-grid;
-  height: 1.3em;
-  overflow: hidden;
-  position: relative;
+  justify-items: end;
 
-  span {
+  > span {
     grid-area: 1 / 1;
-    transition: opacity 360ms cubic-bezier(0.22, 0.8, 0.26, 1),
-      transform 650ms cubic-bezier(0.22, 0.8, 0.26, 1);
-    white-space: nowrap;
   }
 
-  span:last-child {
-    opacity: 0;
-    transform: translateY(-120%);
+  > :first-child {
+    transition: opacity 340ms ease;
   }
+
+  > :last-child {
+    clip-path: polygon(0 0, -16% 0, -6% 25%, -10% 50%, -18% 75%, -12% 100%, 0 100%);
+    transition: clip-path 720ms cubic-bezier(0.22, 0.8, 0.26, 1);
+  }
+}
+
+.navLabel {
+  align-items: center;
+  display: inline-flex;
+  gap: 8px;
+  white-space: nowrap;
 }
 
 .hoverLabel {
   background-clip: text;
-  background-image: linear-gradient(90deg, #e85d75, #9a64d8 48%, #3e9ed3);
-  background-size: 180% 100%;
+  background-image: linear-gradient(105deg, colors.$gradient-purple, colors.$gradient-blue 46%, colors.$gradient-pink);
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.navItem:nth-child(2) .hoverLabel {
-  background-image: linear-gradient(90deg, #f08b3e, #d75584 48%, #7b5fd1);
+@media (prefers-reduced-motion: reduce) {
+  .label > span {
+    transition: none;
+  }
 }
 
 .playgroundIcon {
@@ -199,5 +201,9 @@
     align-items: center;
     flex-direction: column;
     text-align: center;
+  }
+
+  .label {
+    justify-items: center;
   }
 }

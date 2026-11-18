@@ -1,3 +1,5 @@
+@use "../../styles/variables" as colors;
+
 .homePage {
   align-items: center;
   background: #ffffff;
@@ -38,7 +40,6 @@
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;
-  justify-content: center;
   margin: 0 auto;
   max-width: 680px;
   width: 100%;
@@ -54,7 +55,7 @@
   gap: 6px;
   letter-spacing: 0;
   line-height: 1.65;
-  margin: 0 0 clamp(34px, 4.2vh, 45px);
+  margin: clamp(34px, 4.2vh, 45px) 0;
 
   strong {
     color: #313131;
@@ -236,7 +237,7 @@
 .workSymbol {
   color: #9d9d9d;
   font-family: Georgia, serif;
-  font-size: 16px;
+  font-size: 24px;
   padding-left: 78px;
 }
 
@@ -323,8 +324,49 @@
 }
 
 .promotedBadge {
-  display: block;
-  flex-shrink: 0;
+  --gradient-travel: calc(156px / sin(105deg));
+
+  align-items: center;
+  animation: promotedFlow 5s linear infinite;
+  background-image: linear-gradient(#ffffff66, #ffffff66),
+    repeating-linear-gradient(
+      105deg,
+      colors.$gradient-purple 0,
+      colors.$gradient-blue 35px,
+      colors.$gradient-pink 78px,
+      colors.$gradient-blue 121px,
+      colors.$gradient-purple 156px
+    );
+  background-repeat: no-repeat;
+  background-size: calc(100% + var(--gradient-travel)) 100%;
+  border: 1px solid #ffffff66;
+  border-radius: 999px;
+  box-shadow: 0 1px 3px #1f194738;
+  color: #18132b;
+  display: inline-flex;
+  flex: 0 0 auto;
+  font-family: "Fragment Mono", "Courier New", monospace;
+  font-size: 11px;
+  justify-content: center;
+  line-height: 1;
+  min-height: 22px;
+  padding-inline: 8px;
+}
+
+@keyframes promotedFlow {
+  from {
+    background-position: calc(-1 * var(--gradient-travel)) 0;
+  }
+
+  to {
+    background-position: 0 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promotedBadge {
+    animation: none;
+  }
 }
 
 .homeFooter {
@@ -393,15 +435,13 @@
   }
 
   .homeContent {
-    display: block;
     flex: 0 0 auto;
-    margin-top: 58px;
   }
 
   .statusLine {
     align-items: flex-start;
     font-size: 13px;
-    margin-bottom: 50px;
+    margin-block: 50px;
   }
 
   .statusDot {

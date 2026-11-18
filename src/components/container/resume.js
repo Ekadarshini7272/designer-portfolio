@@ -14,7 +14,7 @@ const documents = [
   {
     label: "Resume",
     image: resume,
-    href: "https://drive.google.com/file/d/1HRCRTkGobZZo21CE5r9zhIlL0Oe4-UyB/view?pli=1",
+    href: "https://drive.google.com/file/d/1_UJRe0BZ7pP71jf5-uM09apL_J_Keyzl/view?usp=sharing",
   },
   {
     label: "Cover letter",

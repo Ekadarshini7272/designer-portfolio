@@ -7,7 +7,6 @@ import Header from "../Header/Header";
 import allbgimg from "../../../public/images/commonpageimg/bgsvgcommon.svg";
 import leftarrowdot from "../../../public/images/commonpageimg/rightdotimg.svg";
 import rightarrowdot from "../../../public/images/commonpageimg/rightsquaredot.svg";
-import promoted from "../../../public/images/commonpageimg/promoted.svg";
 import styles from "./homecontainer.module.scss";
 
 const projects = [
@@ -160,7 +159,7 @@ const HomeContainer = () => {
                   <div className={styles.workCompany}>{company}</div>
                   <div className={styles.workRole}>
                     {company === "VVDN" && (
-                      <Image src={promoted} alt="Promoted" className={styles.promotedBadge} />
+                      <span className={styles.promotedBadge}>Promoted</span>
                     )}
                     <span>{role}</span>
                   </div>
