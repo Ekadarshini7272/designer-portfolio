@@ -4,8 +4,8 @@ import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { TbArrowLeft } from "react-icons/tb";
 import allbgimg from "../../../public/images/commonpageimg/bgsvgcommon.svg";
-import recomendationgrey from "../../../public/images/about/recomendationgrey.png";
-import recomendationblack from "../../../public/images/about/recomendationblack.png";
+import recomendationgrey from "../../../public/images/about/aboutg.svg";
+import recomendationblack from "../../../public/images/about/aboutgb.svg";
 import reccomend1 from "../../../public/images/recomendation/recommend1.svg";
 import reccomend2 from "../../../public/images/recomendation/reccomend2.svg";
 import reccomend3 from "../../../public/images/recomendation/reccomend3.svg";
@@ -42,6 +42,8 @@ const recommendationCards = [
 ];
 
 const cardRotations = [-8, 5, -3, 7, -6, 4, -5, 6, -4, 3, -7, 5, -2, 6];
+// These tilts are baked into the SVG exports, in card order.
+const artworkRotations = [12, 12, -12, -12, 12, -12, 12, 12, 12, -12, 12, -12, -12, 12];
 
 const formatIstTime = () =>
   new Intl.DateTimeFormat("en-IN", {
@@ -97,6 +99,12 @@ const Recommendations = () => {
   };
 
   const nextIndex = (activeIndex + 1) % recommendationCards.length;
+  const frontRotation = artworkRotations[activeIndex] + cardRotations[activeIndex];
+  const nextRotation = artworkRotations[nextIndex] + cardRotations[nextIndex];
+  // Preserve pairs that already have enough angular separation.
+  const backRotation = Math.abs(frontRotation - nextRotation) < 12
+    ? -Math.sign(frontRotation) * Math.max(8, Math.abs(nextRotation))
+    : nextRotation;
 
   return (
     <main
@@ -134,7 +142,7 @@ const Recommendations = () => {
               className={styles.recommendationStack}
               style={{
                 "--stamp-rotation": `${cardRotations[activeIndex]}deg`,
-                "--next-rotation": `${cardRotations[nextIndex]}deg`,
+                "--next-rotation": `${backRotation - artworkRotations[nextIndex]}deg`,
               }}
               key={activeIndex}
             >

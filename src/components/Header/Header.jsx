@@ -47,11 +47,11 @@ const Header = () => {
         <Link href="/about" className={styles.navItem} aria-label="About">
           <span className={styles.label} aria-hidden="true">
             <span className={styles.navLabel}>
-              <Image src={headerlogogrey} alt="" />
+              <Image src={headerlogogrey} alt="" width={18} height={18} />
               About
             </span>
             <span className={styles.navLabel}>
-              <Image src={headerlogoblack} alt="" />
+              <Image src={headerlogoblack} alt="" width={18} height={18} />
               <span className={styles.hoverLabel}>the Human</span>
             </span>
           </span>

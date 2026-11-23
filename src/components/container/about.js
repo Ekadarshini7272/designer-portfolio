@@ -2,22 +2,24 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container } from "react-bootstrap";
-import { TbArrowLeft, TbCheck, TbUser } from "react-icons/tb";
+import { TbArrowLeft, TbCheck } from "react-icons/tb";
 import allbgimg from "../../../public/images/commonpageimg/bgsvgcommon.svg";
-import aboutprofileimg from "../../../public/images/about/aboutprofileimg.jpg";
+import headerlogogrey from "../../../public/images/commonpageimg/headerlogogrey.svg";
+import headerlogoblack from "../../../public/images/commonpageimg/headerlogoblack.svg";
+import aboutprofileimg from "../../../public/images/about/professionalpicture.svg";
 import emailsideimg from "../../../public/images/about/aboutdotimg.svg";
-import skillgrey from "../../../public/images/about/skillgrey.png";
-import skillblack from "../../../public/images/about/skillblack.png";
-import gallerygrey from "../../../public/images/about/gallerygrey.png";
-import galleryblack from "../../../public/images/about/galleryblack.png";
-import cvgrey from "../../../public/images/about/cvgrey.png";
-import cvblack from "../../../public/images/about/cvblack.png";
-import collaborationgrey from "../../../public/images/about/collaborationgrey.png";
-import collaborationblack from "../../../public/images/about/collaborationblack.png";
-import linkgrey from "../../../public/images/about/linkgrey.png";
-import linkblack from "../../../public/images/about/linkblack.png";
-import recomendationgrey from "../../../public/images/about/recomendationgrey.png";
-import recomendationblack from "../../../public/images/about/recomendationblack.png";
+import skillgrey from "../../../public/images/about/abouta.svg";
+import skillblack from "../../../public/images/about/aboutab.svg";
+import gallerygrey from "../../../public/images/about/aboutb.svg";
+import galleryblack from "../../../public/images/about/aboutbb.svg";
+import cvgrey from "../../../public/images/about/aboutc.svg";
+import cvblack from "../../../public/images/about/aboutcb.svg";
+import collaborationgrey from "../../../public/images/about/aboutd.svg";
+import collaborationblack from "../../../public/images/about/aboutdb.svg";
+import linkgrey from "../../../public/images/about/aboute.svg";
+import linkblack from "../../../public/images/about/abouteb.svg";
+import recomendationgrey from "../../../public/images/about/aboutg.svg";
+import recomendationblack from "../../../public/images/about/aboutgb.svg";
 import styles from "./about.module.scss";
 const email = "theppp.28@gmail.com";
 const quickLinks = [
@@ -74,7 +76,10 @@ const About = () => {
               <TbArrowLeft aria-hidden="true" />
             </Link>
             <div className={styles.aboutTitle}>
-              <TbUser aria-hidden="true" />
+              <span className={styles.titleIcon} aria-hidden="true">
+                <Image src={headerlogogrey} alt="" width={18} height={18} />
+                <Image src={headerlogoblack} alt="" width={18} height={18} />
+              </span>
               <span>About</span>
             </div>
           </header>

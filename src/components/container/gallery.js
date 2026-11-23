@@ -4,12 +4,10 @@ import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { TbArrowLeft } from "react-icons/tb";
 import allbgimg from "../../../public/images/commonpageimg/bgsvgcommon.svg";
-import gallerygrey from "../../../public/images/about/gallerygrey.png";
-import galleryblack from "../../../public/images/about/galleryblack.png";
+import gallerygrey from "../../../public/images/about/aboutb.svg";
+import galleryblack from "../../../public/images/about/aboutbb.svg";
 import myphotogrey from "../../../public/images/gallery/myphotogrey.png";
-import myphotoblack from "../../../public/images/gallery/myphotoblack.png";
 import photographygrey from "../../../public/images/gallery/photographygrey.png";
-import photographyblack from "../../../public/images/gallery/photographyblack.png";
 import profile1 from "../../../public/images/gallery/profile1.png";
 import profile2 from "../../../public/images/gallery/profile2.png";
 import profile3 from "../../../public/images/gallery/profile3.png";
@@ -78,14 +76,12 @@ const modes = [
   {
     key: "myphoto",
     label: "My Photo",
-    greyIcon: myphotogrey,
-    blackIcon: myphotoblack,
+    icon: myphotogrey,
   },
   {
     key: "photography",
     label: "Photography",
-    greyIcon: photographygrey,
-    blackIcon: photographyblack,
+    icon: photographygrey,
   },
 ];
 
@@ -147,19 +143,14 @@ const Gallery = () => {
                   >
                     <span className={styles.modeIcon}>
                       <Image
-                        src={mode.greyIcon}
+                        src={mode.icon}
                         alt=""
-                        className={styles.modeGreyIcon}
-                        sizes="40px"
-                      />
-                      <Image
-                        src={mode.blackIcon}
-                        alt=""
-                        className={styles.modeBlackIcon}
                         sizes="40px"
                       />
                     </span>
-                    <span className={styles.modeLabel}>{mode.label}</span>
+                    <span className={styles.modeLabel}>
+                      <span>{mode.label}</span>
+                    </span>
                   </button>
                 );
               })}
@@ -174,7 +165,7 @@ const Gallery = () => {
                         src={photo}
                         alt=""
                         className={styles.photo}
-                        sizes="82px"
+                        sizes="(max-width: 560px) 89px, 152px"
                         priority={index < 4}
                       />
                     </div>

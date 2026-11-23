@@ -2,11 +2,11 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Container, Row, Col } from "react-bootstrap";
-import { FiRefreshCw } from "react-icons/fi";
+// import { FiRefreshCw } from "react-icons/fi";
 import Header from "../Header/Header";
 import allbgimg from "../../../public/images/commonpageimg/bgsvgcommon.svg";
 import leftarrowdot from "../../../public/images/commonpageimg/rightdotimg.svg";
-import rightarrowdot from "../../../public/images/commonpageimg/rightsquaredot.svg";
+// import rightarrowdot from "../../../public/images/commonpageimg/rightsquaredot.svg";
 import styles from "./homecontainer.module.scss";
 
 const projects = [
@@ -18,7 +18,7 @@ const projects = [
   { year: "2020-23", name: "Original4sure", href: "https://www.figma.com/proto/MVo0PfpWWBzMpB7WPvTiqA/CASE-Study--part-2-?node-id=8-1155&viewport=228%2C87%2C0.09&t=7Soq4PsaFFzvXXJN-1&scaling=contain&content-scaling=fixed&starting-point-node-id=8%3A1155&page-id=8%3A6" },
 ];
 
-const workHeadings = [
+/* const workHeadings = [
   ["Me Looking For You !", "Lead Designer"],
   ["You Looking For Me !", "Senior UX/UI Designer"],
   ["Lest Work Together !", "Lead Product Designer"],
@@ -30,7 +30,7 @@ const workHeadings = [
   ["I Bring Good Pixels", "UX Design Manager"],
   ["Ideas x Design", "AI Product Designer"],
   ["Got Problems? Hi.", "Design Systems Lead"],
-];
+]; */
 
 const workRows = [
   ["Feb 2025 - Present", "VVDN", "Lead Designer"],
@@ -50,9 +50,9 @@ const formatIstTime = () =>
     .toUpperCase();
 
 const HomeContainer = () => {
-  const [workHeadingIndex, setWorkHeadingIndex] = useState(0);
+  // const [workHeadingIndex, setWorkHeadingIndex] = useState(0);
   const [currentTime, setCurrentTime] = useState(formatIstTime);
-  const [workTitle, workTitleMeta] = workHeadings[workHeadingIndex];
+  // const [workTitle, workTitleMeta] = workHeadings[workHeadingIndex];
 
   useEffect(() => {
     const timer = window.setInterval(() => {
@@ -62,9 +62,9 @@ const HomeContainer = () => {
     return () => window.clearInterval(timer);
   }, []);
 
-  const handleWorkRefresh = () => {
+  /* const handleWorkRefresh = () => {
     setWorkHeadingIndex((current) => (current + 1) % workHeadings.length);
-  };
+  }; */
 
   return (
     <main
@@ -136,7 +136,7 @@ const HomeContainer = () => {
             </div>
 
             <div className={styles.workTable}>
-              <div className={styles.workSymbol}>{"\u221e"}</div>
+              {/* <div className={styles.workSymbol}>{"\u221e"}</div>
               <div className={styles.workIntro} key={`work-title-${workHeadingIndex}`}>
                 {workTitle}
               </div>
@@ -151,7 +151,7 @@ const HomeContainer = () => {
                 >
                   <FiRefreshCw aria-hidden="true" />
                 </button>
-              </div>
+              </div> */}
 
               {workRows.map(([date, company, role]) => (
                 <React.Fragment key={`${date}-${company}-${role}`}>

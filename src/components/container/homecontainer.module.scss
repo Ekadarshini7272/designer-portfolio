@@ -328,18 +328,18 @@
 
   align-items: center;
   animation: promotedFlow 5s linear infinite;
-  background-image: linear-gradient(#ffffff66, #ffffff66),
-    repeating-linear-gradient(
-      105deg,
-      colors.$gradient-purple 0,
-      colors.$gradient-blue 35px,
-      colors.$gradient-pink 78px,
-      colors.$gradient-blue 121px,
-      colors.$gradient-purple 156px
-    );
+  background-image: repeating-linear-gradient(
+    105deg,
+    colors.$gradient-purple 0,
+    colors.$gradient-blue 35px,
+    colors.$gradient-pink 78px,
+    colors.$gradient-blue 121px,
+    colors.$gradient-purple 156px
+  );
+  background-origin: border-box;
   background-repeat: no-repeat;
   background-size: calc(100% + var(--gradient-travel)) 100%;
-  border: 1px solid #ffffff66;
+  border: 1px solid rgb(255 255 255 / 28%);
   border-radius: 999px;
   box-shadow: 0 1px 3px #1f194738;
   color: #18132b;

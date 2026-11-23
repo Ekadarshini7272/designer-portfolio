@@ -4,10 +4,10 @@ import Link from "next/link";
 import { Container } from "react-bootstrap";
 import { TbArrowLeft } from "react-icons/tb";
 import allbgimg from "../../../public/images/commonpageimg/bgsvgcommon.svg";
-import skillgrey from "../../../public/images/about/skillgrey.png";
-import skillblack from "../../../public/images/about/skillblack.png";
-import geryarrow from "../../../public/images/slills/geryarrow.png";
-import blackhoverarrow from "../../../public/images/slills/blackhoverarrow.png";
+import skillgrey from "../../../public/images/about/abouta.svg";
+import skillblack from "../../../public/images/about/aboutab.svg";
+import geryarrow from "../../../public/images/slills/Arrownavigate.svg";
+import blackhoverarrow from "../../../public/images/slills/downarrow.svg";
 import designfirst from "../../../public/images/slills/designfirst.svg";
 import designsecond from "../../../public/images/slills/designsecond.svg";
 import designthird from "../../../public/images/slills/designthird.svg";
@@ -135,8 +135,10 @@ const SkillIconLink = ({ item }) => (
     <span
       className={styles.toolIconWrap}
       style={{
-        "--compact-width": `${item.src.width || 36}px`,
-        "--hover-width": `${(item.hover?.width || item.src.width || 36)}px`,
+        "--compact-width": `${(30 * item.src.width) / item.src.height}px`,
+        "--hover-width": item.hover
+          ? `${(30 * item.hover.width) / item.hover.height}px`
+          : undefined,
       }}
     >
       <Image src={item.src} alt="" className={styles.toolIcon} sizes="160px" />

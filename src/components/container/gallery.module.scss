@@ -30,13 +30,14 @@
 }
 
 .galleryCard {
+  background-color: #ffffff;
   display: grid;
+  grid-template-columns: minmax(0, 1fr);
   grid-template-rows: auto 1fr auto;
   height: min(1080px, calc(100svh - 96px));
   max-width: 680px;
   padding: 16px;
   width: 100%;
-      background-color: #ffffff;
 }
 
 .galleryHeader {
@@ -112,19 +113,20 @@
 
 .galleryContent {
   align-items: center;
-  align-self: center;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-evenly;
   justify-self: center;
   width: min(100%, 680px);
 }
 
 .modeToggle {
+  --mode-transition: 560ms cubic-bezier(0.45, 0, 0.25, 1);
+
   align-items: center;
   background: #ffffff;
   border: 1px solid #efefef;
-  border-radius: 18px;
+  border-radius: 999px;
   display: inline-flex;
   gap: 3px;
   justify-content: center;
@@ -137,7 +139,7 @@
   align-items: center;
   background: transparent;
   border: 0;
-  border-radius: 15px;
+  border-radius: 999px;
   color: #9f9f9f;
   cursor: pointer;
   display: inline-flex;
@@ -145,37 +147,26 @@
   font-size: 11px;
   font-weight: 400;
   gap: 0;
-  height: 26px;
+  height: 40px;
   justify-content: center;
   line-height: 1;
   overflow: hidden;
-  padding: 0 3px;
-  transition: background-color 260ms ease, color 260ms ease, max-width 420ms ease,
-    padding 420ms ease;
+  padding: 0 5px;
+  transition: background-color var(--mode-transition), color var(--mode-transition);
   white-space: nowrap;
-  max-width: 46px;
 
   &:hover,
   &:focus-visible {
     background: #f3f3f3;
     color: #151515;
     outline: none;
-    padding: 0 8px;
-    max-width: 170px;
-
     .modeLabel {
-      margin-left: 5px;
-      max-width: 118px;
+      grid-template-columns: 1fr;
       opacity: 1;
-      transform: translateX(0);
     }
 
-    .modeGreyIcon {
-      opacity: 0;
-    }
-
-    .modeBlackIcon {
-      opacity: 1;
+    .modeIcon img {
+      filter: brightness(0);
     }
   }
 }
@@ -184,12 +175,8 @@
   background: #f3f3f3;
   color: #151515;
 
-  .modeGreyIcon {
-    opacity: 0;
-  }
-
-  .modeBlackIcon {
-    opacity: 1;
+  .modeIcon img {
+    filter: brightness(0);
   }
 
   &:hover,
@@ -208,40 +195,41 @@
     grid-area: 1 / 1;
     height: 32px;
     object-fit: contain;
-    transition: opacity 240ms ease;
+    transition: filter var(--mode-transition);
     width: 40px;
   }
 }
 
-.modeGreyIcon {
-  opacity: 1;
-}
-
-.modeBlackIcon {
-  opacity: 0;
-}
-
 .modeLabel {
-  display: inline-block;
-  margin-left: 0;
-  max-width: 0;
-  opacity: 0;
-  overflow: hidden;
-  transform: translateX(-6px);
-  transition: opacity 320ms ease, transform 320ms ease, margin-left 320ms ease,
-  max-width 360ms ease;
+  display: grid;
   font-size: 16px;
+  grid-template-columns: 0fr;
+  line-height: 1.4;
+  opacity: 0;
+  transition: grid-template-columns var(--mode-transition), opacity var(--mode-transition);
+
+  > span {
+    min-width: 0;
+    overflow: hidden;
+    text-indent: 4px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .modeToggle {
+    --mode-transition: 0ms;
+  }
 }
 
 .sliderWrap {
   align-items: center;
   display: flex;
   justify-content: center;
-  margin-top: clamp(56px, 9svh, 92px);
   width: 100%;
 }
 
 .sliderViewport {
+  container-type: inline-size;
   max-width: min(806px, 100vw - 44px);
   overflow: hidden;
   position: relative;
@@ -276,19 +264,23 @@
 }
 
 .sliderTrack {
+  --photo-gap: 14px;
+
   animation: gallerySlide 34s linear infinite;
   display: flex;
-  gap: 14px;
+  gap: var(--photo-gap);
   width: max-content;
   will-change: transform;
 }
 
 .photoCard {
+  --photo-width: calc((100cqi - 3 * var(--photo-gap)) / 4);
+
+  aspect-ratio: 2 / 3;
   border-radius: 4px;
-  flex: 0 0 92px;
-  height: 138px;
+  flex: 0 0 var(--photo-width);
   overflow: hidden;
-  width: 92px;
+  width: var(--photo-width);
 }
 
 .photo {
@@ -332,7 +324,7 @@
   }
 
   to {
-    transform: translateX(calc(-50% - 6px));
+    transform: translateX(calc(-50% - var(--photo-gap) / 2));
   }
 }
 
@@ -354,23 +346,17 @@
 }
 
 @media (max-width: 560px) {
-  .sliderWrap {
-    margin-top: clamp(44px, 8svh, 76px);
-  }
-
   .sliderViewport {
     max-width: min(390px, 100%);
     width: 100%;
   }
 
   .sliderTrack {
-    gap: 12px;
+    --photo-gap: 12px;
   }
 
   .photoCard {
-    flex-basis: 84px;
-    height: 126px;
-    width: 84px;
+    --photo-width: max(84px, calc((100cqi - 3 * var(--photo-gap)) / 4));
   }
 
   .galleryFooter {
