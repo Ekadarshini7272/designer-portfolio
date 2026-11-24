@@ -80,7 +80,7 @@ const HomeContainer = () => {
             Currently at <strong>VVDN</strong>, making ERP software feel awesome
           </p>
 
-          <section className={styles.sectionBlock} aria-labelledby="project-title">
+          <section aria-labelledby="project-title">
             <h1 id="project-title" className={styles.sectionTitle}>
               PROJECT
             </h1>
@@ -128,7 +128,7 @@ const HomeContainer = () => {
             </div>
           </section>
 
-          <section className={styles.sectionBlock} aria-labelledby="work-title">
+          <section aria-labelledby="work-title">
             <div className={styles.workHeading}>
               <h2 id="work-title" className={styles.sectionTitle}>
                 WORK

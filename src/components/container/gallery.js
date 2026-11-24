@@ -165,7 +165,7 @@ const Gallery = () => {
                         src={photo}
                         alt=""
                         className={styles.photo}
-                        sizes="(max-width: 560px) 89px, 152px"
+                        sizes="131px"
                         priority={index < 4}
                       />
                     </div>

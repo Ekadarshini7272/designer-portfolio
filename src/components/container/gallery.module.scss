@@ -147,7 +147,7 @@
   font-size: 11px;
   font-weight: 400;
   gap: 0;
-  height: 40px;
+  height: 34px;
   justify-content: center;
   line-height: 1;
   overflow: hidden;
@@ -157,7 +157,6 @@
 
   &:hover,
   &:focus-visible {
-    background: #f3f3f3;
     color: #151515;
     outline: none;
     .modeLabel {
@@ -274,13 +273,11 @@
 }
 
 .photoCard {
-  --photo-width: calc((100cqi - 3 * var(--photo-gap)) / 4);
-
-  aspect-ratio: 2 / 3;
   border-radius: 4px;
-  flex: 0 0 var(--photo-width);
+  flex: 0 0 131px;
+  height: 198px;
   overflow: hidden;
-  width: var(--photo-width);
+  width: 131px;
 }
 
 .photo {
@@ -353,10 +350,6 @@
 
   .sliderTrack {
     --photo-gap: 12px;
-  }
-
-  .photoCard {
-    --photo-width: max(84px, calc((100cqi - 3 * var(--photo-gap)) / 4));
   }
 
   .galleryFooter {

@@ -26,10 +26,10 @@ a {
 
 .scrollWave {
   background:
-    radial-gradient(ellipse 30% 75% at 12% 100%, #dce6f94d, transparent 100%),
-    radial-gradient(ellipse 37% 85% at 43% 100%, #cddcf859, transparent 100%),
-    radial-gradient(ellipse 30% 65% at 73% 100%, #e2dbf54d, transparent 100%),
-    radial-gradient(ellipse 24% 78% at 97% 100%, #dce6f94d, transparent 100%);
+    radial-gradient(ellipse 36% 90% at 12% 100%, #96b5ed80, transparent 100%),
+    radial-gradient(ellipse 42% 100% at 43% 100%, #7ea2eb80, transparent 100%),
+    radial-gradient(ellipse 36% 78% at 73% 100%, #ba9be680, transparent 100%),
+    radial-gradient(ellipse 30% 90% at 97% 100%, #96b5ed80, transparent 100%);
   bottom: 0;
   height: clamp(72px, 13vh, 132px);
   inset-inline: 0;

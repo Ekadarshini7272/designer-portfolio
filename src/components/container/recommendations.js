@@ -25,25 +25,25 @@ import reccomenddownblack from "../../../public/images/recomendation/reccomendsh
 import styles from "./recommendations.module.scss";
 
 const recommendationCards = [
-  reccomend1,
-  reccomend2,
-  reccomend3,
-  reccomend4,
+  reccomend2, // Gourav Das
+  reccomend3, // Ritika Gupta
+  reccomend1, // Advait Parnaik
   reccomend5,
-  reccomend6,
+  reccomend4,
   reccomend7,
+  reccomend6,
   reccomend8,
-  reccomend9,
   reccomend10,
-  reccomend11,
+  reccomend9,
   reccomend12,
+  reccomend11,
   reccomend13,
   reccomend14,
 ];
 
-const cardRotations = [-8, 5, -3, 7, -6, 4, -5, 6, -4, 3, -7, 5, -2, 6];
+const cardRotations = [5, -3, -8, -6, 7, -5, 4, 6, 3, -4, 5, -7, -2, 6];
 // These tilts are baked into the SVG exports, in card order.
-const artworkRotations = [12, 12, -12, -12, 12, -12, 12, 12, 12, -12, 12, -12, -12, 12];
+const artworkRotations = [12, -12, 12, 12, -12, 12, -12, 12, -12, 12, -12, 12, -12, 12];
 
 const formatIstTime = () =>
   new Intl.DateTimeFormat("en-IN", {
